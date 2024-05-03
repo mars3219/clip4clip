@@ -286,6 +286,16 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
 
         return sequence_hidden
 
+
+    # def get_sequence_output(self, input_ids, token_type_ids, attention_mask, shaped=False):
+    #     bs_pair = input_ids.size(0)
+    #     sequence_hidden = self.clip.encode_text(input_ids).float()
+    #     sequence_hidden = sequence_hidden.view(bs_pair, -1, sequence_hidden.size(-1))
+
+    #     return sequence_hidden
+
+
+
     def get_visual_output(self, video, video_mask, shaped=False, video_frame=-1):
         if shaped is False:
             video_mask = video_mask.view(-1, video_mask.shape[-1])
@@ -300,6 +310,13 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
 
         return visual_hidden
 
+    # def get_visual_output(self, video, video_frame=-1):
+    #     bs_pair = video.shape[0]
+    #     visual_hidden = self.clip.encode_image(video, video_frame=video_frame).float()
+    #     visual_hidden = visual_hidden.view(bs_pair, -1, visual_hidden.size(-1))
+
+    #     return visual_hidden
+    
     def get_sequence_visual_output(self, input_ids, token_type_ids, attention_mask, video, video_mask, shaped=False, video_frame=-1):
         if shaped is False:
             input_ids = input_ids.view(-1, input_ids.shape[-1])
@@ -316,6 +333,16 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
         visual_output = self.get_visual_output(video, video_mask, shaped=True, video_frame=video_frame)
 
         return sequence_output, visual_output
+    
+    # def get_sequence_visual_output(self, video, video_frame=-1):
+    #     video = torch.stack(video).float()
+    #     bs, h, w, c = video.shape
+    #     video = video.permute(0, 3, 1, 2)        
+
+    #     # sequence_output = self.get_sequence_output(input_ids, token_type_ids, attention_mask, shaped=True)
+    #     visual_output = self.get_visual_output(video, video_frame=bs)
+
+    #     return visual_output
 
     def _get_cross_output(self, sequence_output, visual_output, attention_mask, video_mask):
 

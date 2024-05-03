@@ -4,7 +4,9 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 import cv2
-import queue
+from config.prompt_config import prompt
+from itertools import product
+from tqdm import tqdm
 
 import torch
 import numpy as np
@@ -197,7 +199,24 @@ def load_model(epoch, args, n_gpu, device, model_file=None):
         model = None
     return model
 
-def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list):
+# def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list):
+#     sim_matrix = []
+#     for idx1, b1 in enumerate(batch_list_t):
+#         input_mask, segment_ids, *_tmp = b1
+#         sequence_output = batch_sequence_output_list[idx1]
+#         each_row = []
+#         for idx2, b2 in enumerate(batch_list_v):
+#             video_mask, *_tmp = b2
+#             visual_output = batch_visual_output_list[idx2]
+#             b1b2_logits, *_tmp = model.get_similarity_logits(sequence_output, visual_output, input_mask, video_mask,
+#                                                                      loose_type=model.loose_type)
+#             b1b2_logits = b1b2_logits.cpu().detach().numpy()
+#             each_row.append(b1b2_logits)
+#         each_row = np.concatenate(tuple(each_row), axis=-1)
+#         sim_matrix.append(each_row)
+#     return sim_matrix
+
+def _run_on_single_gpu(model, visual_features, text_features, sim_header='meanP', loose_Type=True):
     sim_matrix = []
     for idx1, b1 in enumerate(batch_list_t):
         input_mask, segment_ids, *_tmp = b1
@@ -214,7 +233,73 @@ def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_
         sim_matrix.append(each_row)
     return sim_matrix
 
+def prompt_config(pos, neg, model, device):
+        SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
+                              "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
+        
+        max_words = 32
+
+        tokenizer = ClipTokenizer()
+        # product 함수를 사용하여 가능한 모든 조합 생성
+        positive_combinations = product(*pos)
+        negative_combinations = product(*neg)
+
+        Positive=[]
+        for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
+            result = " ".join(combination)
+            Positive.append(result)
+
+        Negative=[]
+        for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
+            result = " ".join(combination)
+            Negative.append(result)
+
+        TextSet = Positive + Negative
+
+        encoding_text = []
+        for i, text in enumerate(TextSet):
+            words = tokenizer.tokenize(text)
+            words = [SPECIAL_TOKEN["CLS_TOKEN"]] + words
+            total_length_with_CLS = max_words - 1
+            if len(words) > total_length_with_CLS:
+                words = words[:total_length_with_CLS]
+            words = words + [SPECIAL_TOKEN["SEP_TOKEN"]]
+
+            input_ids = tokenizer.convert_tokens_to_ids(words)
+
+            while len(input_ids) < max_words:
+                input_ids.append(0)
+
+            assert len(input_ids) == max_words
+
+            encoding_text.append(np.array(input_ids))
+
+        with torch.no_grad():
+            # Positive/Negative Class Feature들로부터 평균 Feature를 구해 이를 대표로 사용
+            text = torch.tensor(encoding_text).to(device)
+            pos_features = model.clip.encode_text(text[0:1]).to(device) / float(len(Positive))
+            for pos in range(1,len(Positive)):
+                pos_features = pos_features + model.clip.encode_text(text[pos:pos + 1]).to(device) / float(len(Positive))
+
+            neg_features = model.clip.encode_text(text[len(Positive):len(Positive) + 1]).to(device) / float(len(Negative))
+            for neg in range(len(Positive) + 1, len(text)):
+                neg_features = neg_features + model.clip.encode_text(text[neg:neg + 1]).to(device) / float(len(Negative))
+
+            text_features = torch.cat((pos_features,neg_features),0)
+
+            return text_features
+        
+
 def infer(args, model, rtspurl, device, n_gpu):
+
+    # prompt_pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+    # prompt_neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+
+
+    # text_features = prompt_config(prompt_pos, prompt_neg, model, device)
+    # torch.save(text_features, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
+    text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
+
     cap = cv2.VideoCapture(rtspurl)
 
     if not cap.isOpened():
@@ -232,6 +317,10 @@ def infer(args, model, rtspurl, device, n_gpu):
     window_time = 2
     batch_size = fps * window_time
     frame_buffer = []
+
+    sim_header = 'meanP'
+    loose_type = True
+
     with torch.no_grad():
 
         while True:
@@ -246,12 +335,16 @@ def infer(args, model, rtspurl, device, n_gpu):
             frame_buffer.append(tensor_frame)
 
             if len(frame_buffer) >= batch_size:
-                sequence_output, visual_output = model.get_sequence_visual_output(frame_buffer)
+                frame_buffer = torch.stack(frame_buffer).float()
+                bs, h, w, c = frame_buffer.shape
+                frame_buffer = frame_buffer.permute(0, 3, 1, 2)
+                visual_features = model.clip.encode_image(frame_buffer, video_frame=bs).float()
+                print(f"visual encoding output: {visual_features}")
 
                 # ----------------------------------
                 # 2. calculate the similarity
                 # ----------------------------------
-                sim_matrix = _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list)
+                sim_matrix = _run_on_single_gpu(model, visual_features, text_features, loose_type=True)
                 sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
 
                 logger.info("sim matrix size: {}, {}".format(sim_matrix.shape[0], sim_matrix.shape[1]))
@@ -266,10 +359,10 @@ def main():
     device, n_gpu = init_device(args, args.local_rank)
 
     if args.local_rank == 0:
-        model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth")
+        model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth")
    
     # Uncomment if want to test on the best checkpoint
-    rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    rtsp_url = "rtsp://192.168.10.32:8554/stream"
     if args.do_eval:
         infer(args, model, rtsp_url, device, n_gpu)
 

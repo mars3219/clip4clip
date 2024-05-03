@@ -12,7 +12,7 @@ import time
 import argparse
 from modules.tokenization_clip import SimpleTokenizer as ClipTokenizer
 from modules.file_utils import PYTORCH_PRETRAINED_BERT_CACHE
-from modules.modeling import CLIP4Clip
+from modules.modeling_re import CLIP4Clip
 from modules.optimization import BertAdam
 
 from util import parallel_apply, get_logger
@@ -486,7 +486,7 @@ def main():
     assert  args.task_type == "retrieval"
     # model = init_model(args, device, n_gpu, args.local_rank)
     if args.local_rank == 0:
-        model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth")
+        model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth")
         
     # ## ####################################
     # # freeze testing

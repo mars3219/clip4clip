@@ -1,0 +1,2728 @@
+2024-05-02 23:29:13,674:INFO: Effective parameters:
+2024-05-02 23:29:13,675:INFO:   <<< batch_size: 1
+2024-05-02 23:29:13,675:INFO:   <<< batch_size_val: 16
+2024-05-02 23:29:13,675:INFO:   <<< cache_dir: 
+2024-05-02 23:29:13,675:INFO:   <<< coef_lr: 0.001
+2024-05-02 23:29:13,675:INFO:   <<< cross_model: cross-base
+2024-05-02 23:29:13,675:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-02 23:29:13,675:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-02 23:29:13,675:INFO:   <<< datatype: msrvtt
+2024-05-02 23:29:13,675:INFO:   <<< do_eval: True
+2024-05-02 23:29:13,675:INFO:   <<< do_lower_case: False
+2024-05-02 23:29:13,675:INFO:   <<< do_pretrain: False
+2024-05-02 23:29:13,675:INFO:   <<< do_train: False
+2024-05-02 23:29:13,675:INFO:   <<< epochs: 2
+2024-05-02 23:29:13,675:INFO:   <<< eval_frame_order: 0
+2024-05-02 23:29:13,676:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-02 23:29:13,676:INFO:   <<< feature_framerate: 1
+2024-05-02 23:29:13,676:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-02 23:29:13,676:INFO:   <<< fp16: False
+2024-05-02 23:29:13,676:INFO:   <<< fp16_opt_level: O1
+2024-05-02 23:29:13,676:INFO:   <<< freeze_layer_num: 0
+2024-05-02 23:29:13,676:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-02 23:29:13,676:INFO:   <<< hard_negative_rate: 0.5
+2024-05-02 23:29:13,676:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-02 23:29:13,676:INFO:   <<< linear_patch: 2d
+2024-05-02 23:29:13,676:INFO:   <<< local_rank: 0
+2024-05-02 23:29:13,676:INFO:   <<< loose_type: True
+2024-05-02 23:29:13,676:INFO:   <<< lr: 0.0001
+2024-05-02 23:29:13,676:INFO:   <<< lr_decay: 0.9
+2024-05-02 23:29:13,676:INFO:   <<< margin: 0.1
+2024-05-02 23:29:13,676:INFO:   <<< max_frames: 90
+2024-05-02 23:29:13,676:INFO:   <<< max_words: 32
+2024-05-02 23:29:13,677:INFO:   <<< n_display: 100
+2024-05-02 23:29:13,677:INFO:   <<< n_gpu: 1
+2024-05-02 23:29:13,677:INFO:   <<< n_pair: 1
+2024-05-02 23:29:13,677:INFO:   <<< negative_weighting: 1
+2024-05-02 23:29:13,677:INFO:   <<< num_thread_reader: 0
+2024-05-02 23:29:13,677:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-02 23:29:13,677:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-02 23:29:13,677:INFO:   <<< rank: 0
+2024-05-02 23:29:13,677:INFO:   <<< resume_model: None
+2024-05-02 23:29:13,677:INFO:   <<< sampled_use_mil: False
+2024-05-02 23:29:13,677:INFO:   <<< seed: 42
+2024-05-02 23:29:13,677:INFO:   <<< sim_header: meanP
+2024-05-02 23:29:13,677:INFO:   <<< slice_framepos: 2
+2024-05-02 23:29:13,677:INFO:   <<< task_type: retrieval
+2024-05-02 23:29:13,677:INFO:   <<< text_num_hidden_layers: 12
+2024-05-02 23:29:13,677:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-02 23:29:13,677:INFO:   <<< train_frame_order: 0
+2024-05-02 23:29:13,678:INFO:   <<< use_mil: False
+2024-05-02 23:29:13,678:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-02 23:29:13,678:INFO:   <<< video_dim: 1024
+2024-05-02 23:29:13,678:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-02 23:29:13,678:INFO:   <<< warmup_proportion: 0.1
+2024-05-02 23:29:13,678:INFO:   <<< world_size: 1
+2024-05-02 23:29:13,678:INFO: device: cuda:0 n_gpu: 1
+2024-05-02 23:29:41,217:INFO: Effective parameters:
+2024-05-02 23:29:41,217:INFO:   <<< batch_size: 1
+2024-05-02 23:29:41,217:INFO:   <<< batch_size_val: 16
+2024-05-02 23:29:41,217:INFO:   <<< cache_dir: 
+2024-05-02 23:29:41,217:INFO:   <<< coef_lr: 0.001
+2024-05-02 23:29:41,217:INFO:   <<< cross_model: cross-base
+2024-05-02 23:29:41,217:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-02 23:29:41,217:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-02 23:29:41,217:INFO:   <<< datatype: msrvtt
+2024-05-02 23:29:41,217:INFO:   <<< do_eval: True
+2024-05-02 23:29:41,217:INFO:   <<< do_lower_case: False
+2024-05-02 23:29:41,218:INFO:   <<< do_pretrain: False
+2024-05-02 23:29:41,218:INFO:   <<< do_train: False
+2024-05-02 23:29:41,218:INFO:   <<< epochs: 2
+2024-05-02 23:29:41,218:INFO:   <<< eval_frame_order: 0
+2024-05-02 23:29:41,218:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-02 23:29:41,218:INFO:   <<< feature_framerate: 1
+2024-05-02 23:29:41,218:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-02 23:29:41,218:INFO:   <<< fp16: False
+2024-05-02 23:29:41,218:INFO:   <<< fp16_opt_level: O1
+2024-05-02 23:29:41,218:INFO:   <<< freeze_layer_num: 0
+2024-05-02 23:29:41,218:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-02 23:29:41,218:INFO:   <<< hard_negative_rate: 0.5
+2024-05-02 23:29:41,218:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-02 23:29:41,218:INFO:   <<< linear_patch: 2d
+2024-05-02 23:29:41,218:INFO:   <<< local_rank: 0
+2024-05-02 23:29:41,218:INFO:   <<< loose_type: True
+2024-05-02 23:29:41,218:INFO:   <<< lr: 0.0001
+2024-05-02 23:29:41,218:INFO:   <<< lr_decay: 0.9
+2024-05-02 23:29:41,218:INFO:   <<< margin: 0.1
+2024-05-02 23:29:41,218:INFO:   <<< max_frames: 90
+2024-05-02 23:29:41,218:INFO:   <<< max_words: 32
+2024-05-02 23:29:41,218:INFO:   <<< n_display: 100
+2024-05-02 23:29:41,218:INFO:   <<< n_gpu: 1
+2024-05-02 23:29:41,218:INFO:   <<< n_pair: 1
+2024-05-02 23:29:41,218:INFO:   <<< negative_weighting: 1
+2024-05-02 23:29:41,218:INFO:   <<< num_thread_reader: 0
+2024-05-02 23:29:41,218:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-02 23:29:41,218:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-02 23:29:41,218:INFO:   <<< rank: 0
+2024-05-02 23:29:41,218:INFO:   <<< resume_model: None
+2024-05-02 23:29:41,218:INFO:   <<< sampled_use_mil: False
+2024-05-02 23:29:41,218:INFO:   <<< seed: 42
+2024-05-02 23:29:41,218:INFO:   <<< sim_header: meanP
+2024-05-02 23:29:41,218:INFO:   <<< slice_framepos: 2
+2024-05-02 23:29:41,218:INFO:   <<< task_type: retrieval
+2024-05-02 23:29:41,218:INFO:   <<< text_num_hidden_layers: 12
+2024-05-02 23:29:41,218:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-02 23:29:41,218:INFO:   <<< train_frame_order: 0
+2024-05-02 23:29:41,218:INFO:   <<< use_mil: False
+2024-05-02 23:29:41,218:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-02 23:29:41,218:INFO:   <<< video_dim: 1024
+2024-05-02 23:29:41,218:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-02 23:29:41,218:INFO:   <<< warmup_proportion: 0.1
+2024-05-02 23:29:41,218:INFO:   <<< world_size: 1
+2024-05-02 23:29:41,218:INFO: device: cuda:0 n_gpu: 1
+2024-05-02 23:29:48,395:INFO: Effective parameters:
+2024-05-02 23:29:48,395:INFO:   <<< batch_size: 1
+2024-05-02 23:29:48,395:INFO:   <<< batch_size_val: 16
+2024-05-02 23:29:48,395:INFO:   <<< cache_dir: 
+2024-05-02 23:29:48,395:INFO:   <<< coef_lr: 0.001
+2024-05-02 23:29:48,396:INFO:   <<< cross_model: cross-base
+2024-05-02 23:29:48,396:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-02 23:29:48,396:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-02 23:29:48,396:INFO:   <<< datatype: msrvtt
+2024-05-02 23:29:48,396:INFO:   <<< do_eval: True
+2024-05-02 23:29:48,396:INFO:   <<< do_lower_case: False
+2024-05-02 23:29:48,396:INFO:   <<< do_pretrain: False
+2024-05-02 23:29:48,396:INFO:   <<< do_train: False
+2024-05-02 23:29:48,396:INFO:   <<< epochs: 2
+2024-05-02 23:29:48,396:INFO:   <<< eval_frame_order: 0
+2024-05-02 23:29:48,396:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-02 23:29:48,396:INFO:   <<< feature_framerate: 1
+2024-05-02 23:29:48,396:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-02 23:29:48,396:INFO:   <<< fp16: False
+2024-05-02 23:29:48,396:INFO:   <<< fp16_opt_level: O1
+2024-05-02 23:29:48,396:INFO:   <<< freeze_layer_num: 0
+2024-05-02 23:29:48,396:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-02 23:29:48,397:INFO:   <<< hard_negative_rate: 0.5
+2024-05-02 23:29:48,397:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-02 23:29:48,397:INFO:   <<< linear_patch: 2d
+2024-05-02 23:29:48,397:INFO:   <<< local_rank: 0
+2024-05-02 23:29:48,397:INFO:   <<< loose_type: True
+2024-05-02 23:29:48,397:INFO:   <<< lr: 0.0001
+2024-05-02 23:29:48,397:INFO:   <<< lr_decay: 0.9
+2024-05-02 23:29:48,397:INFO:   <<< margin: 0.1
+2024-05-02 23:29:48,397:INFO:   <<< max_frames: 90
+2024-05-02 23:29:48,397:INFO:   <<< max_words: 32
+2024-05-02 23:29:48,397:INFO:   <<< n_display: 100
+2024-05-02 23:29:48,397:INFO:   <<< n_gpu: 1
+2024-05-02 23:29:48,397:INFO:   <<< n_pair: 1
+2024-05-02 23:29:48,397:INFO:   <<< negative_weighting: 1
+2024-05-02 23:29:48,397:INFO:   <<< num_thread_reader: 0
+2024-05-02 23:29:48,397:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-02 23:29:48,397:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-02 23:29:48,398:INFO:   <<< rank: 0
+2024-05-02 23:29:48,398:INFO:   <<< resume_model: None
+2024-05-02 23:29:48,398:INFO:   <<< sampled_use_mil: False
+2024-05-02 23:29:48,398:INFO:   <<< seed: 42
+2024-05-02 23:29:48,398:INFO:   <<< sim_header: meanP
+2024-05-02 23:29:48,398:INFO:   <<< slice_framepos: 2
+2024-05-02 23:29:48,398:INFO:   <<< task_type: retrieval
+2024-05-02 23:29:48,398:INFO:   <<< text_num_hidden_layers: 12
+2024-05-02 23:29:48,398:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-02 23:29:48,398:INFO:   <<< train_frame_order: 0
+2024-05-02 23:29:48,398:INFO:   <<< use_mil: False
+2024-05-02 23:29:48,398:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-02 23:29:48,398:INFO:   <<< video_dim: 1024
+2024-05-02 23:29:48,398:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-02 23:29:48,398:INFO:   <<< warmup_proportion: 0.1
+2024-05-02 23:29:48,398:INFO:   <<< world_size: 1
+2024-05-02 23:29:48,399:INFO: device: cuda:0 n_gpu: 1
+2024-05-02 23:43:33,570:INFO: Effective parameters:
+2024-05-02 23:43:33,570:INFO:   <<< batch_size: 1
+2024-05-02 23:43:33,571:INFO:   <<< batch_size_val: 16
+2024-05-02 23:43:33,571:INFO:   <<< cache_dir: 
+2024-05-02 23:43:33,571:INFO:   <<< coef_lr: 0.001
+2024-05-02 23:43:33,571:INFO:   <<< cross_model: cross-base
+2024-05-02 23:43:33,571:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-02 23:43:33,571:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-02 23:43:33,571:INFO:   <<< datatype: msrvtt
+2024-05-02 23:43:33,571:INFO:   <<< do_eval: True
+2024-05-02 23:43:33,571:INFO:   <<< do_lower_case: False
+2024-05-02 23:43:33,571:INFO:   <<< do_pretrain: False
+2024-05-02 23:43:33,571:INFO:   <<< do_train: False
+2024-05-02 23:43:33,571:INFO:   <<< epochs: 2
+2024-05-02 23:43:33,571:INFO:   <<< eval_frame_order: 0
+2024-05-02 23:43:33,571:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-02 23:43:33,572:INFO:   <<< feature_framerate: 1
+2024-05-02 23:43:33,572:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-02 23:43:33,572:INFO:   <<< fp16: False
+2024-05-02 23:43:33,572:INFO:   <<< fp16_opt_level: O1
+2024-05-02 23:43:33,572:INFO:   <<< freeze_layer_num: 0
+2024-05-02 23:43:33,572:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-02 23:43:33,572:INFO:   <<< hard_negative_rate: 0.5
+2024-05-02 23:43:33,572:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-02 23:43:33,572:INFO:   <<< linear_patch: 2d
+2024-05-02 23:43:33,572:INFO:   <<< local_rank: 0
+2024-05-02 23:43:33,572:INFO:   <<< loose_type: True
+2024-05-02 23:43:33,572:INFO:   <<< lr: 0.0001
+2024-05-02 23:43:33,572:INFO:   <<< lr_decay: 0.9
+2024-05-02 23:43:33,572:INFO:   <<< margin: 0.1
+2024-05-02 23:43:33,572:INFO:   <<< max_frames: 90
+2024-05-02 23:43:33,573:INFO:   <<< max_words: 32
+2024-05-02 23:43:33,573:INFO:   <<< n_display: 100
+2024-05-02 23:43:33,573:INFO:   <<< n_gpu: 1
+2024-05-02 23:43:33,573:INFO:   <<< n_pair: 1
+2024-05-02 23:43:33,573:INFO:   <<< negative_weighting: 1
+2024-05-02 23:43:33,573:INFO:   <<< num_thread_reader: 0
+2024-05-02 23:43:33,573:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-02 23:43:33,573:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-02 23:43:33,573:INFO:   <<< rank: 0
+2024-05-02 23:43:33,573:INFO:   <<< resume_model: None
+2024-05-02 23:43:33,573:INFO:   <<< sampled_use_mil: False
+2024-05-02 23:43:33,573:INFO:   <<< seed: 42
+2024-05-02 23:43:33,573:INFO:   <<< sim_header: meanP
+2024-05-02 23:43:33,573:INFO:   <<< slice_framepos: 2
+2024-05-02 23:43:33,573:INFO:   <<< task_type: retrieval
+2024-05-02 23:43:33,574:INFO:   <<< text_num_hidden_layers: 12
+2024-05-02 23:43:33,574:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-02 23:43:33,574:INFO:   <<< train_frame_order: 0
+2024-05-02 23:43:33,574:INFO:   <<< use_mil: False
+2024-05-02 23:43:33,574:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-02 23:43:33,574:INFO:   <<< video_dim: 1024
+2024-05-02 23:43:33,574:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-02 23:43:33,574:INFO:   <<< warmup_proportion: 0.1
+2024-05-02 23:43:33,574:INFO:   <<< world_size: 1
+2024-05-02 23:43:33,574:INFO: device: cuda:0 n_gpu: 1
+2024-05-02 23:44:24,003:INFO: Effective parameters:
+2024-05-02 23:44:24,003:INFO:   <<< batch_size: 1
+2024-05-02 23:44:24,003:INFO:   <<< batch_size_val: 16
+2024-05-02 23:44:24,003:INFO:   <<< cache_dir: 
+2024-05-02 23:44:24,003:INFO:   <<< coef_lr: 0.001
+2024-05-02 23:44:24,003:INFO:   <<< cross_model: cross-base
+2024-05-02 23:44:24,003:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-02 23:44:24,003:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-02 23:44:24,003:INFO:   <<< datatype: msrvtt
+2024-05-02 23:44:24,003:INFO:   <<< do_eval: True
+2024-05-02 23:44:24,004:INFO:   <<< do_lower_case: False
+2024-05-02 23:44:24,004:INFO:   <<< do_pretrain: False
+2024-05-02 23:44:24,004:INFO:   <<< do_train: False
+2024-05-02 23:44:24,004:INFO:   <<< epochs: 2
+2024-05-02 23:44:24,004:INFO:   <<< eval_frame_order: 0
+2024-05-02 23:44:24,004:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-02 23:44:24,004:INFO:   <<< feature_framerate: 1
+2024-05-02 23:44:24,004:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-02 23:44:24,004:INFO:   <<< fp16: False
+2024-05-02 23:44:24,004:INFO:   <<< fp16_opt_level: O1
+2024-05-02 23:44:24,004:INFO:   <<< freeze_layer_num: 0
+2024-05-02 23:44:24,004:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-02 23:44:24,004:INFO:   <<< hard_negative_rate: 0.5
+2024-05-02 23:44:24,004:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-02 23:44:24,004:INFO:   <<< linear_patch: 2d
+2024-05-02 23:44:24,004:INFO:   <<< local_rank: 0
+2024-05-02 23:44:24,004:INFO:   <<< loose_type: True
+2024-05-02 23:44:24,005:INFO:   <<< lr: 0.0001
+2024-05-02 23:44:24,005:INFO:   <<< lr_decay: 0.9
+2024-05-02 23:44:24,005:INFO:   <<< margin: 0.1
+2024-05-02 23:44:24,005:INFO:   <<< max_frames: 90
+2024-05-02 23:44:24,005:INFO:   <<< max_words: 32
+2024-05-02 23:44:24,005:INFO:   <<< n_display: 100
+2024-05-02 23:44:24,005:INFO:   <<< n_gpu: 1
+2024-05-02 23:44:24,005:INFO:   <<< n_pair: 1
+2024-05-02 23:44:24,005:INFO:   <<< negative_weighting: 1
+2024-05-02 23:44:24,005:INFO:   <<< num_thread_reader: 0
+2024-05-02 23:44:24,005:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-02 23:44:24,005:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-02 23:44:24,005:INFO:   <<< rank: 0
+2024-05-02 23:44:24,005:INFO:   <<< resume_model: None
+2024-05-02 23:44:24,005:INFO:   <<< sampled_use_mil: False
+2024-05-02 23:44:24,005:INFO:   <<< seed: 42
+2024-05-02 23:44:24,005:INFO:   <<< sim_header: meanP
+2024-05-02 23:44:24,005:INFO:   <<< slice_framepos: 2
+2024-05-02 23:44:24,006:INFO:   <<< task_type: retrieval
+2024-05-02 23:44:24,006:INFO:   <<< text_num_hidden_layers: 12
+2024-05-02 23:44:24,006:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-02 23:44:24,006:INFO:   <<< train_frame_order: 0
+2024-05-02 23:44:24,006:INFO:   <<< use_mil: False
+2024-05-02 23:44:24,006:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-02 23:44:24,006:INFO:   <<< video_dim: 1024
+2024-05-02 23:44:24,006:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-02 23:44:24,006:INFO:   <<< warmup_proportion: 0.1
+2024-05-02 23:44:24,006:INFO:   <<< world_size: 1
+2024-05-02 23:44:24,006:INFO: device: cuda:0 n_gpu: 1
+2024-05-02 23:44:24,184:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-02 23:44:24,734:WARNING: Stage-One:True, Stage-Two:False
+2024-05-02 23:44:24,734:WARNING: Test retrieval by loose type.
+2024-05-02 23:44:24,735:WARNING: 	 embed_dim: 512
+2024-05-02 23:44:24,735:WARNING: 	 image_resolution: 224
+2024-05-02 23:44:24,735:WARNING: 	 vision_layers: 12
+2024-05-02 23:44:24,735:WARNING: 	 vision_width: 768
+2024-05-02 23:44:24,735:WARNING: 	 vision_patch_size: 32
+2024-05-02 23:44:24,735:WARNING: 	 context_length: 77
+2024-05-02 23:44:24,735:WARNING: 	 vocab_size: 49408
+2024-05-02 23:44:24,735:WARNING: 	 transformer_width: 512
+2024-05-02 23:44:24,735:WARNING: 	 transformer_heads: 8
+2024-05-02 23:44:24,735:WARNING: 	 transformer_layers: 12
+2024-05-02 23:44:24,735:WARNING: 		 linear_patch: 2d
+2024-05-02 23:44:24,735:WARNING: 	 cut_top_layer: 0
+2024-05-02 23:44:25,723:WARNING: 	 sim_header: meanP
+2024-05-02 23:46:20,543:INFO: Effective parameters:
+2024-05-02 23:46:20,544:INFO:   <<< batch_size: 1
+2024-05-02 23:46:20,544:INFO:   <<< batch_size_val: 16
+2024-05-02 23:46:20,544:INFO:   <<< cache_dir: 
+2024-05-02 23:46:20,544:INFO:   <<< coef_lr: 0.001
+2024-05-02 23:46:20,544:INFO:   <<< cross_model: cross-base
+2024-05-02 23:46:20,544:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-02 23:46:20,544:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-02 23:46:20,544:INFO:   <<< datatype: msrvtt
+2024-05-02 23:46:20,544:INFO:   <<< do_eval: True
+2024-05-02 23:46:20,544:INFO:   <<< do_lower_case: False
+2024-05-02 23:46:20,544:INFO:   <<< do_pretrain: False
+2024-05-02 23:46:20,544:INFO:   <<< do_train: False
+2024-05-02 23:46:20,544:INFO:   <<< epochs: 2
+2024-05-02 23:46:20,545:INFO:   <<< eval_frame_order: 0
+2024-05-02 23:46:20,545:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-02 23:46:20,545:INFO:   <<< feature_framerate: 1
+2024-05-02 23:46:20,545:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-02 23:46:20,545:INFO:   <<< fp16: False
+2024-05-02 23:46:20,545:INFO:   <<< fp16_opt_level: O1
+2024-05-02 23:46:20,545:INFO:   <<< freeze_layer_num: 0
+2024-05-02 23:46:20,545:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-02 23:46:20,545:INFO:   <<< hard_negative_rate: 0.5
+2024-05-02 23:46:20,546:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-02 23:46:20,546:INFO:   <<< linear_patch: 2d
+2024-05-02 23:46:20,546:INFO:   <<< local_rank: 0
+2024-05-02 23:46:20,546:INFO:   <<< loose_type: True
+2024-05-02 23:46:20,546:INFO:   <<< lr: 0.0001
+2024-05-02 23:46:20,546:INFO:   <<< lr_decay: 0.9
+2024-05-02 23:46:20,546:INFO:   <<< margin: 0.1
+2024-05-02 23:46:20,546:INFO:   <<< max_frames: 90
+2024-05-02 23:46:20,546:INFO:   <<< max_words: 32
+2024-05-02 23:46:20,546:INFO:   <<< n_display: 100
+2024-05-02 23:46:20,547:INFO:   <<< n_gpu: 1
+2024-05-02 23:46:20,547:INFO:   <<< n_pair: 1
+2024-05-02 23:46:20,547:INFO:   <<< negative_weighting: 1
+2024-05-02 23:46:20,547:INFO:   <<< num_thread_reader: 0
+2024-05-02 23:46:20,547:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-02 23:46:20,547:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-02 23:46:20,547:INFO:   <<< rank: 0
+2024-05-02 23:46:20,547:INFO:   <<< resume_model: None
+2024-05-02 23:46:20,547:INFO:   <<< sampled_use_mil: False
+2024-05-02 23:46:20,548:INFO:   <<< seed: 42
+2024-05-02 23:46:20,548:INFO:   <<< sim_header: meanP
+2024-05-02 23:46:20,548:INFO:   <<< slice_framepos: 2
+2024-05-02 23:46:20,548:INFO:   <<< task_type: retrieval
+2024-05-02 23:46:20,548:INFO:   <<< text_num_hidden_layers: 12
+2024-05-02 23:46:20,548:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-02 23:46:20,548:INFO:   <<< train_frame_order: 0
+2024-05-02 23:46:20,548:INFO:   <<< use_mil: False
+2024-05-02 23:46:20,548:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-02 23:46:20,549:INFO:   <<< video_dim: 1024
+2024-05-02 23:46:20,549:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-02 23:46:20,549:INFO:   <<< warmup_proportion: 0.1
+2024-05-02 23:46:20,549:INFO:   <<< world_size: 1
+2024-05-02 23:46:20,549:INFO: device: cuda:0 n_gpu: 1
+2024-05-02 23:46:20,691:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-02 23:46:21,170:WARNING: Stage-One:True, Stage-Two:False
+2024-05-02 23:46:21,170:WARNING: Test retrieval by loose type.
+2024-05-02 23:46:21,171:WARNING: 	 embed_dim: 512
+2024-05-02 23:46:21,171:WARNING: 	 image_resolution: 224
+2024-05-02 23:46:21,171:WARNING: 	 vision_layers: 12
+2024-05-02 23:46:21,171:WARNING: 	 vision_width: 768
+2024-05-02 23:46:21,171:WARNING: 	 vision_patch_size: 32
+2024-05-02 23:46:21,171:WARNING: 	 context_length: 77
+2024-05-02 23:46:21,171:WARNING: 	 vocab_size: 49408
+2024-05-02 23:46:21,171:WARNING: 	 transformer_width: 512
+2024-05-02 23:46:21,171:WARNING: 	 transformer_heads: 8
+2024-05-02 23:46:21,171:WARNING: 	 transformer_layers: 12
+2024-05-02 23:46:21,171:WARNING: 		 linear_patch: 2d
+2024-05-02 23:46:21,171:WARNING: 	 cut_top_layer: 0
+2024-05-02 23:46:22,166:WARNING: 	 sim_header: meanP
+2024-05-03 00:06:46,129:INFO: Effective parameters:
+2024-05-03 00:06:46,129:INFO:   <<< batch_size: 1
+2024-05-03 00:06:46,129:INFO:   <<< batch_size_val: 16
+2024-05-03 00:06:46,129:INFO:   <<< cache_dir: 
+2024-05-03 00:06:46,129:INFO:   <<< coef_lr: 0.001
+2024-05-03 00:06:46,129:INFO:   <<< cross_model: cross-base
+2024-05-03 00:06:46,129:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 00:06:46,129:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 00:06:46,129:INFO:   <<< datatype: msrvtt
+2024-05-03 00:06:46,129:INFO:   <<< do_eval: True
+2024-05-03 00:06:46,130:INFO:   <<< do_lower_case: False
+2024-05-03 00:06:46,130:INFO:   <<< do_pretrain: False
+2024-05-03 00:06:46,130:INFO:   <<< do_train: False
+2024-05-03 00:06:46,130:INFO:   <<< epochs: 2
+2024-05-03 00:06:46,130:INFO:   <<< eval_frame_order: 0
+2024-05-03 00:06:46,130:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 00:06:46,130:INFO:   <<< feature_framerate: 1
+2024-05-03 00:06:46,130:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 00:06:46,130:INFO:   <<< fp16: False
+2024-05-03 00:06:46,130:INFO:   <<< fp16_opt_level: O1
+2024-05-03 00:06:46,130:INFO:   <<< freeze_layer_num: 0
+2024-05-03 00:06:46,130:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 00:06:46,130:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 00:06:46,130:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 00:06:46,130:INFO:   <<< linear_patch: 2d
+2024-05-03 00:06:46,130:INFO:   <<< local_rank: 0
+2024-05-03 00:06:46,130:INFO:   <<< loose_type: True
+2024-05-03 00:06:46,131:INFO:   <<< lr: 0.0001
+2024-05-03 00:06:46,131:INFO:   <<< lr_decay: 0.9
+2024-05-03 00:06:46,131:INFO:   <<< margin: 0.1
+2024-05-03 00:06:46,131:INFO:   <<< max_frames: 90
+2024-05-03 00:06:46,131:INFO:   <<< max_words: 32
+2024-05-03 00:06:46,131:INFO:   <<< n_display: 100
+2024-05-03 00:06:46,131:INFO:   <<< n_gpu: 1
+2024-05-03 00:06:46,131:INFO:   <<< n_pair: 1
+2024-05-03 00:06:46,131:INFO:   <<< negative_weighting: 1
+2024-05-03 00:06:46,131:INFO:   <<< num_thread_reader: 0
+2024-05-03 00:06:46,131:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 00:06:46,131:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 00:06:46,131:INFO:   <<< rank: 0
+2024-05-03 00:06:46,131:INFO:   <<< resume_model: None
+2024-05-03 00:06:46,131:INFO:   <<< sampled_use_mil: False
+2024-05-03 00:06:46,131:INFO:   <<< seed: 42
+2024-05-03 00:06:46,131:INFO:   <<< sim_header: meanP
+2024-05-03 00:06:46,131:INFO:   <<< slice_framepos: 2
+2024-05-03 00:06:46,132:INFO:   <<< task_type: retrieval
+2024-05-03 00:06:46,132:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 00:06:46,132:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 00:06:46,132:INFO:   <<< train_frame_order: 0
+2024-05-03 00:06:46,132:INFO:   <<< use_mil: False
+2024-05-03 00:06:46,132:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 00:06:46,132:INFO:   <<< video_dim: 1024
+2024-05-03 00:06:46,132:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 00:06:46,132:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 00:06:46,132:INFO:   <<< world_size: 1
+2024-05-03 00:06:46,132:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 00:06:46,267:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 00:06:46,738:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 00:06:46,738:WARNING: Test retrieval by loose type.
+2024-05-03 00:06:46,739:WARNING: 	 embed_dim: 512
+2024-05-03 00:06:46,739:WARNING: 	 image_resolution: 224
+2024-05-03 00:06:46,739:WARNING: 	 vision_layers: 12
+2024-05-03 00:06:46,739:WARNING: 	 vision_width: 768
+2024-05-03 00:06:46,739:WARNING: 	 vision_patch_size: 32
+2024-05-03 00:06:46,739:WARNING: 	 context_length: 77
+2024-05-03 00:06:46,739:WARNING: 	 vocab_size: 49408
+2024-05-03 00:06:46,739:WARNING: 	 transformer_width: 512
+2024-05-03 00:06:46,739:WARNING: 	 transformer_heads: 8
+2024-05-03 00:06:46,739:WARNING: 	 transformer_layers: 12
+2024-05-03 00:06:46,740:WARNING: 		 linear_patch: 2d
+2024-05-03 00:06:46,740:WARNING: 	 cut_top_layer: 0
+2024-05-03 00:06:47,715:WARNING: 	 sim_header: meanP
+2024-05-03 00:09:17,759:INFO: Effective parameters:
+2024-05-03 00:09:17,760:INFO:   <<< batch_size: 1
+2024-05-03 00:09:17,760:INFO:   <<< batch_size_val: 16
+2024-05-03 00:09:17,760:INFO:   <<< cache_dir: 
+2024-05-03 00:09:17,760:INFO:   <<< coef_lr: 0.001
+2024-05-03 00:09:17,760:INFO:   <<< cross_model: cross-base
+2024-05-03 00:09:17,760:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 00:09:17,760:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 00:09:17,760:INFO:   <<< datatype: msrvtt
+2024-05-03 00:09:17,760:INFO:   <<< do_eval: True
+2024-05-03 00:09:17,760:INFO:   <<< do_lower_case: False
+2024-05-03 00:09:17,760:INFO:   <<< do_pretrain: False
+2024-05-03 00:09:17,760:INFO:   <<< do_train: False
+2024-05-03 00:09:17,760:INFO:   <<< epochs: 2
+2024-05-03 00:09:17,760:INFO:   <<< eval_frame_order: 0
+2024-05-03 00:09:17,760:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 00:09:17,760:INFO:   <<< feature_framerate: 1
+2024-05-03 00:09:17,761:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 00:09:17,761:INFO:   <<< fp16: False
+2024-05-03 00:09:17,761:INFO:   <<< fp16_opt_level: O1
+2024-05-03 00:09:17,761:INFO:   <<< freeze_layer_num: 0
+2024-05-03 00:09:17,761:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 00:09:17,761:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 00:09:17,761:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 00:09:17,761:INFO:   <<< linear_patch: 2d
+2024-05-03 00:09:17,761:INFO:   <<< local_rank: 0
+2024-05-03 00:09:17,761:INFO:   <<< loose_type: True
+2024-05-03 00:09:17,761:INFO:   <<< lr: 0.0001
+2024-05-03 00:09:17,761:INFO:   <<< lr_decay: 0.9
+2024-05-03 00:09:17,761:INFO:   <<< margin: 0.1
+2024-05-03 00:09:17,761:INFO:   <<< max_frames: 90
+2024-05-03 00:09:17,761:INFO:   <<< max_words: 32
+2024-05-03 00:09:17,761:INFO:   <<< n_display: 100
+2024-05-03 00:09:17,761:INFO:   <<< n_gpu: 1
+2024-05-03 00:09:17,761:INFO:   <<< n_pair: 1
+2024-05-03 00:09:17,762:INFO:   <<< negative_weighting: 1
+2024-05-03 00:09:17,762:INFO:   <<< num_thread_reader: 0
+2024-05-03 00:09:17,762:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 00:09:17,762:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 00:09:17,762:INFO:   <<< rank: 0
+2024-05-03 00:09:17,762:INFO:   <<< resume_model: None
+2024-05-03 00:09:17,762:INFO:   <<< sampled_use_mil: False
+2024-05-03 00:09:17,762:INFO:   <<< seed: 42
+2024-05-03 00:09:17,762:INFO:   <<< sim_header: meanP
+2024-05-03 00:09:17,762:INFO:   <<< slice_framepos: 2
+2024-05-03 00:09:17,762:INFO:   <<< task_type: retrieval
+2024-05-03 00:09:17,762:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 00:09:17,762:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 00:09:17,762:INFO:   <<< train_frame_order: 0
+2024-05-03 00:09:17,762:INFO:   <<< use_mil: False
+2024-05-03 00:09:17,762:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 00:09:17,762:INFO:   <<< video_dim: 1024
+2024-05-03 00:09:17,763:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 00:09:17,763:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 00:09:17,763:INFO:   <<< world_size: 1
+2024-05-03 00:09:17,763:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 00:09:17,902:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 00:09:18,382:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 00:09:18,382:WARNING: Test retrieval by loose type.
+2024-05-03 00:09:18,383:WARNING: 	 embed_dim: 512
+2024-05-03 00:09:18,383:WARNING: 	 image_resolution: 224
+2024-05-03 00:09:18,383:WARNING: 	 vision_layers: 12
+2024-05-03 00:09:18,383:WARNING: 	 vision_width: 768
+2024-05-03 00:09:18,383:WARNING: 	 vision_patch_size: 32
+2024-05-03 00:09:18,383:WARNING: 	 context_length: 77
+2024-05-03 00:09:18,383:WARNING: 	 vocab_size: 49408
+2024-05-03 00:09:18,383:WARNING: 	 transformer_width: 512
+2024-05-03 00:09:18,383:WARNING: 	 transformer_heads: 8
+2024-05-03 00:09:18,383:WARNING: 	 transformer_layers: 12
+2024-05-03 00:09:18,383:WARNING: 		 linear_patch: 2d
+2024-05-03 00:09:18,384:WARNING: 	 cut_top_layer: 0
+2024-05-03 00:09:19,353:WARNING: 	 sim_header: meanP
+2024-05-03 03:55:49,840:INFO: Effective parameters:
+2024-05-03 03:55:49,840:INFO:   <<< batch_size: 1
+2024-05-03 03:55:49,840:INFO:   <<< batch_size_val: 16
+2024-05-03 03:55:49,840:INFO:   <<< cache_dir: 
+2024-05-03 03:55:49,840:INFO:   <<< coef_lr: 0.001
+2024-05-03 03:55:49,840:INFO:   <<< cross_model: cross-base
+2024-05-03 03:55:49,840:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 03:55:49,840:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 03:55:49,840:INFO:   <<< datatype: msrvtt
+2024-05-03 03:55:49,840:INFO:   <<< do_eval: True
+2024-05-03 03:55:49,841:INFO:   <<< do_lower_case: False
+2024-05-03 03:55:49,841:INFO:   <<< do_pretrain: False
+2024-05-03 03:55:49,841:INFO:   <<< do_train: False
+2024-05-03 03:55:49,841:INFO:   <<< epochs: 2
+2024-05-03 03:55:49,841:INFO:   <<< eval_frame_order: 0
+2024-05-03 03:55:49,841:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 03:55:49,841:INFO:   <<< feature_framerate: 1
+2024-05-03 03:55:49,841:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 03:55:49,841:INFO:   <<< fp16: False
+2024-05-03 03:55:49,841:INFO:   <<< fp16_opt_level: O1
+2024-05-03 03:55:49,841:INFO:   <<< freeze_layer_num: 0
+2024-05-03 03:55:49,841:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 03:55:49,841:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 03:55:49,841:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 03:55:49,842:INFO:   <<< linear_patch: 2d
+2024-05-03 03:55:49,842:INFO:   <<< local_rank: 0
+2024-05-03 03:55:49,842:INFO:   <<< loose_type: True
+2024-05-03 03:55:49,842:INFO:   <<< lr: 0.0001
+2024-05-03 03:55:49,842:INFO:   <<< lr_decay: 0.9
+2024-05-03 03:55:49,842:INFO:   <<< margin: 0.1
+2024-05-03 03:55:49,842:INFO:   <<< max_frames: 90
+2024-05-03 03:55:49,842:INFO:   <<< max_words: 32
+2024-05-03 03:55:49,842:INFO:   <<< n_display: 100
+2024-05-03 03:55:49,842:INFO:   <<< n_gpu: 1
+2024-05-03 03:55:49,842:INFO:   <<< n_pair: 1
+2024-05-03 03:55:49,842:INFO:   <<< negative_weighting: 1
+2024-05-03 03:55:49,842:INFO:   <<< num_thread_reader: 0
+2024-05-03 03:55:49,842:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 03:55:49,843:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 03:55:49,843:INFO:   <<< rank: 0
+2024-05-03 03:55:49,843:INFO:   <<< resume_model: None
+2024-05-03 03:55:49,843:INFO:   <<< sampled_use_mil: False
+2024-05-03 03:55:49,843:INFO:   <<< seed: 42
+2024-05-03 03:55:49,843:INFO:   <<< sim_header: meanP
+2024-05-03 03:55:49,843:INFO:   <<< slice_framepos: 2
+2024-05-03 03:55:49,843:INFO:   <<< task_type: retrieval
+2024-05-03 03:55:49,843:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 03:55:49,843:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 03:55:49,843:INFO:   <<< train_frame_order: 0
+2024-05-03 03:55:49,843:INFO:   <<< use_mil: False
+2024-05-03 03:55:49,843:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 03:55:49,843:INFO:   <<< video_dim: 1024
+2024-05-03 03:55:49,843:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 03:55:49,844:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 03:55:49,844:INFO:   <<< world_size: 1
+2024-05-03 03:55:49,844:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 03:55:49,976:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 03:55:50,450:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 03:55:50,450:WARNING: Test retrieval by loose type.
+2024-05-03 03:55:50,451:WARNING: 	 embed_dim: 512
+2024-05-03 03:55:50,451:WARNING: 	 image_resolution: 224
+2024-05-03 03:55:50,451:WARNING: 	 vision_layers: 12
+2024-05-03 03:55:50,451:WARNING: 	 vision_width: 768
+2024-05-03 03:55:50,451:WARNING: 	 vision_patch_size: 32
+2024-05-03 03:55:50,451:WARNING: 	 context_length: 77
+2024-05-03 03:55:50,451:WARNING: 	 vocab_size: 49408
+2024-05-03 03:55:50,451:WARNING: 	 transformer_width: 512
+2024-05-03 03:55:50,451:WARNING: 	 transformer_heads: 8
+2024-05-03 03:55:50,451:WARNING: 	 transformer_layers: 12
+2024-05-03 03:55:50,451:WARNING: 		 linear_patch: 2d
+2024-05-03 03:55:50,451:WARNING: 	 cut_top_layer: 0
+2024-05-03 03:55:51,439:WARNING: 	 sim_header: meanP
+2024-05-03 04:00:02,018:INFO: Effective parameters:
+2024-05-03 04:00:02,019:INFO:   <<< batch_size: 1
+2024-05-03 04:00:02,019:INFO:   <<< batch_size_val: 16
+2024-05-03 04:00:02,019:INFO:   <<< cache_dir: 
+2024-05-03 04:00:02,019:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:00:02,019:INFO:   <<< cross_model: cross-base
+2024-05-03 04:00:02,019:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:00:02,019:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:00:02,019:INFO:   <<< datatype: msrvtt
+2024-05-03 04:00:02,019:INFO:   <<< do_eval: True
+2024-05-03 04:00:02,019:INFO:   <<< do_lower_case: False
+2024-05-03 04:00:02,019:INFO:   <<< do_pretrain: False
+2024-05-03 04:00:02,019:INFO:   <<< do_train: False
+2024-05-03 04:00:02,019:INFO:   <<< epochs: 2
+2024-05-03 04:00:02,019:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:00:02,020:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:00:02,020:INFO:   <<< feature_framerate: 1
+2024-05-03 04:00:02,020:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:00:02,020:INFO:   <<< fp16: False
+2024-05-03 04:00:02,020:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:00:02,020:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:00:02,020:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:00:02,020:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:00:02,020:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:00:02,020:INFO:   <<< linear_patch: 2d
+2024-05-03 04:00:02,020:INFO:   <<< local_rank: 0
+2024-05-03 04:00:02,020:INFO:   <<< loose_type: True
+2024-05-03 04:00:02,020:INFO:   <<< lr: 0.0001
+2024-05-03 04:00:02,020:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:00:02,021:INFO:   <<< margin: 0.1
+2024-05-03 04:00:02,021:INFO:   <<< max_frames: 90
+2024-05-03 04:00:02,021:INFO:   <<< max_words: 32
+2024-05-03 04:00:02,021:INFO:   <<< n_display: 100
+2024-05-03 04:00:02,021:INFO:   <<< n_gpu: 1
+2024-05-03 04:00:02,021:INFO:   <<< n_pair: 1
+2024-05-03 04:00:02,021:INFO:   <<< negative_weighting: 1
+2024-05-03 04:00:02,021:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:00:02,021:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:00:02,021:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:00:02,021:INFO:   <<< rank: 0
+2024-05-03 04:00:02,021:INFO:   <<< resume_model: None
+2024-05-03 04:00:02,021:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:00:02,021:INFO:   <<< seed: 42
+2024-05-03 04:00:02,021:INFO:   <<< sim_header: meanP
+2024-05-03 04:00:02,021:INFO:   <<< slice_framepos: 2
+2024-05-03 04:00:02,021:INFO:   <<< task_type: retrieval
+2024-05-03 04:00:02,021:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:00:02,022:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:00:02,022:INFO:   <<< train_frame_order: 0
+2024-05-03 04:00:02,022:INFO:   <<< use_mil: False
+2024-05-03 04:00:02,022:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:00:02,022:INFO:   <<< video_dim: 1024
+2024-05-03 04:00:02,022:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:00:02,022:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:00:02,022:INFO:   <<< world_size: 1
+2024-05-03 04:00:02,022:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:00:02,154:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:00:02,634:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:00:02,634:WARNING: Test retrieval by loose type.
+2024-05-03 04:00:02,635:WARNING: 	 embed_dim: 512
+2024-05-03 04:00:02,635:WARNING: 	 image_resolution: 224
+2024-05-03 04:00:02,635:WARNING: 	 vision_layers: 12
+2024-05-03 04:00:02,635:WARNING: 	 vision_width: 768
+2024-05-03 04:00:02,635:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:00:02,635:WARNING: 	 context_length: 77
+2024-05-03 04:00:02,636:WARNING: 	 vocab_size: 49408
+2024-05-03 04:00:02,636:WARNING: 	 transformer_width: 512
+2024-05-03 04:00:02,636:WARNING: 	 transformer_heads: 8
+2024-05-03 04:00:02,636:WARNING: 	 transformer_layers: 12
+2024-05-03 04:00:02,636:WARNING: 		 linear_patch: 2d
+2024-05-03 04:00:02,636:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:00:03,623:WARNING: 	 sim_header: meanP
+2024-05-03 04:03:15,279:INFO: Effective parameters:
+2024-05-03 04:03:15,280:INFO:   <<< batch_size: 1
+2024-05-03 04:03:15,280:INFO:   <<< batch_size_val: 16
+2024-05-03 04:03:15,280:INFO:   <<< cache_dir: 
+2024-05-03 04:03:15,280:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:03:15,280:INFO:   <<< cross_model: cross-base
+2024-05-03 04:03:15,280:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:03:15,280:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:03:15,280:INFO:   <<< datatype: msrvtt
+2024-05-03 04:03:15,280:INFO:   <<< do_eval: True
+2024-05-03 04:03:15,280:INFO:   <<< do_lower_case: False
+2024-05-03 04:03:15,280:INFO:   <<< do_pretrain: False
+2024-05-03 04:03:15,281:INFO:   <<< do_train: False
+2024-05-03 04:03:15,281:INFO:   <<< epochs: 2
+2024-05-03 04:03:15,281:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:03:15,281:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:03:15,281:INFO:   <<< feature_framerate: 1
+2024-05-03 04:03:15,281:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:03:15,281:INFO:   <<< fp16: False
+2024-05-03 04:03:15,281:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:03:15,281:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:03:15,281:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:03:15,281:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:03:15,281:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:03:15,281:INFO:   <<< linear_patch: 2d
+2024-05-03 04:03:15,281:INFO:   <<< local_rank: 0
+2024-05-03 04:03:15,281:INFO:   <<< loose_type: True
+2024-05-03 04:03:15,282:INFO:   <<< lr: 0.0001
+2024-05-03 04:03:15,282:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:03:15,282:INFO:   <<< margin: 0.1
+2024-05-03 04:03:15,282:INFO:   <<< max_frames: 90
+2024-05-03 04:03:15,282:INFO:   <<< max_words: 32
+2024-05-03 04:03:15,282:INFO:   <<< n_display: 100
+2024-05-03 04:03:15,282:INFO:   <<< n_gpu: 1
+2024-05-03 04:03:15,282:INFO:   <<< n_pair: 1
+2024-05-03 04:03:15,282:INFO:   <<< negative_weighting: 1
+2024-05-03 04:03:15,282:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:03:15,282:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:03:15,282:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:03:15,282:INFO:   <<< rank: 0
+2024-05-03 04:03:15,282:INFO:   <<< resume_model: None
+2024-05-03 04:03:15,283:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:03:15,283:INFO:   <<< seed: 42
+2024-05-03 04:03:15,283:INFO:   <<< sim_header: meanP
+2024-05-03 04:03:15,283:INFO:   <<< slice_framepos: 2
+2024-05-03 04:03:15,283:INFO:   <<< task_type: retrieval
+2024-05-03 04:03:15,283:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:03:15,283:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:03:15,283:INFO:   <<< train_frame_order: 0
+2024-05-03 04:03:15,283:INFO:   <<< use_mil: False
+2024-05-03 04:03:15,283:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:03:15,283:INFO:   <<< video_dim: 1024
+2024-05-03 04:03:15,283:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:03:15,283:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:03:15,283:INFO:   <<< world_size: 1
+2024-05-03 04:03:15,284:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:03:15,417:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:03:15,891:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:03:15,891:WARNING: Test retrieval by loose type.
+2024-05-03 04:03:15,892:WARNING: 	 embed_dim: 512
+2024-05-03 04:03:15,892:WARNING: 	 image_resolution: 224
+2024-05-03 04:03:15,892:WARNING: 	 vision_layers: 12
+2024-05-03 04:03:15,892:WARNING: 	 vision_width: 768
+2024-05-03 04:03:15,892:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:03:15,892:WARNING: 	 context_length: 77
+2024-05-03 04:03:15,892:WARNING: 	 vocab_size: 49408
+2024-05-03 04:03:15,892:WARNING: 	 transformer_width: 512
+2024-05-03 04:03:15,892:WARNING: 	 transformer_heads: 8
+2024-05-03 04:03:15,892:WARNING: 	 transformer_layers: 12
+2024-05-03 04:03:15,892:WARNING: 		 linear_patch: 2d
+2024-05-03 04:03:15,892:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:03:16,881:WARNING: 	 sim_header: meanP
+2024-05-03 04:05:05,575:INFO: Effective parameters:
+2024-05-03 04:05:05,575:INFO:   <<< batch_size: 1
+2024-05-03 04:05:05,575:INFO:   <<< batch_size_val: 16
+2024-05-03 04:05:05,575:INFO:   <<< cache_dir: 
+2024-05-03 04:05:05,575:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:05:05,575:INFO:   <<< cross_model: cross-base
+2024-05-03 04:05:05,575:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:05:05,575:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:05:05,575:INFO:   <<< datatype: msrvtt
+2024-05-03 04:05:05,575:INFO:   <<< do_eval: True
+2024-05-03 04:05:05,576:INFO:   <<< do_lower_case: False
+2024-05-03 04:05:05,576:INFO:   <<< do_pretrain: False
+2024-05-03 04:05:05,576:INFO:   <<< do_train: False
+2024-05-03 04:05:05,576:INFO:   <<< epochs: 2
+2024-05-03 04:05:05,576:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:05:05,576:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:05:05,576:INFO:   <<< feature_framerate: 1
+2024-05-03 04:05:05,576:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:05:05,576:INFO:   <<< fp16: False
+2024-05-03 04:05:05,576:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:05:05,576:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:05:05,576:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:05:05,576:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:05:05,576:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:05:05,576:INFO:   <<< linear_patch: 2d
+2024-05-03 04:05:05,576:INFO:   <<< local_rank: 0
+2024-05-03 04:05:05,576:INFO:   <<< loose_type: True
+2024-05-03 04:05:05,577:INFO:   <<< lr: 0.0001
+2024-05-03 04:05:05,577:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:05:05,577:INFO:   <<< margin: 0.1
+2024-05-03 04:05:05,577:INFO:   <<< max_frames: 90
+2024-05-03 04:05:05,577:INFO:   <<< max_words: 32
+2024-05-03 04:05:05,577:INFO:   <<< n_display: 100
+2024-05-03 04:05:05,577:INFO:   <<< n_gpu: 1
+2024-05-03 04:05:05,577:INFO:   <<< n_pair: 1
+2024-05-03 04:05:05,577:INFO:   <<< negative_weighting: 1
+2024-05-03 04:05:05,577:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:05:05,577:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:05:05,577:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:05:05,577:INFO:   <<< rank: 0
+2024-05-03 04:05:05,577:INFO:   <<< resume_model: None
+2024-05-03 04:05:05,577:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:05:05,577:INFO:   <<< seed: 42
+2024-05-03 04:05:05,577:INFO:   <<< sim_header: meanP
+2024-05-03 04:05:05,578:INFO:   <<< slice_framepos: 2
+2024-05-03 04:05:05,578:INFO:   <<< task_type: retrieval
+2024-05-03 04:05:05,578:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:05:05,578:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:05:05,578:INFO:   <<< train_frame_order: 0
+2024-05-03 04:05:05,578:INFO:   <<< use_mil: False
+2024-05-03 04:05:05,578:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:05:05,578:INFO:   <<< video_dim: 1024
+2024-05-03 04:05:05,578:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:05:05,578:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:05:05,578:INFO:   <<< world_size: 1
+2024-05-03 04:05:05,578:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:05:05,713:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:05:06,195:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:05:06,195:WARNING: Test retrieval by loose type.
+2024-05-03 04:05:06,196:WARNING: 	 embed_dim: 512
+2024-05-03 04:05:06,196:WARNING: 	 image_resolution: 224
+2024-05-03 04:05:06,196:WARNING: 	 vision_layers: 12
+2024-05-03 04:05:06,196:WARNING: 	 vision_width: 768
+2024-05-03 04:05:06,196:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:05:06,197:WARNING: 	 context_length: 77
+2024-05-03 04:05:06,197:WARNING: 	 vocab_size: 49408
+2024-05-03 04:05:06,197:WARNING: 	 transformer_width: 512
+2024-05-03 04:05:06,197:WARNING: 	 transformer_heads: 8
+2024-05-03 04:05:06,197:WARNING: 	 transformer_layers: 12
+2024-05-03 04:05:06,197:WARNING: 		 linear_patch: 2d
+2024-05-03 04:05:06,197:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:05:07,186:WARNING: 	 sim_header: meanP
+2024-05-03 04:07:40,660:INFO: Effective parameters:
+2024-05-03 04:07:40,660:INFO:   <<< batch_size: 1
+2024-05-03 04:07:40,660:INFO:   <<< batch_size_val: 16
+2024-05-03 04:07:40,660:INFO:   <<< cache_dir: 
+2024-05-03 04:07:40,660:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:07:40,661:INFO:   <<< cross_model: cross-base
+2024-05-03 04:07:40,661:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:07:40,661:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:07:40,661:INFO:   <<< datatype: msrvtt
+2024-05-03 04:07:40,661:INFO:   <<< do_eval: True
+2024-05-03 04:07:40,661:INFO:   <<< do_lower_case: False
+2024-05-03 04:07:40,661:INFO:   <<< do_pretrain: False
+2024-05-03 04:07:40,661:INFO:   <<< do_train: False
+2024-05-03 04:07:40,661:INFO:   <<< epochs: 2
+2024-05-03 04:07:40,661:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:07:40,661:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:07:40,661:INFO:   <<< feature_framerate: 1
+2024-05-03 04:07:40,661:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:07:40,661:INFO:   <<< fp16: False
+2024-05-03 04:07:40,661:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:07:40,662:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:07:40,662:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:07:40,662:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:07:40,662:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:07:40,662:INFO:   <<< linear_patch: 2d
+2024-05-03 04:07:40,662:INFO:   <<< local_rank: 0
+2024-05-03 04:07:40,662:INFO:   <<< loose_type: True
+2024-05-03 04:07:40,662:INFO:   <<< lr: 0.0001
+2024-05-03 04:07:40,662:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:07:40,662:INFO:   <<< margin: 0.1
+2024-05-03 04:07:40,662:INFO:   <<< max_frames: 90
+2024-05-03 04:07:40,662:INFO:   <<< max_words: 32
+2024-05-03 04:07:40,662:INFO:   <<< n_display: 100
+2024-05-03 04:07:40,662:INFO:   <<< n_gpu: 1
+2024-05-03 04:07:40,662:INFO:   <<< n_pair: 1
+2024-05-03 04:07:40,662:INFO:   <<< negative_weighting: 1
+2024-05-03 04:07:40,662:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:07:40,663:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:07:40,663:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:07:40,663:INFO:   <<< rank: 0
+2024-05-03 04:07:40,663:INFO:   <<< resume_model: None
+2024-05-03 04:07:40,663:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:07:40,663:INFO:   <<< seed: 42
+2024-05-03 04:07:40,663:INFO:   <<< sim_header: meanP
+2024-05-03 04:07:40,663:INFO:   <<< slice_framepos: 2
+2024-05-03 04:07:40,663:INFO:   <<< task_type: retrieval
+2024-05-03 04:07:40,663:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:07:40,663:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:07:40,663:INFO:   <<< train_frame_order: 0
+2024-05-03 04:07:40,663:INFO:   <<< use_mil: False
+2024-05-03 04:07:40,663:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:07:40,663:INFO:   <<< video_dim: 1024
+2024-05-03 04:07:40,663:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:07:40,664:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:07:40,664:INFO:   <<< world_size: 1
+2024-05-03 04:07:40,664:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:07:40,798:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:07:41,275:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:07:41,275:WARNING: Test retrieval by loose type.
+2024-05-03 04:07:41,275:WARNING: 	 embed_dim: 512
+2024-05-03 04:07:41,276:WARNING: 	 image_resolution: 224
+2024-05-03 04:07:41,276:WARNING: 	 vision_layers: 12
+2024-05-03 04:07:41,276:WARNING: 	 vision_width: 768
+2024-05-03 04:07:41,276:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:07:41,276:WARNING: 	 context_length: 77
+2024-05-03 04:07:41,276:WARNING: 	 vocab_size: 49408
+2024-05-03 04:07:41,276:WARNING: 	 transformer_width: 512
+2024-05-03 04:07:41,276:WARNING: 	 transformer_heads: 8
+2024-05-03 04:07:41,276:WARNING: 	 transformer_layers: 12
+2024-05-03 04:07:41,276:WARNING: 		 linear_patch: 2d
+2024-05-03 04:07:41,276:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:07:42,264:WARNING: 	 sim_header: meanP
+2024-05-03 04:08:09,491:INFO: Effective parameters:
+2024-05-03 04:08:09,491:INFO:   <<< batch_size: 1
+2024-05-03 04:08:09,491:INFO:   <<< batch_size_val: 16
+2024-05-03 04:08:09,491:INFO:   <<< cache_dir: 
+2024-05-03 04:08:09,491:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:08:09,491:INFO:   <<< cross_model: cross-base
+2024-05-03 04:08:09,491:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:08:09,491:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:08:09,491:INFO:   <<< datatype: msrvtt
+2024-05-03 04:08:09,491:INFO:   <<< do_eval: True
+2024-05-03 04:08:09,491:INFO:   <<< do_lower_case: False
+2024-05-03 04:08:09,491:INFO:   <<< do_pretrain: False
+2024-05-03 04:08:09,492:INFO:   <<< do_train: False
+2024-05-03 04:08:09,492:INFO:   <<< epochs: 2
+2024-05-03 04:08:09,492:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:08:09,492:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:08:09,492:INFO:   <<< feature_framerate: 1
+2024-05-03 04:08:09,492:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:08:09,492:INFO:   <<< fp16: False
+2024-05-03 04:08:09,492:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:08:09,492:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:08:09,492:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:08:09,492:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:08:09,492:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:08:09,492:INFO:   <<< linear_patch: 2d
+2024-05-03 04:08:09,492:INFO:   <<< local_rank: 0
+2024-05-03 04:08:09,492:INFO:   <<< loose_type: True
+2024-05-03 04:08:09,492:INFO:   <<< lr: 0.0001
+2024-05-03 04:08:09,493:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:08:09,493:INFO:   <<< margin: 0.1
+2024-05-03 04:08:09,493:INFO:   <<< max_frames: 90
+2024-05-03 04:08:09,493:INFO:   <<< max_words: 32
+2024-05-03 04:08:09,493:INFO:   <<< n_display: 100
+2024-05-03 04:08:09,493:INFO:   <<< n_gpu: 1
+2024-05-03 04:08:09,493:INFO:   <<< n_pair: 1
+2024-05-03 04:08:09,493:INFO:   <<< negative_weighting: 1
+2024-05-03 04:08:09,493:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:08:09,493:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:08:09,493:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:08:09,493:INFO:   <<< rank: 0
+2024-05-03 04:08:09,493:INFO:   <<< resume_model: None
+2024-05-03 04:08:09,493:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:08:09,493:INFO:   <<< seed: 42
+2024-05-03 04:08:09,493:INFO:   <<< sim_header: meanP
+2024-05-03 04:08:09,493:INFO:   <<< slice_framepos: 2
+2024-05-03 04:08:09,493:INFO:   <<< task_type: retrieval
+2024-05-03 04:08:09,494:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:08:09,494:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:08:09,494:INFO:   <<< train_frame_order: 0
+2024-05-03 04:08:09,494:INFO:   <<< use_mil: False
+2024-05-03 04:08:09,494:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:08:09,494:INFO:   <<< video_dim: 1024
+2024-05-03 04:08:09,494:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:08:09,494:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:08:09,494:INFO:   <<< world_size: 1
+2024-05-03 04:08:09,494:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:08:09,626:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:08:10,099:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:08:10,099:WARNING: Test retrieval by loose type.
+2024-05-03 04:08:10,100:WARNING: 	 embed_dim: 512
+2024-05-03 04:08:10,100:WARNING: 	 image_resolution: 224
+2024-05-03 04:08:10,100:WARNING: 	 vision_layers: 12
+2024-05-03 04:08:10,100:WARNING: 	 vision_width: 768
+2024-05-03 04:08:10,100:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:08:10,100:WARNING: 	 context_length: 77
+2024-05-03 04:08:10,100:WARNING: 	 vocab_size: 49408
+2024-05-03 04:08:10,101:WARNING: 	 transformer_width: 512
+2024-05-03 04:08:10,101:WARNING: 	 transformer_heads: 8
+2024-05-03 04:08:10,101:WARNING: 	 transformer_layers: 12
+2024-05-03 04:08:10,101:WARNING: 		 linear_patch: 2d
+2024-05-03 04:08:10,101:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:08:11,071:WARNING: 	 sim_header: meanP
+2024-05-03 04:10:40,574:INFO: Effective parameters:
+2024-05-03 04:10:40,574:INFO:   <<< batch_size: 16
+2024-05-03 04:10:40,574:INFO:   <<< batch_size_val: 16
+2024-05-03 04:10:40,574:INFO:   <<< cache_dir: 
+2024-05-03 04:10:40,574:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:10:40,574:INFO:   <<< cross_model: cross-base
+2024-05-03 04:10:40,574:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:10:40,574:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:10:40,575:INFO:   <<< datatype: msrvtt
+2024-05-03 04:10:40,575:INFO:   <<< do_eval: True
+2024-05-03 04:10:40,575:INFO:   <<< do_lower_case: False
+2024-05-03 04:10:40,575:INFO:   <<< do_pretrain: False
+2024-05-03 04:10:40,575:INFO:   <<< do_train: False
+2024-05-03 04:10:40,575:INFO:   <<< epochs: 2
+2024-05-03 04:10:40,575:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:10:40,575:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:10:40,575:INFO:   <<< feature_framerate: 1
+2024-05-03 04:10:40,575:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:10:40,575:INFO:   <<< fp16: False
+2024-05-03 04:10:40,575:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:10:40,575:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:10:40,575:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:10:40,575:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:10:40,575:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:10:40,575:INFO:   <<< linear_patch: 2d
+2024-05-03 04:10:40,575:INFO:   <<< local_rank: 0
+2024-05-03 04:10:40,576:INFO:   <<< loose_type: True
+2024-05-03 04:10:40,576:INFO:   <<< lr: 0.0001
+2024-05-03 04:10:40,576:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:10:40,576:INFO:   <<< margin: 0.1
+2024-05-03 04:10:40,576:INFO:   <<< max_frames: 12
+2024-05-03 04:10:40,576:INFO:   <<< max_words: 32
+2024-05-03 04:10:40,576:INFO:   <<< n_display: 100
+2024-05-03 04:10:40,576:INFO:   <<< n_gpu: 1
+2024-05-03 04:10:40,576:INFO:   <<< n_pair: 1
+2024-05-03 04:10:40,576:INFO:   <<< negative_weighting: 1
+2024-05-03 04:10:40,576:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:10:40,576:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:10:40,576:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:10:40,576:INFO:   <<< rank: 0
+2024-05-03 04:10:40,576:INFO:   <<< resume_model: None
+2024-05-03 04:10:40,576:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:10:40,576:INFO:   <<< seed: 42
+2024-05-03 04:10:40,577:INFO:   <<< sim_header: meanP
+2024-05-03 04:10:40,577:INFO:   <<< slice_framepos: 2
+2024-05-03 04:10:40,577:INFO:   <<< task_type: retrieval
+2024-05-03 04:10:40,577:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:10:40,577:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:10:40,577:INFO:   <<< train_frame_order: 0
+2024-05-03 04:10:40,577:INFO:   <<< use_mil: False
+2024-05-03 04:10:40,577:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:10:40,577:INFO:   <<< video_dim: 1024
+2024-05-03 04:10:40,577:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:10:40,577:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:10:40,577:INFO:   <<< world_size: 1
+2024-05-03 04:10:40,577:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:10:40,677:INFO: ***** Running test *****
+2024-05-03 04:10:40,678:INFO:   Num examples = 29
+2024-05-03 04:10:40,678:INFO:   Batch size = 16
+2024-05-03 04:10:40,678:INFO:   Num steps = 2
+2024-05-03 04:10:40,678:INFO: ***** Running val *****
+2024-05-03 04:10:40,678:INFO:   Num examples = 29
+2024-05-03 04:11:42,255:INFO: Effective parameters:
+2024-05-03 04:11:42,255:INFO:   <<< batch_size: 16
+2024-05-03 04:11:42,255:INFO:   <<< batch_size_val: 16
+2024-05-03 04:11:42,255:INFO:   <<< cache_dir: 
+2024-05-03 04:11:42,256:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:11:42,256:INFO:   <<< cross_model: cross-base
+2024-05-03 04:11:42,256:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:11:42,256:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:11:42,256:INFO:   <<< datatype: msrvtt
+2024-05-03 04:11:42,256:INFO:   <<< do_eval: True
+2024-05-03 04:11:42,256:INFO:   <<< do_lower_case: False
+2024-05-03 04:11:42,256:INFO:   <<< do_pretrain: False
+2024-05-03 04:11:42,256:INFO:   <<< do_train: False
+2024-05-03 04:11:42,256:INFO:   <<< epochs: 2
+2024-05-03 04:11:42,256:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:11:42,256:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:11:42,256:INFO:   <<< feature_framerate: 1
+2024-05-03 04:11:42,256:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:11:42,256:INFO:   <<< fp16: False
+2024-05-03 04:11:42,256:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:11:42,256:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:11:42,257:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:11:42,257:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:11:42,257:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:11:42,257:INFO:   <<< linear_patch: 2d
+2024-05-03 04:11:42,257:INFO:   <<< local_rank: 0
+2024-05-03 04:11:42,257:INFO:   <<< loose_type: True
+2024-05-03 04:11:42,257:INFO:   <<< lr: 0.0001
+2024-05-03 04:11:42,257:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:11:42,257:INFO:   <<< margin: 0.1
+2024-05-03 04:11:42,257:INFO:   <<< max_frames: 12
+2024-05-03 04:11:42,257:INFO:   <<< max_words: 32
+2024-05-03 04:11:42,257:INFO:   <<< n_display: 100
+2024-05-03 04:11:42,257:INFO:   <<< n_gpu: 1
+2024-05-03 04:11:42,257:INFO:   <<< n_pair: 1
+2024-05-03 04:11:42,257:INFO:   <<< negative_weighting: 1
+2024-05-03 04:11:42,257:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:11:42,258:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:11:42,258:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:11:42,258:INFO:   <<< rank: 0
+2024-05-03 04:11:42,258:INFO:   <<< resume_model: None
+2024-05-03 04:11:42,258:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:11:42,258:INFO:   <<< seed: 42
+2024-05-03 04:11:42,258:INFO:   <<< sim_header: meanP
+2024-05-03 04:11:42,258:INFO:   <<< slice_framepos: 2
+2024-05-03 04:11:42,258:INFO:   <<< task_type: retrieval
+2024-05-03 04:11:42,258:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:11:42,258:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:11:42,258:INFO:   <<< train_frame_order: 0
+2024-05-03 04:11:42,258:INFO:   <<< use_mil: False
+2024-05-03 04:11:42,258:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:11:42,258:INFO:   <<< video_dim: 1024
+2024-05-03 04:11:42,259:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:11:42,259:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:11:42,259:INFO:   <<< world_size: 1
+2024-05-03 04:11:42,259:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:11:42,483:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:11:42,946:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:11:42,946:WARNING: Test retrieval by loose type.
+2024-05-03 04:11:42,947:WARNING: 	 embed_dim: 512
+2024-05-03 04:11:42,947:WARNING: 	 image_resolution: 224
+2024-05-03 04:11:42,947:WARNING: 	 vision_layers: 12
+2024-05-03 04:11:42,947:WARNING: 	 vision_width: 768
+2024-05-03 04:11:42,947:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:11:42,947:WARNING: 	 context_length: 77
+2024-05-03 04:11:42,947:WARNING: 	 vocab_size: 49408
+2024-05-03 04:11:42,947:WARNING: 	 transformer_width: 512
+2024-05-03 04:11:42,947:WARNING: 	 transformer_heads: 8
+2024-05-03 04:11:42,947:WARNING: 	 transformer_layers: 12
+2024-05-03 04:11:42,948:WARNING: 		 linear_patch: 2d
+2024-05-03 04:11:42,948:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:11:43,925:WARNING: 	 sim_header: meanP
+2024-05-03 04:11:49,956:INFO: ***** Running test *****
+2024-05-03 04:11:49,956:INFO:   Num examples = 29
+2024-05-03 04:11:49,956:INFO:   Batch size = 16
+2024-05-03 04:11:49,957:INFO:   Num steps = 2
+2024-05-03 04:11:49,957:INFO: ***** Running val *****
+2024-05-03 04:11:49,957:INFO:   Num examples = 29
+2024-05-03 04:13:27,155:INFO: Effective parameters:
+2024-05-03 04:13:27,155:INFO:   <<< batch_size: 16
+2024-05-03 04:13:27,155:INFO:   <<< batch_size_val: 16
+2024-05-03 04:13:27,155:INFO:   <<< cache_dir: 
+2024-05-03 04:13:27,155:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:13:27,155:INFO:   <<< cross_model: cross-base
+2024-05-03 04:13:27,155:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:13:27,155:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:13:27,155:INFO:   <<< datatype: msrvtt
+2024-05-03 04:13:27,155:INFO:   <<< do_eval: True
+2024-05-03 04:13:27,155:INFO:   <<< do_lower_case: False
+2024-05-03 04:13:27,156:INFO:   <<< do_pretrain: False
+2024-05-03 04:13:27,156:INFO:   <<< do_train: False
+2024-05-03 04:13:27,156:INFO:   <<< epochs: 2
+2024-05-03 04:13:27,156:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:13:27,156:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:13:27,156:INFO:   <<< feature_framerate: 1
+2024-05-03 04:13:27,156:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:13:27,156:INFO:   <<< fp16: False
+2024-05-03 04:13:27,156:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:13:27,156:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:13:27,156:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:13:27,156:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:13:27,156:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:13:27,156:INFO:   <<< linear_patch: 2d
+2024-05-03 04:13:27,156:INFO:   <<< local_rank: 0
+2024-05-03 04:13:27,156:INFO:   <<< loose_type: True
+2024-05-03 04:13:27,156:INFO:   <<< lr: 0.0001
+2024-05-03 04:13:27,157:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:13:27,157:INFO:   <<< margin: 0.1
+2024-05-03 04:13:27,157:INFO:   <<< max_frames: 12
+2024-05-03 04:13:27,157:INFO:   <<< max_words: 32
+2024-05-03 04:13:27,157:INFO:   <<< n_display: 100
+2024-05-03 04:13:27,157:INFO:   <<< n_gpu: 1
+2024-05-03 04:13:27,157:INFO:   <<< n_pair: 1
+2024-05-03 04:13:27,157:INFO:   <<< negative_weighting: 1
+2024-05-03 04:13:27,157:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:13:27,157:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:13:27,157:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:13:27,157:INFO:   <<< rank: 0
+2024-05-03 04:13:27,157:INFO:   <<< resume_model: None
+2024-05-03 04:13:27,157:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:13:27,157:INFO:   <<< seed: 42
+2024-05-03 04:13:27,157:INFO:   <<< sim_header: meanP
+2024-05-03 04:13:27,157:INFO:   <<< slice_framepos: 2
+2024-05-03 04:13:27,158:INFO:   <<< task_type: retrieval
+2024-05-03 04:13:27,158:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:13:27,158:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:13:27,158:INFO:   <<< train_frame_order: 0
+2024-05-03 04:13:27,158:INFO:   <<< use_mil: False
+2024-05-03 04:13:27,158:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:13:27,158:INFO:   <<< video_dim: 1024
+2024-05-03 04:13:27,158:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:13:27,158:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:13:27,158:INFO:   <<< world_size: 1
+2024-05-03 04:13:27,158:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:13:27,375:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:13:27,833:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:13:27,833:WARNING: Test retrieval by loose type.
+2024-05-03 04:13:27,834:WARNING: 	 embed_dim: 512
+2024-05-03 04:13:27,834:WARNING: 	 image_resolution: 224
+2024-05-03 04:13:27,834:WARNING: 	 vision_layers: 12
+2024-05-03 04:13:27,834:WARNING: 	 vision_width: 768
+2024-05-03 04:13:27,834:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:13:27,834:WARNING: 	 context_length: 77
+2024-05-03 04:13:27,834:WARNING: 	 vocab_size: 49408
+2024-05-03 04:13:27,834:WARNING: 	 transformer_width: 512
+2024-05-03 04:13:27,834:WARNING: 	 transformer_heads: 8
+2024-05-03 04:13:27,834:WARNING: 	 transformer_layers: 12
+2024-05-03 04:13:27,834:WARNING: 		 linear_patch: 2d
+2024-05-03 04:13:27,834:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:13:28,814:WARNING: 	 sim_header: meanP
+2024-05-03 04:13:34,867:INFO: ***** Running test *****
+2024-05-03 04:13:34,867:INFO:   Num examples = 29
+2024-05-03 04:13:34,868:INFO:   Batch size = 16
+2024-05-03 04:13:34,868:INFO:   Num steps = 2
+2024-05-03 04:13:34,868:INFO: ***** Running val *****
+2024-05-03 04:13:34,868:INFO:   Num examples = 29
+2024-05-03 04:19:06,701:INFO: Effective parameters:
+2024-05-03 04:19:06,701:INFO:   <<< batch_size: 16
+2024-05-03 04:19:06,701:INFO:   <<< batch_size_val: 16
+2024-05-03 04:19:06,701:INFO:   <<< cache_dir: 
+2024-05-03 04:19:06,702:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:19:06,702:INFO:   <<< cross_model: cross-base
+2024-05-03 04:19:06,702:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:19:06,702:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:19:06,702:INFO:   <<< datatype: msrvtt
+2024-05-03 04:19:06,702:INFO:   <<< do_eval: True
+2024-05-03 04:19:06,702:INFO:   <<< do_lower_case: False
+2024-05-03 04:19:06,702:INFO:   <<< do_pretrain: False
+2024-05-03 04:19:06,702:INFO:   <<< do_train: False
+2024-05-03 04:19:06,702:INFO:   <<< epochs: 2
+2024-05-03 04:19:06,702:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:19:06,702:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:19:06,702:INFO:   <<< feature_framerate: 1
+2024-05-03 04:19:06,702:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:19:06,702:INFO:   <<< fp16: False
+2024-05-03 04:19:06,702:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:19:06,702:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:19:06,703:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:19:06,703:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:19:06,703:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:19:06,703:INFO:   <<< linear_patch: 2d
+2024-05-03 04:19:06,703:INFO:   <<< local_rank: 0
+2024-05-03 04:19:06,703:INFO:   <<< loose_type: True
+2024-05-03 04:19:06,703:INFO:   <<< lr: 0.0001
+2024-05-03 04:19:06,703:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:19:06,703:INFO:   <<< margin: 0.1
+2024-05-03 04:19:06,703:INFO:   <<< max_frames: 12
+2024-05-03 04:19:06,703:INFO:   <<< max_words: 32
+2024-05-03 04:19:06,703:INFO:   <<< n_display: 100
+2024-05-03 04:19:06,703:INFO:   <<< n_gpu: 1
+2024-05-03 04:19:06,703:INFO:   <<< n_pair: 1
+2024-05-03 04:19:06,703:INFO:   <<< negative_weighting: 1
+2024-05-03 04:19:06,703:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:19:06,703:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:19:06,703:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:19:06,704:INFO:   <<< rank: 0
+2024-05-03 04:19:06,704:INFO:   <<< resume_model: None
+2024-05-03 04:19:06,704:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:19:06,704:INFO:   <<< seed: 42
+2024-05-03 04:19:06,704:INFO:   <<< sim_header: meanP
+2024-05-03 04:19:06,704:INFO:   <<< slice_framepos: 2
+2024-05-03 04:19:06,704:INFO:   <<< task_type: retrieval
+2024-05-03 04:19:06,704:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:19:06,704:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:19:06,704:INFO:   <<< train_frame_order: 0
+2024-05-03 04:19:06,704:INFO:   <<< use_mil: False
+2024-05-03 04:19:06,704:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:19:06,704:INFO:   <<< video_dim: 1024
+2024-05-03 04:19:06,704:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:19:06,704:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:19:06,704:INFO:   <<< world_size: 1
+2024-05-03 04:19:06,705:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:19:06,925:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:19:07,382:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:19:07,382:WARNING: Test retrieval by loose type.
+2024-05-03 04:19:07,383:WARNING: 	 embed_dim: 512
+2024-05-03 04:19:07,383:WARNING: 	 image_resolution: 224
+2024-05-03 04:19:07,383:WARNING: 	 vision_layers: 12
+2024-05-03 04:19:07,383:WARNING: 	 vision_width: 768
+2024-05-03 04:19:07,383:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:19:07,383:WARNING: 	 context_length: 77
+2024-05-03 04:19:07,383:WARNING: 	 vocab_size: 49408
+2024-05-03 04:19:07,383:WARNING: 	 transformer_width: 512
+2024-05-03 04:19:07,383:WARNING: 	 transformer_heads: 8
+2024-05-03 04:19:07,383:WARNING: 	 transformer_layers: 12
+2024-05-03 04:19:07,383:WARNING: 		 linear_patch: 2d
+2024-05-03 04:19:07,384:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:19:08,348:WARNING: 	 sim_header: meanP
+2024-05-03 04:19:14,359:INFO: ***** Running test *****
+2024-05-03 04:19:14,359:INFO:   Num examples = 29
+2024-05-03 04:19:14,359:INFO:   Batch size = 16
+2024-05-03 04:19:14,359:INFO:   Num steps = 2
+2024-05-03 04:19:14,359:INFO: ***** Running val *****
+2024-05-03 04:19:14,359:INFO:   Num examples = 29
+2024-05-03 04:20:13,364:INFO: Effective parameters:
+2024-05-03 04:20:13,365:INFO:   <<< batch_size: 16
+2024-05-03 04:20:13,365:INFO:   <<< batch_size_val: 16
+2024-05-03 04:20:13,365:INFO:   <<< cache_dir: 
+2024-05-03 04:20:13,365:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:20:13,365:INFO:   <<< cross_model: cross-base
+2024-05-03 04:20:13,365:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:20:13,365:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:20:13,365:INFO:   <<< datatype: msrvtt
+2024-05-03 04:20:13,365:INFO:   <<< do_eval: True
+2024-05-03 04:20:13,365:INFO:   <<< do_lower_case: False
+2024-05-03 04:20:13,365:INFO:   <<< do_pretrain: False
+2024-05-03 04:20:13,365:INFO:   <<< do_train: False
+2024-05-03 04:20:13,365:INFO:   <<< epochs: 2
+2024-05-03 04:20:13,365:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:20:13,366:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:20:13,366:INFO:   <<< feature_framerate: 1
+2024-05-03 04:20:13,366:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:20:13,366:INFO:   <<< fp16: False
+2024-05-03 04:20:13,366:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:20:13,366:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:20:13,366:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:20:13,366:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:20:13,366:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:20:13,366:INFO:   <<< linear_patch: 2d
+2024-05-03 04:20:13,366:INFO:   <<< local_rank: 0
+2024-05-03 04:20:13,366:INFO:   <<< loose_type: True
+2024-05-03 04:20:13,366:INFO:   <<< lr: 0.0001
+2024-05-03 04:20:13,366:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:20:13,366:INFO:   <<< margin: 0.1
+2024-05-03 04:20:13,366:INFO:   <<< max_frames: 12
+2024-05-03 04:20:13,366:INFO:   <<< max_words: 32
+2024-05-03 04:20:13,367:INFO:   <<< n_display: 100
+2024-05-03 04:20:13,367:INFO:   <<< n_gpu: 1
+2024-05-03 04:20:13,367:INFO:   <<< n_pair: 1
+2024-05-03 04:20:13,367:INFO:   <<< negative_weighting: 1
+2024-05-03 04:20:13,367:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:20:13,367:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:20:13,367:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:20:13,367:INFO:   <<< rank: 0
+2024-05-03 04:20:13,367:INFO:   <<< resume_model: None
+2024-05-03 04:20:13,367:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:20:13,367:INFO:   <<< seed: 42
+2024-05-03 04:20:13,367:INFO:   <<< sim_header: meanP
+2024-05-03 04:20:13,367:INFO:   <<< slice_framepos: 2
+2024-05-03 04:20:13,367:INFO:   <<< task_type: retrieval
+2024-05-03 04:20:13,367:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:20:13,368:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:20:13,368:INFO:   <<< train_frame_order: 0
+2024-05-03 04:20:13,368:INFO:   <<< use_mil: False
+2024-05-03 04:20:13,368:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:20:13,368:INFO:   <<< video_dim: 1024
+2024-05-03 04:20:13,368:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:20:13,368:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:20:13,368:INFO:   <<< world_size: 1
+2024-05-03 04:20:13,368:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:20:13,589:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:20:14,049:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:20:14,049:WARNING: Test retrieval by loose type.
+2024-05-03 04:20:14,050:WARNING: 	 embed_dim: 512
+2024-05-03 04:20:14,050:WARNING: 	 image_resolution: 224
+2024-05-03 04:20:14,050:WARNING: 	 vision_layers: 12
+2024-05-03 04:20:14,050:WARNING: 	 vision_width: 768
+2024-05-03 04:20:14,051:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:20:14,051:WARNING: 	 context_length: 77
+2024-05-03 04:20:14,051:WARNING: 	 vocab_size: 49408
+2024-05-03 04:20:14,051:WARNING: 	 transformer_width: 512
+2024-05-03 04:20:14,051:WARNING: 	 transformer_heads: 8
+2024-05-03 04:20:14,051:WARNING: 	 transformer_layers: 12
+2024-05-03 04:20:14,051:WARNING: 		 linear_patch: 2d
+2024-05-03 04:20:14,051:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:20:15,034:WARNING: 	 sim_header: meanP
+2024-05-03 04:20:21,104:INFO: ***** Running test *****
+2024-05-03 04:20:21,104:INFO:   Num examples = 29
+2024-05-03 04:20:21,104:INFO:   Batch size = 16
+2024-05-03 04:20:21,104:INFO:   Num steps = 2
+2024-05-03 04:20:21,104:INFO: ***** Running val *****
+2024-05-03 04:20:21,104:INFO:   Num examples = 29
+2024-05-03 04:42:32,845:INFO: Effective parameters:
+2024-05-03 04:42:32,845:INFO:   <<< batch_size: 16
+2024-05-03 04:42:32,845:INFO:   <<< batch_size_val: 16
+2024-05-03 04:42:32,845:INFO:   <<< cache_dir: 
+2024-05-03 04:42:32,845:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:42:32,845:INFO:   <<< cross_model: cross-base
+2024-05-03 04:42:32,845:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:42:32,846:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:42:32,846:INFO:   <<< datatype: msrvtt
+2024-05-03 04:42:32,846:INFO:   <<< do_eval: True
+2024-05-03 04:42:32,846:INFO:   <<< do_lower_case: False
+2024-05-03 04:42:32,846:INFO:   <<< do_pretrain: False
+2024-05-03 04:42:32,846:INFO:   <<< do_train: False
+2024-05-03 04:42:32,846:INFO:   <<< epochs: 2
+2024-05-03 04:42:32,846:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:42:32,846:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:42:32,846:INFO:   <<< feature_framerate: 1
+2024-05-03 04:42:32,846:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:42:32,846:INFO:   <<< fp16: False
+2024-05-03 04:42:32,846:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:42:32,846:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:42:32,846:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:42:32,846:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:42:32,846:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:42:32,847:INFO:   <<< linear_patch: 2d
+2024-05-03 04:42:32,847:INFO:   <<< local_rank: 0
+2024-05-03 04:42:32,847:INFO:   <<< loose_type: True
+2024-05-03 04:42:32,847:INFO:   <<< lr: 0.0001
+2024-05-03 04:42:32,847:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:42:32,847:INFO:   <<< margin: 0.1
+2024-05-03 04:42:32,847:INFO:   <<< max_frames: 12
+2024-05-03 04:42:32,847:INFO:   <<< max_words: 32
+2024-05-03 04:42:32,847:INFO:   <<< n_display: 100
+2024-05-03 04:42:32,847:INFO:   <<< n_gpu: 1
+2024-05-03 04:42:32,847:INFO:   <<< n_pair: 1
+2024-05-03 04:42:32,847:INFO:   <<< negative_weighting: 1
+2024-05-03 04:42:32,847:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:42:32,847:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:42:32,847:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:42:32,847:INFO:   <<< rank: 0
+2024-05-03 04:42:32,847:INFO:   <<< resume_model: None
+2024-05-03 04:42:32,848:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:42:32,848:INFO:   <<< seed: 42
+2024-05-03 04:42:32,848:INFO:   <<< sim_header: meanP
+2024-05-03 04:42:32,848:INFO:   <<< slice_framepos: 2
+2024-05-03 04:42:32,848:INFO:   <<< task_type: retrieval
+2024-05-03 04:42:32,848:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:42:32,848:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:42:32,848:INFO:   <<< train_frame_order: 0
+2024-05-03 04:42:32,848:INFO:   <<< use_mil: False
+2024-05-03 04:42:32,848:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:42:32,848:INFO:   <<< video_dim: 1024
+2024-05-03 04:42:32,848:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:42:32,848:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:42:32,848:INFO:   <<< world_size: 1
+2024-05-03 04:42:32,848:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:42:33,068:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:42:33,526:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:42:33,526:WARNING: Test retrieval by loose type.
+2024-05-03 04:42:33,527:WARNING: 	 embed_dim: 512
+2024-05-03 04:42:33,527:WARNING: 	 image_resolution: 224
+2024-05-03 04:42:33,527:WARNING: 	 vision_layers: 12
+2024-05-03 04:42:33,527:WARNING: 	 vision_width: 768
+2024-05-03 04:42:33,527:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:42:33,528:WARNING: 	 context_length: 77
+2024-05-03 04:42:33,528:WARNING: 	 vocab_size: 49408
+2024-05-03 04:42:33,528:WARNING: 	 transformer_width: 512
+2024-05-03 04:42:33,528:WARNING: 	 transformer_heads: 8
+2024-05-03 04:42:33,528:WARNING: 	 transformer_layers: 12
+2024-05-03 04:42:33,528:WARNING: 		 linear_patch: 2d
+2024-05-03 04:42:33,528:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:42:34,509:WARNING: 	 sim_header: meanP
+2024-05-03 04:42:40,572:INFO: ***** Running test *****
+2024-05-03 04:42:40,572:INFO:   Num examples = 29
+2024-05-03 04:42:40,572:INFO:   Batch size = 16
+2024-05-03 04:42:40,572:INFO:   Num steps = 2
+2024-05-03 04:42:40,572:INFO: ***** Running val *****
+2024-05-03 04:42:40,572:INFO:   Num examples = 29
+2024-05-03 04:45:45,147:INFO: Effective parameters:
+2024-05-03 04:45:45,147:INFO:   <<< batch_size: 16
+2024-05-03 04:45:45,147:INFO:   <<< batch_size_val: 16
+2024-05-03 04:45:45,147:INFO:   <<< cache_dir: 
+2024-05-03 04:45:45,147:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:45:45,147:INFO:   <<< cross_model: cross-base
+2024-05-03 04:45:45,147:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:45:45,147:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:45:45,148:INFO:   <<< datatype: msrvtt
+2024-05-03 04:45:45,148:INFO:   <<< do_eval: True
+2024-05-03 04:45:45,148:INFO:   <<< do_lower_case: False
+2024-05-03 04:45:45,148:INFO:   <<< do_pretrain: False
+2024-05-03 04:45:45,148:INFO:   <<< do_train: False
+2024-05-03 04:45:45,148:INFO:   <<< epochs: 2
+2024-05-03 04:45:45,148:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:45:45,148:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:45:45,148:INFO:   <<< feature_framerate: 1
+2024-05-03 04:45:45,148:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:45:45,148:INFO:   <<< fp16: False
+2024-05-03 04:45:45,148:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:45:45,148:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:45:45,148:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:45:45,148:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:45:45,149:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:45:45,149:INFO:   <<< linear_patch: 2d
+2024-05-03 04:45:45,149:INFO:   <<< local_rank: 0
+2024-05-03 04:45:45,149:INFO:   <<< loose_type: True
+2024-05-03 04:45:45,149:INFO:   <<< lr: 0.0001
+2024-05-03 04:45:45,149:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:45:45,149:INFO:   <<< margin: 0.1
+2024-05-03 04:45:45,149:INFO:   <<< max_frames: 12
+2024-05-03 04:45:45,149:INFO:   <<< max_words: 32
+2024-05-03 04:45:45,149:INFO:   <<< n_display: 100
+2024-05-03 04:45:45,149:INFO:   <<< n_gpu: 1
+2024-05-03 04:45:45,149:INFO:   <<< n_pair: 1
+2024-05-03 04:45:45,149:INFO:   <<< negative_weighting: 1
+2024-05-03 04:45:45,150:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:45:45,150:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:45:45,150:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:45:45,150:INFO:   <<< rank: 0
+2024-05-03 04:45:45,150:INFO:   <<< resume_model: None
+2024-05-03 04:45:45,150:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:45:45,150:INFO:   <<< seed: 42
+2024-05-03 04:45:45,150:INFO:   <<< sim_header: meanP
+2024-05-03 04:45:45,150:INFO:   <<< slice_framepos: 2
+2024-05-03 04:45:45,150:INFO:   <<< task_type: retrieval
+2024-05-03 04:45:45,150:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:45:45,150:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:45:45,150:INFO:   <<< train_frame_order: 0
+2024-05-03 04:45:45,150:INFO:   <<< use_mil: False
+2024-05-03 04:45:45,150:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:45:45,151:INFO:   <<< video_dim: 1024
+2024-05-03 04:45:45,151:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:45:45,151:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:45:45,151:INFO:   <<< world_size: 1
+2024-05-03 04:45:45,151:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:45:45,370:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:45:45,833:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:45:45,833:WARNING: Test retrieval by loose type.
+2024-05-03 04:45:45,834:WARNING: 	 embed_dim: 512
+2024-05-03 04:45:45,834:WARNING: 	 image_resolution: 224
+2024-05-03 04:45:45,834:WARNING: 	 vision_layers: 12
+2024-05-03 04:45:45,834:WARNING: 	 vision_width: 768
+2024-05-03 04:45:45,834:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:45:45,834:WARNING: 	 context_length: 77
+2024-05-03 04:45:45,834:WARNING: 	 vocab_size: 49408
+2024-05-03 04:45:45,834:WARNING: 	 transformer_width: 512
+2024-05-03 04:45:45,834:WARNING: 	 transformer_heads: 8
+2024-05-03 04:45:45,834:WARNING: 	 transformer_layers: 12
+2024-05-03 04:45:45,834:WARNING: 		 linear_patch: 2d
+2024-05-03 04:45:45,835:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:45:46,815:WARNING: 	 sim_header: meanP
+2024-05-03 04:45:52,898:INFO: ***** Running test *****
+2024-05-03 04:45:52,898:INFO:   Num examples = 29
+2024-05-03 04:45:52,899:INFO:   Batch size = 16
+2024-05-03 04:45:52,899:INFO:   Num steps = 2
+2024-05-03 04:45:52,899:INFO: ***** Running val *****
+2024-05-03 04:45:52,899:INFO:   Num examples = 29
+2024-05-03 04:56:47,427:INFO: Effective parameters:
+2024-05-03 04:56:47,427:INFO:   <<< batch_size: 1
+2024-05-03 04:56:47,427:INFO:   <<< batch_size_val: 16
+2024-05-03 04:56:47,427:INFO:   <<< cache_dir: 
+2024-05-03 04:56:47,427:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:56:47,427:INFO:   <<< cross_model: cross-base
+2024-05-03 04:56:47,427:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:56:47,427:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:56:47,427:INFO:   <<< datatype: msrvtt
+2024-05-03 04:56:47,427:INFO:   <<< do_eval: True
+2024-05-03 04:56:47,427:INFO:   <<< do_lower_case: False
+2024-05-03 04:56:47,427:INFO:   <<< do_pretrain: False
+2024-05-03 04:56:47,427:INFO:   <<< do_train: False
+2024-05-03 04:56:47,428:INFO:   <<< epochs: 2
+2024-05-03 04:56:47,428:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:56:47,428:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:56:47,428:INFO:   <<< feature_framerate: 1
+2024-05-03 04:56:47,428:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:56:47,428:INFO:   <<< fp16: False
+2024-05-03 04:56:47,428:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:56:47,428:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:56:47,428:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:56:47,428:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:56:47,428:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:56:47,428:INFO:   <<< linear_patch: 2d
+2024-05-03 04:56:47,428:INFO:   <<< local_rank: 0
+2024-05-03 04:56:47,428:INFO:   <<< loose_type: True
+2024-05-03 04:56:47,428:INFO:   <<< lr: 0.0001
+2024-05-03 04:56:47,428:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:56:47,429:INFO:   <<< margin: 0.1
+2024-05-03 04:56:47,429:INFO:   <<< max_frames: 90
+2024-05-03 04:56:47,429:INFO:   <<< max_words: 32
+2024-05-03 04:56:47,429:INFO:   <<< n_display: 100
+2024-05-03 04:56:47,429:INFO:   <<< n_gpu: 1
+2024-05-03 04:56:47,429:INFO:   <<< n_pair: 1
+2024-05-03 04:56:47,429:INFO:   <<< negative_weighting: 1
+2024-05-03 04:56:47,429:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:56:47,429:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:56:47,429:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:56:47,429:INFO:   <<< rank: 0
+2024-05-03 04:56:47,429:INFO:   <<< resume_model: None
+2024-05-03 04:56:47,429:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:56:47,429:INFO:   <<< seed: 42
+2024-05-03 04:56:47,429:INFO:   <<< sim_header: meanP
+2024-05-03 04:56:47,429:INFO:   <<< slice_framepos: 2
+2024-05-03 04:56:47,429:INFO:   <<< task_type: retrieval
+2024-05-03 04:56:47,430:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:56:47,430:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:56:47,430:INFO:   <<< train_frame_order: 0
+2024-05-03 04:56:47,430:INFO:   <<< use_mil: False
+2024-05-03 04:56:47,430:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:56:47,430:INFO:   <<< video_dim: 1024
+2024-05-03 04:56:47,430:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:56:47,430:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:56:47,430:INFO:   <<< world_size: 1
+2024-05-03 04:56:47,430:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:56:47,562:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:56:48,040:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:56:48,040:WARNING: Test retrieval by loose type.
+2024-05-03 04:56:48,041:WARNING: 	 embed_dim: 512
+2024-05-03 04:56:48,041:WARNING: 	 image_resolution: 224
+2024-05-03 04:56:48,041:WARNING: 	 vision_layers: 12
+2024-05-03 04:56:48,041:WARNING: 	 vision_width: 768
+2024-05-03 04:56:48,041:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:56:48,041:WARNING: 	 context_length: 77
+2024-05-03 04:56:48,041:WARNING: 	 vocab_size: 49408
+2024-05-03 04:56:48,041:WARNING: 	 transformer_width: 512
+2024-05-03 04:56:48,041:WARNING: 	 transformer_heads: 8
+2024-05-03 04:56:48,042:WARNING: 	 transformer_layers: 12
+2024-05-03 04:56:48,042:WARNING: 		 linear_patch: 2d
+2024-05-03 04:56:48,042:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:56:49,031:WARNING: 	 sim_header: meanP
+2024-05-03 04:57:42,571:INFO: Effective parameters:
+2024-05-03 04:57:42,572:INFO:   <<< batch_size: 16
+2024-05-03 04:57:42,572:INFO:   <<< batch_size_val: 16
+2024-05-03 04:57:42,572:INFO:   <<< cache_dir: 
+2024-05-03 04:57:42,572:INFO:   <<< coef_lr: 0.001
+2024-05-03 04:57:42,572:INFO:   <<< cross_model: cross-base
+2024-05-03 04:57:42,572:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 04:57:42,572:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 04:57:42,572:INFO:   <<< datatype: msrvtt
+2024-05-03 04:57:42,572:INFO:   <<< do_eval: True
+2024-05-03 04:57:42,572:INFO:   <<< do_lower_case: False
+2024-05-03 04:57:42,572:INFO:   <<< do_pretrain: False
+2024-05-03 04:57:42,572:INFO:   <<< do_train: False
+2024-05-03 04:57:42,572:INFO:   <<< epochs: 2
+2024-05-03 04:57:42,573:INFO:   <<< eval_frame_order: 0
+2024-05-03 04:57:42,573:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 04:57:42,573:INFO:   <<< feature_framerate: 1
+2024-05-03 04:57:42,573:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 04:57:42,573:INFO:   <<< fp16: False
+2024-05-03 04:57:42,573:INFO:   <<< fp16_opt_level: O1
+2024-05-03 04:57:42,573:INFO:   <<< freeze_layer_num: 0
+2024-05-03 04:57:42,573:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 04:57:42,573:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 04:57:42,573:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 04:57:42,573:INFO:   <<< linear_patch: 2d
+2024-05-03 04:57:42,573:INFO:   <<< local_rank: 0
+2024-05-03 04:57:42,573:INFO:   <<< loose_type: True
+2024-05-03 04:57:42,574:INFO:   <<< lr: 0.0001
+2024-05-03 04:57:42,574:INFO:   <<< lr_decay: 0.9
+2024-05-03 04:57:42,574:INFO:   <<< margin: 0.1
+2024-05-03 04:57:42,574:INFO:   <<< max_frames: 12
+2024-05-03 04:57:42,574:INFO:   <<< max_words: 32
+2024-05-03 04:57:42,574:INFO:   <<< n_display: 100
+2024-05-03 04:57:42,574:INFO:   <<< n_gpu: 1
+2024-05-03 04:57:42,574:INFO:   <<< n_pair: 1
+2024-05-03 04:57:42,574:INFO:   <<< negative_weighting: 1
+2024-05-03 04:57:42,574:INFO:   <<< num_thread_reader: 0
+2024-05-03 04:57:42,574:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 04:57:42,574:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 04:57:42,574:INFO:   <<< rank: 0
+2024-05-03 04:57:42,574:INFO:   <<< resume_model: None
+2024-05-03 04:57:42,575:INFO:   <<< sampled_use_mil: False
+2024-05-03 04:57:42,575:INFO:   <<< seed: 42
+2024-05-03 04:57:42,575:INFO:   <<< sim_header: meanP
+2024-05-03 04:57:42,575:INFO:   <<< slice_framepos: 2
+2024-05-03 04:57:42,575:INFO:   <<< task_type: retrieval
+2024-05-03 04:57:42,575:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 04:57:42,575:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 04:57:42,575:INFO:   <<< train_frame_order: 0
+2024-05-03 04:57:42,575:INFO:   <<< use_mil: False
+2024-05-03 04:57:42,575:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 04:57:42,575:INFO:   <<< video_dim: 1024
+2024-05-03 04:57:42,575:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 04:57:42,575:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 04:57:42,575:INFO:   <<< world_size: 1
+2024-05-03 04:57:42,576:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 04:57:42,791:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 04:57:43,248:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 04:57:43,248:WARNING: Test retrieval by loose type.
+2024-05-03 04:57:43,249:WARNING: 	 embed_dim: 512
+2024-05-03 04:57:43,249:WARNING: 	 image_resolution: 224
+2024-05-03 04:57:43,249:WARNING: 	 vision_layers: 12
+2024-05-03 04:57:43,249:WARNING: 	 vision_width: 768
+2024-05-03 04:57:43,249:WARNING: 	 vision_patch_size: 32
+2024-05-03 04:57:43,249:WARNING: 	 context_length: 77
+2024-05-03 04:57:43,249:WARNING: 	 vocab_size: 49408
+2024-05-03 04:57:43,249:WARNING: 	 transformer_width: 512
+2024-05-03 04:57:43,250:WARNING: 	 transformer_heads: 8
+2024-05-03 04:57:43,250:WARNING: 	 transformer_layers: 12
+2024-05-03 04:57:43,250:WARNING: 		 linear_patch: 2d
+2024-05-03 04:57:43,250:WARNING: 	 cut_top_layer: 0
+2024-05-03 04:57:44,220:WARNING: 	 sim_header: meanP
+2024-05-03 04:57:50,295:INFO: ***** Running test *****
+2024-05-03 04:57:50,296:INFO:   Num examples = 29
+2024-05-03 04:57:50,296:INFO:   Batch size = 16
+2024-05-03 04:57:50,296:INFO:   Num steps = 2
+2024-05-03 04:57:50,296:INFO: ***** Running val *****
+2024-05-03 04:57:50,296:INFO:   Num examples = 29
+2024-05-03 05:01:11,366:INFO: Effective parameters:
+2024-05-03 05:01:11,367:INFO:   <<< batch_size: 1
+2024-05-03 05:01:11,367:INFO:   <<< batch_size_val: 16
+2024-05-03 05:01:11,367:INFO:   <<< cache_dir: 
+2024-05-03 05:01:11,367:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:01:11,367:INFO:   <<< cross_model: cross-base
+2024-05-03 05:01:11,367:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:01:11,367:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:01:11,367:INFO:   <<< datatype: msrvtt
+2024-05-03 05:01:11,367:INFO:   <<< do_eval: True
+2024-05-03 05:01:11,367:INFO:   <<< do_lower_case: False
+2024-05-03 05:01:11,367:INFO:   <<< do_pretrain: False
+2024-05-03 05:01:11,367:INFO:   <<< do_train: False
+2024-05-03 05:01:11,367:INFO:   <<< epochs: 2
+2024-05-03 05:01:11,367:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:01:11,368:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:01:11,368:INFO:   <<< feature_framerate: 1
+2024-05-03 05:01:11,368:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:01:11,368:INFO:   <<< fp16: False
+2024-05-03 05:01:11,368:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:01:11,368:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:01:11,368:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:01:11,368:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:01:11,368:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:01:11,368:INFO:   <<< linear_patch: 2d
+2024-05-03 05:01:11,368:INFO:   <<< local_rank: 0
+2024-05-03 05:01:11,368:INFO:   <<< loose_type: True
+2024-05-03 05:01:11,368:INFO:   <<< lr: 0.0001
+2024-05-03 05:01:11,368:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:01:11,368:INFO:   <<< margin: 0.1
+2024-05-03 05:01:11,368:INFO:   <<< max_frames: 90
+2024-05-03 05:01:11,368:INFO:   <<< max_words: 32
+2024-05-03 05:01:11,369:INFO:   <<< n_display: 100
+2024-05-03 05:01:11,369:INFO:   <<< n_gpu: 1
+2024-05-03 05:01:11,369:INFO:   <<< n_pair: 1
+2024-05-03 05:01:11,369:INFO:   <<< negative_weighting: 1
+2024-05-03 05:01:11,369:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:01:11,369:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:01:11,369:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:01:11,369:INFO:   <<< rank: 0
+2024-05-03 05:01:11,369:INFO:   <<< resume_model: None
+2024-05-03 05:01:11,369:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:01:11,369:INFO:   <<< seed: 42
+2024-05-03 05:01:11,369:INFO:   <<< sim_header: meanP
+2024-05-03 05:01:11,369:INFO:   <<< slice_framepos: 2
+2024-05-03 05:01:11,369:INFO:   <<< task_type: retrieval
+2024-05-03 05:01:11,369:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:01:11,369:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:01:11,369:INFO:   <<< train_frame_order: 0
+2024-05-03 05:01:11,370:INFO:   <<< use_mil: False
+2024-05-03 05:01:11,370:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:01:11,370:INFO:   <<< video_dim: 1024
+2024-05-03 05:01:11,370:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:01:11,370:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:01:11,370:INFO:   <<< world_size: 1
+2024-05-03 05:01:11,370:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:01:11,610:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:01:12,161:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:01:12,161:WARNING: Test retrieval by loose type.
+2024-05-03 05:01:12,162:WARNING: 	 embed_dim: 512
+2024-05-03 05:01:12,162:WARNING: 	 image_resolution: 224
+2024-05-03 05:01:12,162:WARNING: 	 vision_layers: 12
+2024-05-03 05:01:12,162:WARNING: 	 vision_width: 768
+2024-05-03 05:01:12,162:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:01:12,162:WARNING: 	 context_length: 77
+2024-05-03 05:01:12,162:WARNING: 	 vocab_size: 49408
+2024-05-03 05:01:12,162:WARNING: 	 transformer_width: 512
+2024-05-03 05:01:12,162:WARNING: 	 transformer_heads: 8
+2024-05-03 05:01:12,163:WARNING: 	 transformer_layers: 12
+2024-05-03 05:01:12,163:WARNING: 		 linear_patch: 2d
+2024-05-03 05:01:12,163:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:01:13,195:WARNING: 	 sim_header: meanP
+2024-05-03 05:01:30,863:INFO: Effective parameters:
+2024-05-03 05:01:30,863:INFO:   <<< batch_size: 1
+2024-05-03 05:01:30,864:INFO:   <<< batch_size_val: 16
+2024-05-03 05:01:30,864:INFO:   <<< cache_dir: 
+2024-05-03 05:01:30,864:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:01:30,864:INFO:   <<< cross_model: cross-base
+2024-05-03 05:01:30,864:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:01:30,864:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:01:30,864:INFO:   <<< datatype: msrvtt
+2024-05-03 05:01:30,864:INFO:   <<< do_eval: True
+2024-05-03 05:01:30,864:INFO:   <<< do_lower_case: False
+2024-05-03 05:01:30,864:INFO:   <<< do_pretrain: False
+2024-05-03 05:01:30,864:INFO:   <<< do_train: False
+2024-05-03 05:01:30,864:INFO:   <<< epochs: 2
+2024-05-03 05:01:30,864:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:01:30,864:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:01:30,864:INFO:   <<< feature_framerate: 1
+2024-05-03 05:01:30,864:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:01:30,864:INFO:   <<< fp16: False
+2024-05-03 05:01:30,865:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:01:30,865:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:01:30,865:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:01:30,865:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:01:30,865:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:01:30,865:INFO:   <<< linear_patch: 2d
+2024-05-03 05:01:30,865:INFO:   <<< local_rank: 0
+2024-05-03 05:01:30,865:INFO:   <<< loose_type: True
+2024-05-03 05:01:30,865:INFO:   <<< lr: 0.0001
+2024-05-03 05:01:30,865:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:01:30,865:INFO:   <<< margin: 0.1
+2024-05-03 05:01:30,865:INFO:   <<< max_frames: 90
+2024-05-03 05:01:30,865:INFO:   <<< max_words: 32
+2024-05-03 05:01:30,865:INFO:   <<< n_display: 100
+2024-05-03 05:01:30,865:INFO:   <<< n_gpu: 1
+2024-05-03 05:01:30,865:INFO:   <<< n_pair: 1
+2024-05-03 05:01:30,865:INFO:   <<< negative_weighting: 1
+2024-05-03 05:01:30,866:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:01:30,866:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:01:30,866:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:01:30,866:INFO:   <<< rank: 0
+2024-05-03 05:01:30,866:INFO:   <<< resume_model: None
+2024-05-03 05:01:30,866:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:01:30,866:INFO:   <<< seed: 42
+2024-05-03 05:01:30,866:INFO:   <<< sim_header: meanP
+2024-05-03 05:01:30,866:INFO:   <<< slice_framepos: 2
+2024-05-03 05:01:30,866:INFO:   <<< task_type: retrieval
+2024-05-03 05:01:30,866:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:01:30,866:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:01:30,866:INFO:   <<< train_frame_order: 0
+2024-05-03 05:01:30,866:INFO:   <<< use_mil: False
+2024-05-03 05:01:30,866:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:01:30,866:INFO:   <<< video_dim: 1024
+2024-05-03 05:01:30,866:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:01:30,866:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:01:30,867:INFO:   <<< world_size: 1
+2024-05-03 05:01:30,867:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:01:31,022:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:01:31,521:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:01:31,521:WARNING: Test retrieval by loose type.
+2024-05-03 05:01:31,522:WARNING: 	 embed_dim: 512
+2024-05-03 05:01:31,522:WARNING: 	 image_resolution: 224
+2024-05-03 05:01:31,522:WARNING: 	 vision_layers: 12
+2024-05-03 05:01:31,522:WARNING: 	 vision_width: 768
+2024-05-03 05:01:31,522:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:01:31,522:WARNING: 	 context_length: 77
+2024-05-03 05:01:31,522:WARNING: 	 vocab_size: 49408
+2024-05-03 05:01:31,522:WARNING: 	 transformer_width: 512
+2024-05-03 05:01:31,522:WARNING: 	 transformer_heads: 8
+2024-05-03 05:01:31,522:WARNING: 	 transformer_layers: 12
+2024-05-03 05:01:31,522:WARNING: 		 linear_patch: 2d
+2024-05-03 05:01:31,522:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:01:32,501:WARNING: 	 sim_header: meanP
+2024-05-03 05:08:52,799:INFO: Effective parameters:
+2024-05-03 05:08:52,799:INFO:   <<< batch_size: 1
+2024-05-03 05:08:52,799:INFO:   <<< batch_size_val: 16
+2024-05-03 05:08:52,799:INFO:   <<< cache_dir: 
+2024-05-03 05:08:52,799:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:08:52,799:INFO:   <<< cross_model: cross-base
+2024-05-03 05:08:52,799:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:08:52,800:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:08:52,800:INFO:   <<< datatype: msrvtt
+2024-05-03 05:08:52,800:INFO:   <<< do_eval: True
+2024-05-03 05:08:52,800:INFO:   <<< do_lower_case: False
+2024-05-03 05:08:52,800:INFO:   <<< do_pretrain: False
+2024-05-03 05:08:52,800:INFO:   <<< do_train: False
+2024-05-03 05:08:52,800:INFO:   <<< epochs: 2
+2024-05-03 05:08:52,800:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:08:52,800:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:08:52,800:INFO:   <<< feature_framerate: 1
+2024-05-03 05:08:52,800:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:08:52,800:INFO:   <<< fp16: False
+2024-05-03 05:08:52,800:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:08:52,800:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:08:52,800:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:08:52,800:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:08:52,800:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:08:52,801:INFO:   <<< linear_patch: 2d
+2024-05-03 05:08:52,801:INFO:   <<< local_rank: 0
+2024-05-03 05:08:52,801:INFO:   <<< loose_type: True
+2024-05-03 05:08:52,801:INFO:   <<< lr: 0.0001
+2024-05-03 05:08:52,801:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:08:52,801:INFO:   <<< margin: 0.1
+2024-05-03 05:08:52,801:INFO:   <<< max_frames: 90
+2024-05-03 05:08:52,801:INFO:   <<< max_words: 32
+2024-05-03 05:08:52,801:INFO:   <<< n_display: 100
+2024-05-03 05:08:52,801:INFO:   <<< n_gpu: 1
+2024-05-03 05:08:52,801:INFO:   <<< n_pair: 1
+2024-05-03 05:08:52,801:INFO:   <<< negative_weighting: 1
+2024-05-03 05:08:52,801:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:08:52,801:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:08:52,801:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:08:52,801:INFO:   <<< rank: 0
+2024-05-03 05:08:52,801:INFO:   <<< resume_model: None
+2024-05-03 05:08:52,802:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:08:52,802:INFO:   <<< seed: 42
+2024-05-03 05:08:52,802:INFO:   <<< sim_header: meanP
+2024-05-03 05:08:52,802:INFO:   <<< slice_framepos: 2
+2024-05-03 05:08:52,802:INFO:   <<< task_type: retrieval
+2024-05-03 05:08:52,802:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:08:52,802:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:08:52,802:INFO:   <<< train_frame_order: 0
+2024-05-03 05:08:52,802:INFO:   <<< use_mil: False
+2024-05-03 05:08:52,802:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:08:52,802:INFO:   <<< video_dim: 1024
+2024-05-03 05:08:52,802:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:08:52,802:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:08:52,802:INFO:   <<< world_size: 1
+2024-05-03 05:08:52,802:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:08:52,946:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:08:53,434:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:08:53,434:WARNING: Test retrieval by loose type.
+2024-05-03 05:08:53,435:WARNING: 	 embed_dim: 512
+2024-05-03 05:08:53,435:WARNING: 	 image_resolution: 224
+2024-05-03 05:08:53,435:WARNING: 	 vision_layers: 12
+2024-05-03 05:08:53,435:WARNING: 	 vision_width: 768
+2024-05-03 05:08:53,435:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:08:53,435:WARNING: 	 context_length: 77
+2024-05-03 05:08:53,435:WARNING: 	 vocab_size: 49408
+2024-05-03 05:08:53,435:WARNING: 	 transformer_width: 512
+2024-05-03 05:08:53,435:WARNING: 	 transformer_heads: 8
+2024-05-03 05:08:53,435:WARNING: 	 transformer_layers: 12
+2024-05-03 05:08:53,435:WARNING: 		 linear_patch: 2d
+2024-05-03 05:08:53,436:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:08:54,427:WARNING: 	 sim_header: meanP
+2024-05-03 05:09:11,816:INFO: Effective parameters:
+2024-05-03 05:09:11,816:INFO:   <<< batch_size: 1
+2024-05-03 05:09:11,816:INFO:   <<< batch_size_val: 16
+2024-05-03 05:09:11,816:INFO:   <<< cache_dir: 
+2024-05-03 05:09:11,816:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:09:11,817:INFO:   <<< cross_model: cross-base
+2024-05-03 05:09:11,817:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:09:11,817:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:09:11,817:INFO:   <<< datatype: msrvtt
+2024-05-03 05:09:11,817:INFO:   <<< do_eval: True
+2024-05-03 05:09:11,817:INFO:   <<< do_lower_case: False
+2024-05-03 05:09:11,817:INFO:   <<< do_pretrain: False
+2024-05-03 05:09:11,817:INFO:   <<< do_train: False
+2024-05-03 05:09:11,817:INFO:   <<< epochs: 2
+2024-05-03 05:09:11,817:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:09:11,817:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:09:11,817:INFO:   <<< feature_framerate: 1
+2024-05-03 05:09:11,817:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:09:11,817:INFO:   <<< fp16: False
+2024-05-03 05:09:11,817:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:09:11,817:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:09:11,817:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:09:11,818:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:09:11,818:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:09:11,818:INFO:   <<< linear_patch: 2d
+2024-05-03 05:09:11,818:INFO:   <<< local_rank: 0
+2024-05-03 05:09:11,818:INFO:   <<< loose_type: True
+2024-05-03 05:09:11,818:INFO:   <<< lr: 0.0001
+2024-05-03 05:09:11,818:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:09:11,818:INFO:   <<< margin: 0.1
+2024-05-03 05:09:11,818:INFO:   <<< max_frames: 90
+2024-05-03 05:09:11,818:INFO:   <<< max_words: 32
+2024-05-03 05:09:11,818:INFO:   <<< n_display: 100
+2024-05-03 05:09:11,818:INFO:   <<< n_gpu: 1
+2024-05-03 05:09:11,818:INFO:   <<< n_pair: 1
+2024-05-03 05:09:11,818:INFO:   <<< negative_weighting: 1
+2024-05-03 05:09:11,818:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:09:11,818:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:09:11,818:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:09:11,819:INFO:   <<< rank: 0
+2024-05-03 05:09:11,819:INFO:   <<< resume_model: None
+2024-05-03 05:09:11,819:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:09:11,819:INFO:   <<< seed: 42
+2024-05-03 05:09:11,819:INFO:   <<< sim_header: meanP
+2024-05-03 05:09:11,819:INFO:   <<< slice_framepos: 2
+2024-05-03 05:09:11,819:INFO:   <<< task_type: retrieval
+2024-05-03 05:09:11,819:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:09:11,819:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:09:11,819:INFO:   <<< train_frame_order: 0
+2024-05-03 05:09:11,819:INFO:   <<< use_mil: False
+2024-05-03 05:09:11,819:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:09:11,819:INFO:   <<< video_dim: 1024
+2024-05-03 05:09:11,819:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:09:11,819:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:09:11,819:INFO:   <<< world_size: 1
+2024-05-03 05:09:11,820:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:09:11,960:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:09:12,449:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:09:12,449:WARNING: Test retrieval by loose type.
+2024-05-03 05:09:12,450:WARNING: 	 embed_dim: 512
+2024-05-03 05:09:12,450:WARNING: 	 image_resolution: 224
+2024-05-03 05:09:12,450:WARNING: 	 vision_layers: 12
+2024-05-03 05:09:12,450:WARNING: 	 vision_width: 768
+2024-05-03 05:09:12,450:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:09:12,450:WARNING: 	 context_length: 77
+2024-05-03 05:09:12,450:WARNING: 	 vocab_size: 49408
+2024-05-03 05:09:12,450:WARNING: 	 transformer_width: 512
+2024-05-03 05:09:12,450:WARNING: 	 transformer_heads: 8
+2024-05-03 05:09:12,450:WARNING: 	 transformer_layers: 12
+2024-05-03 05:09:12,450:WARNING: 		 linear_patch: 2d
+2024-05-03 05:09:12,450:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:09:13,451:WARNING: 	 sim_header: meanP
+2024-05-03 05:10:01,668:INFO: Effective parameters:
+2024-05-03 05:10:01,669:INFO:   <<< batch_size: 1
+2024-05-03 05:10:01,669:INFO:   <<< batch_size_val: 16
+2024-05-03 05:10:01,669:INFO:   <<< cache_dir: 
+2024-05-03 05:10:01,669:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:10:01,669:INFO:   <<< cross_model: cross-base
+2024-05-03 05:10:01,669:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:10:01,669:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:10:01,669:INFO:   <<< datatype: msrvtt
+2024-05-03 05:10:01,669:INFO:   <<< do_eval: True
+2024-05-03 05:10:01,669:INFO:   <<< do_lower_case: False
+2024-05-03 05:10:01,669:INFO:   <<< do_pretrain: False
+2024-05-03 05:10:01,669:INFO:   <<< do_train: False
+2024-05-03 05:10:01,669:INFO:   <<< epochs: 2
+2024-05-03 05:10:01,669:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:10:01,669:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:10:01,669:INFO:   <<< feature_framerate: 1
+2024-05-03 05:10:01,670:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:10:01,670:INFO:   <<< fp16: False
+2024-05-03 05:10:01,670:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:10:01,670:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:10:01,670:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:10:01,670:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:10:01,670:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:10:01,670:INFO:   <<< linear_patch: 2d
+2024-05-03 05:10:01,670:INFO:   <<< local_rank: 0
+2024-05-03 05:10:01,670:INFO:   <<< loose_type: True
+2024-05-03 05:10:01,670:INFO:   <<< lr: 0.0001
+2024-05-03 05:10:01,670:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:10:01,670:INFO:   <<< margin: 0.1
+2024-05-03 05:10:01,670:INFO:   <<< max_frames: 90
+2024-05-03 05:10:01,670:INFO:   <<< max_words: 32
+2024-05-03 05:10:01,670:INFO:   <<< n_display: 100
+2024-05-03 05:10:01,670:INFO:   <<< n_gpu: 1
+2024-05-03 05:10:01,671:INFO:   <<< n_pair: 1
+2024-05-03 05:10:01,671:INFO:   <<< negative_weighting: 1
+2024-05-03 05:10:01,671:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:10:01,671:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:10:01,671:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:10:01,671:INFO:   <<< rank: 0
+2024-05-03 05:10:01,671:INFO:   <<< resume_model: None
+2024-05-03 05:10:01,671:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:10:01,671:INFO:   <<< seed: 42
+2024-05-03 05:10:01,671:INFO:   <<< sim_header: meanP
+2024-05-03 05:10:01,671:INFO:   <<< slice_framepos: 2
+2024-05-03 05:10:01,671:INFO:   <<< task_type: retrieval
+2024-05-03 05:10:01,671:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:10:01,671:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:10:01,671:INFO:   <<< train_frame_order: 0
+2024-05-03 05:10:01,671:INFO:   <<< use_mil: False
+2024-05-03 05:10:01,671:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:10:01,672:INFO:   <<< video_dim: 1024
+2024-05-03 05:10:01,672:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:10:01,672:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:10:01,672:INFO:   <<< world_size: 1
+2024-05-03 05:10:01,672:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:10:01,813:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:10:02,302:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:10:02,302:WARNING: Test retrieval by loose type.
+2024-05-03 05:10:02,303:WARNING: 	 embed_dim: 512
+2024-05-03 05:10:02,303:WARNING: 	 image_resolution: 224
+2024-05-03 05:10:02,303:WARNING: 	 vision_layers: 12
+2024-05-03 05:10:02,303:WARNING: 	 vision_width: 768
+2024-05-03 05:10:02,303:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:10:02,303:WARNING: 	 context_length: 77
+2024-05-03 05:10:02,303:WARNING: 	 vocab_size: 49408
+2024-05-03 05:10:02,303:WARNING: 	 transformer_width: 512
+2024-05-03 05:10:02,303:WARNING: 	 transformer_heads: 8
+2024-05-03 05:10:02,304:WARNING: 	 transformer_layers: 12
+2024-05-03 05:10:02,304:WARNING: 		 linear_patch: 2d
+2024-05-03 05:10:02,304:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:10:03,307:WARNING: 	 sim_header: meanP
+2024-05-03 05:29:37,861:INFO: Effective parameters:
+2024-05-03 05:29:37,861:INFO:   <<< batch_size: 1
+2024-05-03 05:29:37,861:INFO:   <<< batch_size_val: 16
+2024-05-03 05:29:37,861:INFO:   <<< cache_dir: 
+2024-05-03 05:29:37,861:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:29:37,861:INFO:   <<< cross_model: cross-base
+2024-05-03 05:29:37,861:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:29:37,861:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:29:37,861:INFO:   <<< datatype: msrvtt
+2024-05-03 05:29:37,861:INFO:   <<< do_eval: True
+2024-05-03 05:29:37,861:INFO:   <<< do_lower_case: False
+2024-05-03 05:29:37,862:INFO:   <<< do_pretrain: False
+2024-05-03 05:29:37,862:INFO:   <<< do_train: False
+2024-05-03 05:29:37,862:INFO:   <<< epochs: 2
+2024-05-03 05:29:37,862:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:29:37,862:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:29:37,862:INFO:   <<< feature_framerate: 1
+2024-05-03 05:29:37,862:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:29:37,862:INFO:   <<< fp16: False
+2024-05-03 05:29:37,862:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:29:37,862:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:29:37,862:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:29:37,862:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:29:37,862:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:29:37,862:INFO:   <<< linear_patch: 2d
+2024-05-03 05:29:37,862:INFO:   <<< local_rank: 0
+2024-05-03 05:29:37,862:INFO:   <<< loose_type: True
+2024-05-03 05:29:37,862:INFO:   <<< lr: 0.0001
+2024-05-03 05:29:37,863:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:29:37,863:INFO:   <<< margin: 0.1
+2024-05-03 05:29:37,863:INFO:   <<< max_frames: 90
+2024-05-03 05:29:37,863:INFO:   <<< max_words: 32
+2024-05-03 05:29:37,863:INFO:   <<< n_display: 100
+2024-05-03 05:29:37,863:INFO:   <<< n_gpu: 1
+2024-05-03 05:29:37,863:INFO:   <<< n_pair: 1
+2024-05-03 05:29:37,863:INFO:   <<< negative_weighting: 1
+2024-05-03 05:29:37,863:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:29:37,863:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:29:37,863:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:29:37,863:INFO:   <<< rank: 0
+2024-05-03 05:29:37,863:INFO:   <<< resume_model: None
+2024-05-03 05:29:37,863:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:29:37,863:INFO:   <<< seed: 42
+2024-05-03 05:29:37,863:INFO:   <<< sim_header: meanP
+2024-05-03 05:29:37,863:INFO:   <<< slice_framepos: 2
+2024-05-03 05:29:37,864:INFO:   <<< task_type: retrieval
+2024-05-03 05:29:37,864:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:29:37,864:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:29:37,864:INFO:   <<< train_frame_order: 0
+2024-05-03 05:29:37,864:INFO:   <<< use_mil: False
+2024-05-03 05:29:37,864:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:29:37,864:INFO:   <<< video_dim: 1024
+2024-05-03 05:29:37,864:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:29:37,864:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:29:37,864:INFO:   <<< world_size: 1
+2024-05-03 05:29:37,864:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:29:38,002:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:29:38,487:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:29:38,487:WARNING: Test retrieval by loose type.
+2024-05-03 05:29:38,488:WARNING: 	 embed_dim: 512
+2024-05-03 05:29:38,488:WARNING: 	 image_resolution: 224
+2024-05-03 05:29:38,488:WARNING: 	 vision_layers: 12
+2024-05-03 05:29:38,488:WARNING: 	 vision_width: 768
+2024-05-03 05:29:38,488:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:29:38,488:WARNING: 	 context_length: 77
+2024-05-03 05:29:38,488:WARNING: 	 vocab_size: 49408
+2024-05-03 05:29:38,488:WARNING: 	 transformer_width: 512
+2024-05-03 05:29:38,488:WARNING: 	 transformer_heads: 8
+2024-05-03 05:29:38,488:WARNING: 	 transformer_layers: 12
+2024-05-03 05:29:38,488:WARNING: 		 linear_patch: 2d
+2024-05-03 05:29:38,488:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:29:39,479:WARNING: 	 sim_header: meanP
+2024-05-03 05:32:44,907:INFO: Effective parameters:
+2024-05-03 05:32:44,907:INFO:   <<< batch_size: 1
+2024-05-03 05:32:44,907:INFO:   <<< batch_size_val: 16
+2024-05-03 05:32:44,907:INFO:   <<< cache_dir: 
+2024-05-03 05:32:44,907:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:32:44,907:INFO:   <<< cross_model: cross-base
+2024-05-03 05:32:44,907:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:32:44,907:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:32:44,907:INFO:   <<< datatype: msrvtt
+2024-05-03 05:32:44,907:INFO:   <<< do_eval: True
+2024-05-03 05:32:44,907:INFO:   <<< do_lower_case: False
+2024-05-03 05:32:44,907:INFO:   <<< do_pretrain: False
+2024-05-03 05:32:44,908:INFO:   <<< do_train: False
+2024-05-03 05:32:44,908:INFO:   <<< epochs: 2
+2024-05-03 05:32:44,908:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:32:44,908:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:32:44,908:INFO:   <<< feature_framerate: 1
+2024-05-03 05:32:44,908:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:32:44,908:INFO:   <<< fp16: False
+2024-05-03 05:32:44,908:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:32:44,908:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:32:44,908:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:32:44,908:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:32:44,908:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:32:44,908:INFO:   <<< linear_patch: 2d
+2024-05-03 05:32:44,908:INFO:   <<< local_rank: 0
+2024-05-03 05:32:44,908:INFO:   <<< loose_type: True
+2024-05-03 05:32:44,908:INFO:   <<< lr: 0.0001
+2024-05-03 05:32:44,908:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:32:44,909:INFO:   <<< margin: 0.1
+2024-05-03 05:32:44,909:INFO:   <<< max_frames: 90
+2024-05-03 05:32:44,909:INFO:   <<< max_words: 32
+2024-05-03 05:32:44,909:INFO:   <<< n_display: 100
+2024-05-03 05:32:44,909:INFO:   <<< n_gpu: 1
+2024-05-03 05:32:44,909:INFO:   <<< n_pair: 1
+2024-05-03 05:32:44,909:INFO:   <<< negative_weighting: 1
+2024-05-03 05:32:44,909:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:32:44,909:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:32:44,909:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:32:44,909:INFO:   <<< rank: 0
+2024-05-03 05:32:44,909:INFO:   <<< resume_model: None
+2024-05-03 05:32:44,909:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:32:44,909:INFO:   <<< seed: 42
+2024-05-03 05:32:44,909:INFO:   <<< sim_header: meanP
+2024-05-03 05:32:44,909:INFO:   <<< slice_framepos: 2
+2024-05-03 05:32:44,909:INFO:   <<< task_type: retrieval
+2024-05-03 05:32:44,910:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:32:44,910:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:32:44,910:INFO:   <<< train_frame_order: 0
+2024-05-03 05:32:44,910:INFO:   <<< use_mil: False
+2024-05-03 05:32:44,910:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:32:44,910:INFO:   <<< video_dim: 1024
+2024-05-03 05:32:44,910:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:32:44,910:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:32:44,910:INFO:   <<< world_size: 1
+2024-05-03 05:32:44,910:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:32:45,049:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:32:45,528:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:32:45,528:WARNING: Test retrieval by loose type.
+2024-05-03 05:32:45,529:WARNING: 	 embed_dim: 512
+2024-05-03 05:32:45,529:WARNING: 	 image_resolution: 224
+2024-05-03 05:32:45,529:WARNING: 	 vision_layers: 12
+2024-05-03 05:32:45,529:WARNING: 	 vision_width: 768
+2024-05-03 05:32:45,529:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:32:45,529:WARNING: 	 context_length: 77
+2024-05-03 05:32:45,530:WARNING: 	 vocab_size: 49408
+2024-05-03 05:32:45,530:WARNING: 	 transformer_width: 512
+2024-05-03 05:32:45,530:WARNING: 	 transformer_heads: 8
+2024-05-03 05:32:45,530:WARNING: 	 transformer_layers: 12
+2024-05-03 05:32:45,530:WARNING: 		 linear_patch: 2d
+2024-05-03 05:32:45,530:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:32:46,510:WARNING: 	 sim_header: meanP
+2024-05-03 05:38:02,981:INFO: Effective parameters:
+2024-05-03 05:38:02,982:INFO:   <<< batch_size: 1
+2024-05-03 05:38:02,982:INFO:   <<< batch_size_val: 16
+2024-05-03 05:38:02,982:INFO:   <<< cache_dir: 
+2024-05-03 05:38:02,982:INFO:   <<< coef_lr: 0.001
+2024-05-03 05:38:02,982:INFO:   <<< cross_model: cross-base
+2024-05-03 05:38:02,982:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 05:38:02,982:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 05:38:02,982:INFO:   <<< datatype: msrvtt
+2024-05-03 05:38:02,982:INFO:   <<< do_eval: True
+2024-05-03 05:38:02,982:INFO:   <<< do_lower_case: False
+2024-05-03 05:38:02,982:INFO:   <<< do_pretrain: False
+2024-05-03 05:38:02,982:INFO:   <<< do_train: False
+2024-05-03 05:38:02,982:INFO:   <<< epochs: 2
+2024-05-03 05:38:02,983:INFO:   <<< eval_frame_order: 0
+2024-05-03 05:38:02,983:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 05:38:02,983:INFO:   <<< feature_framerate: 1
+2024-05-03 05:38:02,983:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 05:38:02,983:INFO:   <<< fp16: False
+2024-05-03 05:38:02,983:INFO:   <<< fp16_opt_level: O1
+2024-05-03 05:38:02,983:INFO:   <<< freeze_layer_num: 0
+2024-05-03 05:38:02,983:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 05:38:02,983:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 05:38:02,983:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 05:38:02,983:INFO:   <<< linear_patch: 2d
+2024-05-03 05:38:02,983:INFO:   <<< local_rank: 0
+2024-05-03 05:38:02,983:INFO:   <<< loose_type: True
+2024-05-03 05:38:02,983:INFO:   <<< lr: 0.0001
+2024-05-03 05:38:02,983:INFO:   <<< lr_decay: 0.9
+2024-05-03 05:38:02,983:INFO:   <<< margin: 0.1
+2024-05-03 05:38:02,983:INFO:   <<< max_frames: 90
+2024-05-03 05:38:02,984:INFO:   <<< max_words: 32
+2024-05-03 05:38:02,984:INFO:   <<< n_display: 100
+2024-05-03 05:38:02,984:INFO:   <<< n_gpu: 1
+2024-05-03 05:38:02,984:INFO:   <<< n_pair: 1
+2024-05-03 05:38:02,984:INFO:   <<< negative_weighting: 1
+2024-05-03 05:38:02,984:INFO:   <<< num_thread_reader: 0
+2024-05-03 05:38:02,984:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 05:38:02,984:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 05:38:02,984:INFO:   <<< rank: 0
+2024-05-03 05:38:02,984:INFO:   <<< resume_model: None
+2024-05-03 05:38:02,984:INFO:   <<< sampled_use_mil: False
+2024-05-03 05:38:02,984:INFO:   <<< seed: 42
+2024-05-03 05:38:02,984:INFO:   <<< sim_header: meanP
+2024-05-03 05:38:02,984:INFO:   <<< slice_framepos: 2
+2024-05-03 05:38:02,984:INFO:   <<< task_type: retrieval
+2024-05-03 05:38:02,984:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 05:38:02,984:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 05:38:02,985:INFO:   <<< train_frame_order: 0
+2024-05-03 05:38:02,985:INFO:   <<< use_mil: False
+2024-05-03 05:38:02,985:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 05:38:02,985:INFO:   <<< video_dim: 1024
+2024-05-03 05:38:02,985:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 05:38:02,985:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 05:38:02,985:INFO:   <<< world_size: 1
+2024-05-03 05:38:02,985:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 05:38:03,127:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 05:38:03,639:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 05:38:03,639:WARNING: Test retrieval by loose type.
+2024-05-03 05:38:03,640:WARNING: 	 embed_dim: 512
+2024-05-03 05:38:03,640:WARNING: 	 image_resolution: 224
+2024-05-03 05:38:03,640:WARNING: 	 vision_layers: 12
+2024-05-03 05:38:03,640:WARNING: 	 vision_width: 768
+2024-05-03 05:38:03,640:WARNING: 	 vision_patch_size: 32
+2024-05-03 05:38:03,640:WARNING: 	 context_length: 77
+2024-05-03 05:38:03,640:WARNING: 	 vocab_size: 49408
+2024-05-03 05:38:03,640:WARNING: 	 transformer_width: 512
+2024-05-03 05:38:03,640:WARNING: 	 transformer_heads: 8
+2024-05-03 05:38:03,640:WARNING: 	 transformer_layers: 12
+2024-05-03 05:38:03,640:WARNING: 		 linear_patch: 2d
+2024-05-03 05:38:03,640:WARNING: 	 cut_top_layer: 0
+2024-05-03 05:38:04,641:WARNING: 	 sim_header: meanP
+2024-05-03 06:06:23,890:INFO: Effective parameters:
+2024-05-03 06:06:23,890:INFO:   <<< batch_size: 16
+2024-05-03 06:06:23,890:INFO:   <<< batch_size_val: 16
+2024-05-03 06:06:23,890:INFO:   <<< cache_dir: 
+2024-05-03 06:06:23,890:INFO:   <<< coef_lr: 0.001
+2024-05-03 06:06:23,890:INFO:   <<< cross_model: cross-base
+2024-05-03 06:06:23,891:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 06:06:23,891:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 06:06:23,891:INFO:   <<< datatype: msrvtt
+2024-05-03 06:06:23,891:INFO:   <<< do_eval: True
+2024-05-03 06:06:23,891:INFO:   <<< do_lower_case: False
+2024-05-03 06:06:23,891:INFO:   <<< do_pretrain: False
+2024-05-03 06:06:23,891:INFO:   <<< do_train: False
+2024-05-03 06:06:23,891:INFO:   <<< epochs: 2
+2024-05-03 06:06:23,891:INFO:   <<< eval_frame_order: 0
+2024-05-03 06:06:23,891:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 06:06:23,891:INFO:   <<< feature_framerate: 1
+2024-05-03 06:06:23,891:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 06:06:23,891:INFO:   <<< fp16: False
+2024-05-03 06:06:23,891:INFO:   <<< fp16_opt_level: O1
+2024-05-03 06:06:23,891:INFO:   <<< freeze_layer_num: 0
+2024-05-03 06:06:23,891:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 06:06:23,891:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 06:06:23,892:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 06:06:23,892:INFO:   <<< linear_patch: 2d
+2024-05-03 06:06:23,892:INFO:   <<< local_rank: 0
+2024-05-03 06:06:23,892:INFO:   <<< loose_type: True
+2024-05-03 06:06:23,892:INFO:   <<< lr: 0.0001
+2024-05-03 06:06:23,892:INFO:   <<< lr_decay: 0.9
+2024-05-03 06:06:23,892:INFO:   <<< margin: 0.1
+2024-05-03 06:06:23,892:INFO:   <<< max_frames: 12
+2024-05-03 06:06:23,892:INFO:   <<< max_words: 32
+2024-05-03 06:06:23,892:INFO:   <<< n_display: 100
+2024-05-03 06:06:23,892:INFO:   <<< n_gpu: 1
+2024-05-03 06:06:23,892:INFO:   <<< n_pair: 1
+2024-05-03 06:06:23,892:INFO:   <<< negative_weighting: 1
+2024-05-03 06:06:23,892:INFO:   <<< num_thread_reader: 0
+2024-05-03 06:06:23,892:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 06:06:23,892:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 06:06:23,893:INFO:   <<< rank: 0
+2024-05-03 06:06:23,893:INFO:   <<< resume_model: None
+2024-05-03 06:06:23,893:INFO:   <<< sampled_use_mil: False
+2024-05-03 06:06:23,893:INFO:   <<< seed: 42
+2024-05-03 06:06:23,893:INFO:   <<< sim_header: meanP
+2024-05-03 06:06:23,893:INFO:   <<< slice_framepos: 2
+2024-05-03 06:06:23,893:INFO:   <<< task_type: retrieval
+2024-05-03 06:06:23,893:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 06:06:23,893:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 06:06:23,893:INFO:   <<< train_frame_order: 0
+2024-05-03 06:06:23,893:INFO:   <<< use_mil: False
+2024-05-03 06:06:23,893:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 06:06:23,893:INFO:   <<< video_dim: 1024
+2024-05-03 06:06:23,893:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 06:06:23,893:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 06:06:23,893:INFO:   <<< world_size: 1
+2024-05-03 06:06:23,894:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 06:06:24,122:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 06:06:24,592:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 06:06:24,592:WARNING: Test retrieval by loose type.
+2024-05-03 06:06:24,593:WARNING: 	 embed_dim: 512
+2024-05-03 06:06:24,593:WARNING: 	 image_resolution: 224
+2024-05-03 06:06:24,593:WARNING: 	 vision_layers: 12
+2024-05-03 06:06:24,593:WARNING: 	 vision_width: 768
+2024-05-03 06:06:24,593:WARNING: 	 vision_patch_size: 32
+2024-05-03 06:06:24,593:WARNING: 	 context_length: 77
+2024-05-03 06:06:24,593:WARNING: 	 vocab_size: 49408
+2024-05-03 06:06:24,593:WARNING: 	 transformer_width: 512
+2024-05-03 06:06:24,593:WARNING: 	 transformer_heads: 8
+2024-05-03 06:06:24,593:WARNING: 	 transformer_layers: 12
+2024-05-03 06:06:24,593:WARNING: 		 linear_patch: 2d
+2024-05-03 06:06:24,593:WARNING: 	 cut_top_layer: 0
+2024-05-03 06:06:25,580:WARNING: 	 sim_header: meanP
+2024-05-03 06:06:31,653:INFO: ***** Running test *****
+2024-05-03 06:06:31,653:INFO:   Num examples = 29
+2024-05-03 06:06:31,653:INFO:   Batch size = 16
+2024-05-03 06:06:31,653:INFO:   Num steps = 2
+2024-05-03 06:06:31,653:INFO: ***** Running val *****
+2024-05-03 06:06:31,653:INFO:   Num examples = 29
+2024-05-03 06:08:01,383:INFO: Effective parameters:
+2024-05-03 06:08:01,383:INFO:   <<< batch_size: 16
+2024-05-03 06:08:01,383:INFO:   <<< batch_size_val: 16
+2024-05-03 06:08:01,383:INFO:   <<< cache_dir: 
+2024-05-03 06:08:01,384:INFO:   <<< coef_lr: 0.001
+2024-05-03 06:08:01,384:INFO:   <<< cross_model: cross-base
+2024-05-03 06:08:01,384:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 06:08:01,384:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 06:08:01,384:INFO:   <<< datatype: msrvtt
+2024-05-03 06:08:01,384:INFO:   <<< do_eval: True
+2024-05-03 06:08:01,384:INFO:   <<< do_lower_case: False
+2024-05-03 06:08:01,384:INFO:   <<< do_pretrain: False
+2024-05-03 06:08:01,384:INFO:   <<< do_train: False
+2024-05-03 06:08:01,384:INFO:   <<< epochs: 2
+2024-05-03 06:08:01,384:INFO:   <<< eval_frame_order: 0
+2024-05-03 06:08:01,384:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 06:08:01,384:INFO:   <<< feature_framerate: 1
+2024-05-03 06:08:01,384:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 06:08:01,384:INFO:   <<< fp16: False
+2024-05-03 06:08:01,384:INFO:   <<< fp16_opt_level: O1
+2024-05-03 06:08:01,385:INFO:   <<< freeze_layer_num: 0
+2024-05-03 06:08:01,385:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 06:08:01,385:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 06:08:01,385:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 06:08:01,385:INFO:   <<< linear_patch: 2d
+2024-05-03 06:08:01,385:INFO:   <<< local_rank: 0
+2024-05-03 06:08:01,385:INFO:   <<< loose_type: True
+2024-05-03 06:08:01,385:INFO:   <<< lr: 0.0001
+2024-05-03 06:08:01,385:INFO:   <<< lr_decay: 0.9
+2024-05-03 06:08:01,385:INFO:   <<< margin: 0.1
+2024-05-03 06:08:01,385:INFO:   <<< max_frames: 12
+2024-05-03 06:08:01,385:INFO:   <<< max_words: 32
+2024-05-03 06:08:01,385:INFO:   <<< n_display: 100
+2024-05-03 06:08:01,385:INFO:   <<< n_gpu: 1
+2024-05-03 06:08:01,385:INFO:   <<< n_pair: 1
+2024-05-03 06:08:01,385:INFO:   <<< negative_weighting: 1
+2024-05-03 06:08:01,386:INFO:   <<< num_thread_reader: 0
+2024-05-03 06:08:01,386:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 06:08:01,386:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 06:08:01,386:INFO:   <<< rank: 0
+2024-05-03 06:08:01,386:INFO:   <<< resume_model: None
+2024-05-03 06:08:01,386:INFO:   <<< sampled_use_mil: False
+2024-05-03 06:08:01,386:INFO:   <<< seed: 42
+2024-05-03 06:08:01,386:INFO:   <<< sim_header: meanP
+2024-05-03 06:08:01,386:INFO:   <<< slice_framepos: 2
+2024-05-03 06:08:01,386:INFO:   <<< task_type: retrieval
+2024-05-03 06:08:01,386:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 06:08:01,386:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 06:08:01,386:INFO:   <<< train_frame_order: 0
+2024-05-03 06:08:01,386:INFO:   <<< use_mil: False
+2024-05-03 06:08:01,386:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 06:08:01,387:INFO:   <<< video_dim: 1024
+2024-05-03 06:08:01,387:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 06:08:01,387:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 06:08:01,387:INFO:   <<< world_size: 1
+2024-05-03 06:08:01,387:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 06:08:01,618:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 06:08:02,088:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 06:08:02,088:WARNING: Test retrieval by loose type.
+2024-05-03 06:08:02,089:WARNING: 	 embed_dim: 512
+2024-05-03 06:08:02,089:WARNING: 	 image_resolution: 224
+2024-05-03 06:08:02,089:WARNING: 	 vision_layers: 12
+2024-05-03 06:08:02,089:WARNING: 	 vision_width: 768
+2024-05-03 06:08:02,089:WARNING: 	 vision_patch_size: 32
+2024-05-03 06:08:02,089:WARNING: 	 context_length: 77
+2024-05-03 06:08:02,089:WARNING: 	 vocab_size: 49408
+2024-05-03 06:08:02,089:WARNING: 	 transformer_width: 512
+2024-05-03 06:08:02,089:WARNING: 	 transformer_heads: 8
+2024-05-03 06:08:02,089:WARNING: 	 transformer_layers: 12
+2024-05-03 06:08:02,089:WARNING: 		 linear_patch: 2d
+2024-05-03 06:08:02,089:WARNING: 	 cut_top_layer: 0
+2024-05-03 06:08:03,058:WARNING: 	 sim_header: meanP
+2024-05-03 06:08:09,150:INFO: ***** Running test *****
+2024-05-03 06:08:09,150:INFO:   Num examples = 29
+2024-05-03 06:08:09,150:INFO:   Batch size = 16
+2024-05-03 06:08:09,150:INFO:   Num steps = 2
+2024-05-03 06:08:09,150:INFO: ***** Running val *****
+2024-05-03 06:08:09,150:INFO:   Num examples = 29
+2024-05-03 06:16:06,627:INFO: Effective parameters:
+2024-05-03 06:16:06,627:INFO:   <<< batch_size: 16
+2024-05-03 06:16:06,627:INFO:   <<< batch_size_val: 16
+2024-05-03 06:16:06,627:INFO:   <<< cache_dir: 
+2024-05-03 06:16:06,627:INFO:   <<< coef_lr: 0.001
+2024-05-03 06:16:06,627:INFO:   <<< cross_model: cross-base
+2024-05-03 06:16:06,627:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 06:16:06,627:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 06:16:06,628:INFO:   <<< datatype: msrvtt
+2024-05-03 06:16:06,628:INFO:   <<< do_eval: True
+2024-05-03 06:16:06,628:INFO:   <<< do_lower_case: False
+2024-05-03 06:16:06,628:INFO:   <<< do_pretrain: False
+2024-05-03 06:16:06,628:INFO:   <<< do_train: False
+2024-05-03 06:16:06,628:INFO:   <<< epochs: 2
+2024-05-03 06:16:06,628:INFO:   <<< eval_frame_order: 0
+2024-05-03 06:16:06,628:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 06:16:06,628:INFO:   <<< feature_framerate: 1
+2024-05-03 06:16:06,628:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 06:16:06,628:INFO:   <<< fp16: False
+2024-05-03 06:16:06,628:INFO:   <<< fp16_opt_level: O1
+2024-05-03 06:16:06,628:INFO:   <<< freeze_layer_num: 0
+2024-05-03 06:16:06,628:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 06:16:06,628:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 06:16:06,628:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 06:16:06,628:INFO:   <<< linear_patch: 2d
+2024-05-03 06:16:06,629:INFO:   <<< local_rank: 0
+2024-05-03 06:16:06,629:INFO:   <<< loose_type: True
+2024-05-03 06:16:06,629:INFO:   <<< lr: 0.0001
+2024-05-03 06:16:06,629:INFO:   <<< lr_decay: 0.9
+2024-05-03 06:16:06,629:INFO:   <<< margin: 0.1
+2024-05-03 06:16:06,629:INFO:   <<< max_frames: 12
+2024-05-03 06:16:06,629:INFO:   <<< max_words: 32
+2024-05-03 06:16:06,629:INFO:   <<< n_display: 100
+2024-05-03 06:16:06,629:INFO:   <<< n_gpu: 1
+2024-05-03 06:16:06,629:INFO:   <<< n_pair: 1
+2024-05-03 06:16:06,629:INFO:   <<< negative_weighting: 1
+2024-05-03 06:16:06,629:INFO:   <<< num_thread_reader: 0
+2024-05-03 06:16:06,629:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 06:16:06,629:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 06:16:06,629:INFO:   <<< rank: 0
+2024-05-03 06:16:06,629:INFO:   <<< resume_model: None
+2024-05-03 06:16:06,629:INFO:   <<< sampled_use_mil: False
+2024-05-03 06:16:06,629:INFO:   <<< seed: 42
+2024-05-03 06:16:06,630:INFO:   <<< sim_header: meanP
+2024-05-03 06:16:06,630:INFO:   <<< slice_framepos: 2
+2024-05-03 06:16:06,630:INFO:   <<< task_type: retrieval
+2024-05-03 06:16:06,630:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 06:16:06,630:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 06:16:06,630:INFO:   <<< train_frame_order: 0
+2024-05-03 06:16:06,630:INFO:   <<< use_mil: False
+2024-05-03 06:16:06,630:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 06:16:06,630:INFO:   <<< video_dim: 1024
+2024-05-03 06:16:06,630:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 06:16:06,630:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 06:16:06,630:INFO:   <<< world_size: 1
+2024-05-03 06:16:06,630:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 06:16:06,856:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 06:16:07,321:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 06:16:07,321:WARNING: Test retrieval by loose type.
+2024-05-03 06:16:07,322:WARNING: 	 embed_dim: 512
+2024-05-03 06:16:07,322:WARNING: 	 image_resolution: 224
+2024-05-03 06:16:07,322:WARNING: 	 vision_layers: 12
+2024-05-03 06:16:07,322:WARNING: 	 vision_width: 768
+2024-05-03 06:16:07,322:WARNING: 	 vision_patch_size: 32
+2024-05-03 06:16:07,322:WARNING: 	 context_length: 77
+2024-05-03 06:16:07,322:WARNING: 	 vocab_size: 49408
+2024-05-03 06:16:07,322:WARNING: 	 transformer_width: 512
+2024-05-03 06:16:07,322:WARNING: 	 transformer_heads: 8
+2024-05-03 06:16:07,322:WARNING: 	 transformer_layers: 12
+2024-05-03 06:16:07,322:WARNING: 		 linear_patch: 2d
+2024-05-03 06:16:07,322:WARNING: 	 cut_top_layer: 0
+2024-05-03 06:16:08,295:WARNING: 	 sim_header: meanP
+2024-05-03 06:16:14,341:INFO: ***** Running test *****
+2024-05-03 06:16:14,341:INFO:   Num examples = 29
+2024-05-03 06:16:14,341:INFO:   Batch size = 16
+2024-05-03 06:16:14,341:INFO:   Num steps = 2
+2024-05-03 06:16:14,341:INFO: ***** Running val *****
+2024-05-03 06:16:14,341:INFO:   Num examples = 29
+2024-05-03 07:06:33,156:INFO: Effective parameters:
+2024-05-03 07:06:33,156:INFO:   <<< batch_size: 16
+2024-05-03 07:06:33,157:INFO:   <<< batch_size_val: 16
+2024-05-03 07:06:33,157:INFO:   <<< cache_dir: 
+2024-05-03 07:06:33,157:INFO:   <<< coef_lr: 0.001
+2024-05-03 07:06:33,157:INFO:   <<< cross_model: cross-base
+2024-05-03 07:06:33,157:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 07:06:33,157:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 07:06:33,157:INFO:   <<< datatype: msrvtt
+2024-05-03 07:06:33,157:INFO:   <<< do_eval: True
+2024-05-03 07:06:33,157:INFO:   <<< do_lower_case: False
+2024-05-03 07:06:33,157:INFO:   <<< do_pretrain: False
+2024-05-03 07:06:33,157:INFO:   <<< do_train: False
+2024-05-03 07:06:33,157:INFO:   <<< epochs: 2
+2024-05-03 07:06:33,157:INFO:   <<< eval_frame_order: 0
+2024-05-03 07:06:33,157:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 07:06:33,157:INFO:   <<< feature_framerate: 1
+2024-05-03 07:06:33,157:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 07:06:33,158:INFO:   <<< fp16: False
+2024-05-03 07:06:33,158:INFO:   <<< fp16_opt_level: O1
+2024-05-03 07:06:33,158:INFO:   <<< freeze_layer_num: 0
+2024-05-03 07:06:33,158:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 07:06:33,158:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 07:06:33,158:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 07:06:33,158:INFO:   <<< linear_patch: 2d
+2024-05-03 07:06:33,158:INFO:   <<< local_rank: 0
+2024-05-03 07:06:33,158:INFO:   <<< loose_type: True
+2024-05-03 07:06:33,158:INFO:   <<< lr: 0.0001
+2024-05-03 07:06:33,158:INFO:   <<< lr_decay: 0.9
+2024-05-03 07:06:33,158:INFO:   <<< margin: 0.1
+2024-05-03 07:06:33,158:INFO:   <<< max_frames: 12
+2024-05-03 07:06:33,158:INFO:   <<< max_words: 32
+2024-05-03 07:06:33,158:INFO:   <<< n_display: 100
+2024-05-03 07:06:33,158:INFO:   <<< n_gpu: 1
+2024-05-03 07:06:33,159:INFO:   <<< n_pair: 1
+2024-05-03 07:06:33,159:INFO:   <<< negative_weighting: 1
+2024-05-03 07:06:33,159:INFO:   <<< num_thread_reader: 0
+2024-05-03 07:06:33,159:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 07:06:33,159:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 07:06:33,159:INFO:   <<< rank: 0
+2024-05-03 07:06:33,159:INFO:   <<< resume_model: None
+2024-05-03 07:06:33,159:INFO:   <<< sampled_use_mil: False
+2024-05-03 07:06:33,159:INFO:   <<< seed: 42
+2024-05-03 07:06:33,159:INFO:   <<< sim_header: meanP
+2024-05-03 07:06:33,159:INFO:   <<< slice_framepos: 2
+2024-05-03 07:06:33,159:INFO:   <<< task_type: retrieval
+2024-05-03 07:06:33,159:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 07:06:33,159:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 07:06:33,159:INFO:   <<< train_frame_order: 0
+2024-05-03 07:06:33,159:INFO:   <<< use_mil: False
+2024-05-03 07:06:33,159:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 07:06:33,160:INFO:   <<< video_dim: 1024
+2024-05-03 07:06:33,160:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 07:06:33,160:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 07:06:33,160:INFO:   <<< world_size: 1
+2024-05-03 07:06:33,160:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 07:06:33,385:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 07:06:33,859:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 07:06:33,859:WARNING: Test retrieval by loose type.
+2024-05-03 07:06:33,859:WARNING: 	 embed_dim: 512
+2024-05-03 07:06:33,860:WARNING: 	 image_resolution: 224
+2024-05-03 07:06:33,860:WARNING: 	 vision_layers: 12
+2024-05-03 07:06:33,860:WARNING: 	 vision_width: 768
+2024-05-03 07:06:33,860:WARNING: 	 vision_patch_size: 32
+2024-05-03 07:06:33,860:WARNING: 	 context_length: 77
+2024-05-03 07:06:33,860:WARNING: 	 vocab_size: 49408
+2024-05-03 07:06:33,860:WARNING: 	 transformer_width: 512
+2024-05-03 07:06:33,860:WARNING: 	 transformer_heads: 8
+2024-05-03 07:06:33,860:WARNING: 	 transformer_layers: 12
+2024-05-03 07:06:33,860:WARNING: 		 linear_patch: 2d
+2024-05-03 07:06:33,860:WARNING: 	 cut_top_layer: 0
+2024-05-03 07:06:34,830:WARNING: 	 sim_header: meanP
+2024-05-03 07:06:40,856:INFO: ***** Running test *****
+2024-05-03 07:06:40,857:INFO:   Num examples = 29
+2024-05-03 07:06:40,857:INFO:   Batch size = 16
+2024-05-03 07:06:40,857:INFO:   Num steps = 2
+2024-05-03 07:06:40,857:INFO: ***** Running val *****
+2024-05-03 07:06:40,857:INFO:   Num examples = 29
+2024-05-03 07:13:35,004:INFO: Effective parameters:
+2024-05-03 07:13:35,004:INFO:   <<< batch_size: 1
+2024-05-03 07:13:35,004:INFO:   <<< batch_size_val: 16
+2024-05-03 07:13:35,004:INFO:   <<< cache_dir: 
+2024-05-03 07:13:35,004:INFO:   <<< coef_lr: 0.001
+2024-05-03 07:13:35,004:INFO:   <<< cross_model: cross-base
+2024-05-03 07:13:35,004:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 07:13:35,004:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 07:13:35,004:INFO:   <<< datatype: msrvtt
+2024-05-03 07:13:35,005:INFO:   <<< do_eval: True
+2024-05-03 07:13:35,005:INFO:   <<< do_lower_case: False
+2024-05-03 07:13:35,005:INFO:   <<< do_pretrain: False
+2024-05-03 07:13:35,005:INFO:   <<< do_train: False
+2024-05-03 07:13:35,005:INFO:   <<< epochs: 2
+2024-05-03 07:13:35,005:INFO:   <<< eval_frame_order: 0
+2024-05-03 07:13:35,005:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 07:13:35,005:INFO:   <<< feature_framerate: 1
+2024-05-03 07:13:35,005:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 07:13:35,005:INFO:   <<< fp16: False
+2024-05-03 07:13:35,005:INFO:   <<< fp16_opt_level: O1
+2024-05-03 07:13:35,005:INFO:   <<< freeze_layer_num: 0
+2024-05-03 07:13:35,005:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 07:13:35,005:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 07:13:35,005:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 07:13:35,005:INFO:   <<< linear_patch: 2d
+2024-05-03 07:13:35,005:INFO:   <<< local_rank: 0
+2024-05-03 07:13:35,006:INFO:   <<< loose_type: True
+2024-05-03 07:13:35,006:INFO:   <<< lr: 0.0001
+2024-05-03 07:13:35,006:INFO:   <<< lr_decay: 0.9
+2024-05-03 07:13:35,006:INFO:   <<< margin: 0.1
+2024-05-03 07:13:35,006:INFO:   <<< max_frames: 90
+2024-05-03 07:13:35,006:INFO:   <<< max_words: 32
+2024-05-03 07:13:35,006:INFO:   <<< n_display: 100
+2024-05-03 07:13:35,006:INFO:   <<< n_gpu: 1
+2024-05-03 07:13:35,006:INFO:   <<< n_pair: 1
+2024-05-03 07:13:35,006:INFO:   <<< negative_weighting: 1
+2024-05-03 07:13:35,006:INFO:   <<< num_thread_reader: 0
+2024-05-03 07:13:35,006:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 07:13:35,006:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 07:13:35,006:INFO:   <<< rank: 0
+2024-05-03 07:13:35,006:INFO:   <<< resume_model: None
+2024-05-03 07:13:35,006:INFO:   <<< sampled_use_mil: False
+2024-05-03 07:13:35,007:INFO:   <<< seed: 42
+2024-05-03 07:13:35,007:INFO:   <<< sim_header: meanP
+2024-05-03 07:13:35,007:INFO:   <<< slice_framepos: 2
+2024-05-03 07:13:35,007:INFO:   <<< task_type: retrieval
+2024-05-03 07:13:35,007:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 07:13:35,007:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 07:13:35,007:INFO:   <<< train_frame_order: 0
+2024-05-03 07:13:35,007:INFO:   <<< use_mil: False
+2024-05-03 07:13:35,007:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 07:13:35,007:INFO:   <<< video_dim: 1024
+2024-05-03 07:13:35,007:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 07:13:35,007:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 07:13:35,007:INFO:   <<< world_size: 1
+2024-05-03 07:13:35,007:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 07:13:35,151:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 07:13:35,633:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 07:13:35,633:WARNING: Test retrieval by loose type.
+2024-05-03 07:13:35,634:WARNING: 	 embed_dim: 512
+2024-05-03 07:13:35,634:WARNING: 	 image_resolution: 224
+2024-05-03 07:13:35,634:WARNING: 	 vision_layers: 12
+2024-05-03 07:13:35,634:WARNING: 	 vision_width: 768
+2024-05-03 07:13:35,634:WARNING: 	 vision_patch_size: 32
+2024-05-03 07:13:35,634:WARNING: 	 context_length: 77
+2024-05-03 07:13:35,634:WARNING: 	 vocab_size: 49408
+2024-05-03 07:13:35,634:WARNING: 	 transformer_width: 512
+2024-05-03 07:13:35,635:WARNING: 	 transformer_heads: 8
+2024-05-03 07:13:35,635:WARNING: 	 transformer_layers: 12
+2024-05-03 07:13:35,635:WARNING: 		 linear_patch: 2d
+2024-05-03 07:13:35,635:WARNING: 	 cut_top_layer: 0
+2024-05-03 07:13:36,613:WARNING: 	 sim_header: meanP
+2024-05-03 07:14:03,242:INFO: Effective parameters:
+2024-05-03 07:14:03,242:INFO:   <<< batch_size: 1
+2024-05-03 07:14:03,242:INFO:   <<< batch_size_val: 16
+2024-05-03 07:14:03,243:INFO:   <<< cache_dir: 
+2024-05-03 07:14:03,243:INFO:   <<< coef_lr: 0.001
+2024-05-03 07:14:03,243:INFO:   <<< cross_model: cross-base
+2024-05-03 07:14:03,243:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 07:14:03,243:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 07:14:03,243:INFO:   <<< datatype: msrvtt
+2024-05-03 07:14:03,243:INFO:   <<< do_eval: True
+2024-05-03 07:14:03,243:INFO:   <<< do_lower_case: False
+2024-05-03 07:14:03,243:INFO:   <<< do_pretrain: False
+2024-05-03 07:14:03,243:INFO:   <<< do_train: False
+2024-05-03 07:14:03,243:INFO:   <<< epochs: 2
+2024-05-03 07:14:03,243:INFO:   <<< eval_frame_order: 0
+2024-05-03 07:14:03,243:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 07:14:03,243:INFO:   <<< feature_framerate: 1
+2024-05-03 07:14:03,243:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 07:14:03,244:INFO:   <<< fp16: False
+2024-05-03 07:14:03,244:INFO:   <<< fp16_opt_level: O1
+2024-05-03 07:14:03,244:INFO:   <<< freeze_layer_num: 0
+2024-05-03 07:14:03,244:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 07:14:03,244:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 07:14:03,244:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 07:14:03,244:INFO:   <<< linear_patch: 2d
+2024-05-03 07:14:03,244:INFO:   <<< local_rank: 0
+2024-05-03 07:14:03,244:INFO:   <<< loose_type: True
+2024-05-03 07:14:03,244:INFO:   <<< lr: 0.0001
+2024-05-03 07:14:03,244:INFO:   <<< lr_decay: 0.9
+2024-05-03 07:14:03,244:INFO:   <<< margin: 0.1
+2024-05-03 07:14:03,244:INFO:   <<< max_frames: 90
+2024-05-03 07:14:03,245:INFO:   <<< max_words: 32
+2024-05-03 07:14:03,245:INFO:   <<< n_display: 100
+2024-05-03 07:14:03,245:INFO:   <<< n_gpu: 1
+2024-05-03 07:14:03,245:INFO:   <<< n_pair: 1
+2024-05-03 07:14:03,245:INFO:   <<< negative_weighting: 1
+2024-05-03 07:14:03,245:INFO:   <<< num_thread_reader: 0
+2024-05-03 07:14:03,245:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 07:14:03,245:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 07:14:03,245:INFO:   <<< rank: 0
+2024-05-03 07:14:03,245:INFO:   <<< resume_model: None
+2024-05-03 07:14:03,245:INFO:   <<< sampled_use_mil: False
+2024-05-03 07:14:03,245:INFO:   <<< seed: 42
+2024-05-03 07:14:03,245:INFO:   <<< sim_header: meanP
+2024-05-03 07:14:03,245:INFO:   <<< slice_framepos: 2
+2024-05-03 07:14:03,245:INFO:   <<< task_type: retrieval
+2024-05-03 07:14:03,246:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 07:14:03,246:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 07:14:03,246:INFO:   <<< train_frame_order: 0
+2024-05-03 07:14:03,246:INFO:   <<< use_mil: False
+2024-05-03 07:14:03,246:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 07:14:03,246:INFO:   <<< video_dim: 1024
+2024-05-03 07:14:03,246:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 07:14:03,246:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 07:14:03,246:INFO:   <<< world_size: 1
+2024-05-03 07:14:03,246:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 07:14:03,390:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 07:14:03,875:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 07:14:03,875:WARNING: Test retrieval by loose type.
+2024-05-03 07:14:03,876:WARNING: 	 embed_dim: 512
+2024-05-03 07:14:03,876:WARNING: 	 image_resolution: 224
+2024-05-03 07:14:03,876:WARNING: 	 vision_layers: 12
+2024-05-03 07:14:03,876:WARNING: 	 vision_width: 768
+2024-05-03 07:14:03,876:WARNING: 	 vision_patch_size: 32
+2024-05-03 07:14:03,876:WARNING: 	 context_length: 77
+2024-05-03 07:14:03,877:WARNING: 	 vocab_size: 49408
+2024-05-03 07:14:03,877:WARNING: 	 transformer_width: 512
+2024-05-03 07:14:03,877:WARNING: 	 transformer_heads: 8
+2024-05-03 07:14:03,877:WARNING: 	 transformer_layers: 12
+2024-05-03 07:14:03,877:WARNING: 		 linear_patch: 2d
+2024-05-03 07:14:03,877:WARNING: 	 cut_top_layer: 0
+2024-05-03 07:14:04,873:WARNING: 	 sim_header: meanP
+2024-05-03 07:17:40,328:INFO: Effective parameters:
+2024-05-03 07:17:40,329:INFO:   <<< batch_size: 1
+2024-05-03 07:17:40,329:INFO:   <<< batch_size_val: 16
+2024-05-03 07:17:40,329:INFO:   <<< cache_dir: 
+2024-05-03 07:17:40,329:INFO:   <<< coef_lr: 0.001
+2024-05-03 07:17:40,329:INFO:   <<< cross_model: cross-base
+2024-05-03 07:17:40,329:INFO:   <<< cross_num_hidden_layers: 4
+2024-05-03 07:17:40,329:INFO:   <<< data_path: /workspace/CLIP4Clip/data/MSRVTT_data.json
+2024-05-03 07:17:40,329:INFO:   <<< datatype: msrvtt
+2024-05-03 07:17:40,329:INFO:   <<< do_eval: True
+2024-05-03 07:17:40,330:INFO:   <<< do_lower_case: False
+2024-05-03 07:17:40,330:INFO:   <<< do_pretrain: False
+2024-05-03 07:17:40,330:INFO:   <<< do_train: False
+2024-05-03 07:17:40,330:INFO:   <<< epochs: 2
+2024-05-03 07:17:40,330:INFO:   <<< eval_frame_order: 0
+2024-05-03 07:17:40,330:INFO:   <<< expand_msrvtt_sentences: True
+2024-05-03 07:17:40,330:INFO:   <<< feature_framerate: 1
+2024-05-03 07:17:40,330:INFO:   <<< features_path: /workspace/CLIP4Clip/data/MSRVTT_Videos
+2024-05-03 07:17:40,330:INFO:   <<< fp16: False
+2024-05-03 07:17:40,330:INFO:   <<< fp16_opt_level: O1
+2024-05-03 07:17:40,330:INFO:   <<< freeze_layer_num: 0
+2024-05-03 07:17:40,330:INFO:   <<< gradient_accumulation_steps: 1
+2024-05-03 07:17:40,330:INFO:   <<< hard_negative_rate: 0.5
+2024-05-03 07:17:40,331:INFO:   <<< init_model: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth
+2024-05-03 07:17:40,331:INFO:   <<< linear_patch: 2d
+2024-05-03 07:17:40,331:INFO:   <<< local_rank: 0
+2024-05-03 07:17:40,331:INFO:   <<< loose_type: True
+2024-05-03 07:17:40,331:INFO:   <<< lr: 0.0001
+2024-05-03 07:17:40,331:INFO:   <<< lr_decay: 0.9
+2024-05-03 07:17:40,331:INFO:   <<< margin: 0.1
+2024-05-03 07:17:40,331:INFO:   <<< max_frames: 90
+2024-05-03 07:17:40,331:INFO:   <<< max_words: 32
+2024-05-03 07:17:40,331:INFO:   <<< n_display: 100
+2024-05-03 07:17:40,331:INFO:   <<< n_gpu: 1
+2024-05-03 07:17:40,331:INFO:   <<< n_pair: 1
+2024-05-03 07:17:40,332:INFO:   <<< negative_weighting: 1
+2024-05-03 07:17:40,332:INFO:   <<< num_thread_reader: 0
+2024-05-03 07:17:40,332:INFO:   <<< output_dir: /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType
+2024-05-03 07:17:40,332:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-05-03 07:17:40,332:INFO:   <<< rank: 0
+2024-05-03 07:17:40,332:INFO:   <<< resume_model: None
+2024-05-03 07:17:40,332:INFO:   <<< sampled_use_mil: False
+2024-05-03 07:17:40,332:INFO:   <<< seed: 42
+2024-05-03 07:17:40,332:INFO:   <<< sim_header: meanP
+2024-05-03 07:17:40,332:INFO:   <<< slice_framepos: 2
+2024-05-03 07:17:40,332:INFO:   <<< task_type: retrieval
+2024-05-03 07:17:40,332:INFO:   <<< text_num_hidden_layers: 12
+2024-05-03 07:17:40,332:INFO:   <<< train_csv: /workspace/CLIP4Clip/data/MSRVTT_train.9k.csv
+2024-05-03 07:17:40,333:INFO:   <<< train_frame_order: 0
+2024-05-03 07:17:40,333:INFO:   <<< use_mil: False
+2024-05-03 07:17:40,333:INFO:   <<< val_csv: /workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv
+2024-05-03 07:17:40,333:INFO:   <<< video_dim: 1024
+2024-05-03 07:17:40,333:INFO:   <<< visual_num_hidden_layers: 12
+2024-05-03 07:17:40,333:INFO:   <<< warmup_proportion: 0.1
+2024-05-03 07:17:40,333:INFO:   <<< world_size: 1
+2024-05-03 07:17:40,333:INFO: device: cuda:0 n_gpu: 1
+2024-05-03 07:17:40,472:INFO: Model loaded from /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth
+2024-05-03 07:17:40,952:WARNING: Stage-One:True, Stage-Two:False
+2024-05-03 07:17:40,952:WARNING: Test retrieval by loose type.
+2024-05-03 07:17:40,953:WARNING: 	 embed_dim: 512
+2024-05-03 07:17:40,953:WARNING: 	 image_resolution: 224
+2024-05-03 07:17:40,953:WARNING: 	 vision_layers: 12
+2024-05-03 07:17:40,953:WARNING: 	 vision_width: 768
+2024-05-03 07:17:40,953:WARNING: 	 vision_patch_size: 32
+2024-05-03 07:17:40,953:WARNING: 	 context_length: 77
+2024-05-03 07:17:40,953:WARNING: 	 vocab_size: 49408
+2024-05-03 07:17:40,953:WARNING: 	 transformer_width: 512
+2024-05-03 07:17:40,954:WARNING: 	 transformer_heads: 8
+2024-05-03 07:17:40,954:WARNING: 	 transformer_layers: 12
+2024-05-03 07:17:40,954:WARNING: 		 linear_patch: 2d
+2024-05-03 07:17:40,954:WARNING: 	 cut_top_layer: 0
+2024-05-03 07:17:41,928:WARNING: 	 sim_header: meanP

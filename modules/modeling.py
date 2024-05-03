@@ -274,17 +274,27 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
         else:
             return None
 
-    def get_sequence_output(self, input_ids, token_type_ids, attention_mask, shaped=False):
-        if shaped is False:
-            input_ids = input_ids.view(-1, input_ids.shape[-1])
-            token_type_ids = token_type_ids.view(-1, token_type_ids.shape[-1])
-            attention_mask = attention_mask.view(-1, attention_mask.shape[-1])
+    # def get_sequence_output(self, input_ids, token_type_ids, attention_mask, shaped=False):
+    #     if shaped is False:
+    #         input_ids = input_ids.view(-1, input_ids.shape[-1])
+    #         token_type_ids = token_type_ids.view(-1, token_type_ids.shape[-1])
+    #         attention_mask = attention_mask.view(-1, attention_mask.shape[-1])
 
+    #     bs_pair = input_ids.size(0)
+    #     sequence_hidden = self.clip.encode_text(input_ids).float()
+    #     sequence_hidden = sequence_hidden.view(bs_pair, -1, sequence_hidden.size(-1))
+
+    #     return sequence_hidden
+
+
+    def get_sequence_output(self, input_ids, token_type_ids, attention_mask, shaped=False):
         bs_pair = input_ids.size(0)
         sequence_hidden = self.clip.encode_text(input_ids).float()
         sequence_hidden = sequence_hidden.view(bs_pair, -1, sequence_hidden.size(-1))
 
         return sequence_hidden
+
+
 
     # def get_visual_output(self, video, video_mask, shaped=False, video_frame=-1):
     #     if shaped is False:
@@ -460,17 +470,28 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
         retrieve_logits = torch.cat(retrieve_logits_list, dim=0)
         return retrieve_logits
 
-    def get_similarity_logits(self, sequence_output, visual_output, attention_mask, video_mask, shaped=False, loose_type=False):
-        if shaped is False:
-            attention_mask = attention_mask.view(-1, attention_mask.shape[-1])
-            video_mask = video_mask.view(-1, video_mask.shape[-1])
+    # def get_similarity_logits(self, sequence_output, visual_output, attention_mask, video_mask, shaped=False, loose_type=False):
+    #     if shaped is False:
+    #         attention_mask = attention_mask.view(-1, attention_mask.shape[-1])
+    #         video_mask = video_mask.view(-1, video_mask.shape[-1])
 
+    #     contrastive_direction = ()
+    #     if loose_type:
+    #         assert self.sim_header in ["meanP", "seqLSTM", "seqTransf"]
+    #         retrieve_logits = self._loose_similarity(sequence_output, visual_output, attention_mask, video_mask, sim_header=self.sim_header)
+    #     else:
+    #         assert self.sim_header in ["tightTransf"]
+    #         retrieve_logits = self._cross_similarity(sequence_output, visual_output, attention_mask, video_mask, )
+
+    #     return retrieve_logits, contrastive_direction
+
+    def get_similarity_logits(self, sequence_output, visual_output, attention_mask, video_mask, sim_header="meanP", loose_type=False):
         contrastive_direction = ()
         if loose_type:
-            assert self.sim_header in ["meanP", "seqLSTM", "seqTransf"]
+            assert sim_header in ["meanP", "seqLSTM", "seqTransf"]
             retrieve_logits = self._loose_similarity(sequence_output, visual_output, attention_mask, video_mask, sim_header=self.sim_header)
         else:
-            assert self.sim_header in ["tightTransf"]
+            assert sim_header in ["tightTransf"]
             retrieve_logits = self._cross_similarity(sequence_output, visual_output, attention_mask, video_mask, )
 
         return retrieve_logits, contrastive_direction
