@@ -365,11 +365,12 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
         return text_out
 
     def _mean_pooling_for_similarity_visual(self, visual_output, video_mask,):
-        video_mask_un = video_mask.to(dtype=torch.float).unsqueeze(-1)
-        visual_output = visual_output * video_mask_un
-        video_mask_un_sum = torch.sum(video_mask_un, dim=1, dtype=torch.float)
+        video_mask_un = video_mask.to(dtype=torch.float).unsqueeze(-1) # torch.Size([16,12,1]) 비디오 클립마다 길이가 다름. 인터벌 시간으로 나눌때 12 프레임 이하인 클립 존재함. 그럴경우 마스크에 0 값이 채워짐.
+        visual_output = visual_output * video_mask_un   # visual_output.shape: [16,12,512], 프레임이 없던 위치의 가비지 값을 마스킹하여 0으로 변경
+        video_mask_un_sum = torch.sum(video_mask_un, dim=1, dtype=torch.float)  # [16,1], 16개 배치별 프레임 수를 나타냄
         video_mask_un_sum[video_mask_un_sum == 0.] = 1.
-        video_out = torch.sum(visual_output, dim=1) / video_mask_un_sum
+        video_out = torch.sum(visual_output, dim=1) / video_mask_un_sum # 1 클립, 최대 12 프레임, 1프레임당 512 차원 정보에 대해 12프레임의 각 인덱스 값(dim=1)을 총합한 후 프레임 수로 나눔
+        # 위의 과정으로 1개 클립의 최대 12 프레임의 각각 차원의 정보를 평균 내면 12개 프레임의 각각 값은 mean으로 정리되고, [12, 512] ==> [1, 512]로 변경됨, 프레임의 평균값이군....시간 정보 반영
         return video_out
 
     def _mean_pooling_for_similarity(self, sequence_output, visual_output, attention_mask, video_mask,):

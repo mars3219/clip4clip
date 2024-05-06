@@ -364,12 +364,21 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
         text_out = torch.sum(sequence_output, dim=1) / torch.sum(attention_mask_un, dim=1, dtype=torch.float)
         return text_out
 
+    # def _mean_pooling_for_similarity_visual(self, visual_output, video_mask,):
+    #     video_mask_un = video_mask.to(dtype=torch.float).unsqueeze(-1) # torch.Size([16,12,1]) 비디오 클립마다 길이가 다름. 인터벌 시간으로 나눌때 12 프레임 이하인 클립 존재함. 그럴경우 마스크에 0 값이 채워짐.
+    #     visual_output = visual_output * video_mask_un   # visual_output.shape: [16,12,512], 프레임이 없던 위치의 가비지 값을 마스킹하여 0으로 변경
+    #     video_mask_un_sum = torch.sum(video_mask_un, dim=1, dtype=torch.float)  # [16,1], 16개 배치별 프레임 수를 나타냄
+    #     video_mask_un_sum[video_mask_un_sum == 0.] = 1.
+    #     video_out = torch.sum(visual_output, dim=1) / video_mask_un_sum # 1 클립, 최대 12 프레임, 1프레임당 512 차원 정보에 대해 12프레임의 각 인덱스 값(dim=1)을 총합한 후 프레임 수로 나눔
+    #     # 위의 과정으로 1개 클립의 최대 12 프레임의 각각 차원의 정보를 평균 내면 12개 프레임의 각각 값은 mean으로 정리되고, [12, 512] ==> [1, 512]로 변경됨, 프레임의 평균값이군....시간 정보 반영
+    #     return video_out
+
     def _mean_pooling_for_similarity_visual(self, visual_output, video_mask,):
         video_mask_un = video_mask.to(dtype=torch.float).unsqueeze(-1)
         visual_output = visual_output * video_mask_un
-        video_mask_un_sum = torch.sum(video_mask_un, dim=1, dtype=torch.float)
+        video_mask_un_sum = torch.sum(video_mask_un, dim=0, dtype=torch.float)
         video_mask_un_sum[video_mask_un_sum == 0.] = 1.
-        video_out = torch.sum(visual_output, dim=1) / video_mask_un_sum
+        video_out = torch.sum(visual_output, dim=0) / video_mask_un_sum
         return video_out
 
     def _mean_pooling_for_similarity(self, sequence_output, visual_output, attention_mask, video_mask,):
@@ -378,8 +387,58 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
 
         return text_out, video_out
 
-    def _loose_similarity(self, sequence_output, visual_output, attention_mask, video_mask, sim_header="meanP"):
+    # def _loose_similarity(self, sequence_output, visual_output, attention_mask, video_mask, sim_header="meanP"):
+    #     sequence_output, visual_output = sequence_output.contiguous(), visual_output.contiguous()
+
+    #     if sim_header == "meanP":
+    #         # Default: Parameter-free type
+    #         pass
+    #     elif sim_header == "seqLSTM":
+    #         # Sequential type: LSTM
+    #         visual_output_original = visual_output
+    #         visual_output = pack_padded_sequence(visual_output, torch.sum(video_mask, dim=-1).cpu(),
+    #                                              batch_first=True, enforce_sorted=False)
+    #         visual_output, _ = self.lstm_visual(visual_output)
+    #         if self.training: self.lstm_visual.flatten_parameters()
+    #         visual_output, _ = pad_packed_sequence(visual_output, batch_first=True)
+    #         visual_output = torch.cat((visual_output, visual_output_original[:, visual_output.size(1):, ...].contiguous()), dim=1)
+    #         visual_output = visual_output + visual_output_original
+    #     elif sim_header == "seqTransf":
+    #         # Sequential type: Transformer Encoder
+    #         visual_output_original = visual_output
+    #         seq_length = visual_output.size(1)
+    #         position_ids = torch.arange(seq_length, dtype=torch.long, device=visual_output.device)
+    #         position_ids = position_ids.unsqueeze(0).expand(visual_output.size(0), -1)
+    #         frame_position_embeddings = self.frame_position_embeddings(position_ids)
+    #         visual_output = visual_output + frame_position_embeddings
+
+    #         extended_video_mask = (1.0 - video_mask.unsqueeze(1)) * -1000000.0
+    #         extended_video_mask = extended_video_mask.expand(-1, video_mask.size(1), -1)
+    #         visual_output = visual_output.permute(1, 0, 2)  # NLD -> LND
+    #         visual_output = self.transformerClip(visual_output, extended_video_mask)
+    #         visual_output = visual_output.permute(1, 0, 2)  # LND -> NLD
+    #         visual_output = visual_output + visual_output_original
+
+    #     if self.training:
+    #         visual_output = allgather(visual_output, self.task_config)
+    #         video_mask = allgather(video_mask, self.task_config)
+    #         sequence_output = allgather(sequence_output, self.task_config)
+    #         torch.distributed.barrier()
+
+    #     visual_output = visual_output / visual_output.norm(dim=-1, keepdim=True)
+    #     visual_output = self._mean_pooling_for_similarity_visual(visual_output, video_mask)
+    #     visual_output = visual_output / visual_output.norm(dim=-1, keepdim=True)
+
+    #     sequence_output = sequence_output.squeeze(1)
+    #     sequence_output = sequence_output / sequence_output.norm(dim=-1, keepdim=True)
+
+    #     logit_scale = self.clip.logit_scale.exp()
+    #     retrieve_logits = logit_scale * torch.matmul(sequence_output, visual_output.t())
+    #     return retrieve_logits
+
+    def _loose_similarity(self, sequence_output, visual_output, sim_header="meanP", loose_type=True, device=None):
         sequence_output, visual_output = sequence_output.contiguous(), visual_output.contiguous()
+        video_mask = torch.ones(visual_output.shape[0], device=device)
 
         if sim_header == "meanP":
             # Default: Parameter-free type
@@ -417,15 +476,23 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
             torch.distributed.barrier()
 
         visual_output = visual_output / visual_output.norm(dim=-1, keepdim=True)
+
+        visual_output_each = visual_output
+        visual_output_each = visual_output_each.to(torch.float16)
+
         visual_output = self._mean_pooling_for_similarity_visual(visual_output, video_mask)
         visual_output = visual_output / visual_output.norm(dim=-1, keepdim=True)
+        visual_output = visual_output.to(torch.float16)
 
-        sequence_output = sequence_output.squeeze(1)
-        sequence_output = sequence_output / sequence_output.norm(dim=-1, keepdim=True)
+        # sequence_output = sequence_output.squeeze(1)
+        # sequence_output = sequence_output / sequence_output.norm(dim=-1, keepdim=True)
 
         logit_scale = self.clip.logit_scale.exp()
-        retrieve_logits = logit_scale * torch.matmul(sequence_output, visual_output.t())
-        return retrieve_logits
+        # retrieve_logits = logit_scale * torch.matmul(sequence_output, visual_output.t())
+        retrieve_logits = logit_scale * torch.matmul(visual_output, sequence_output.T )
+        retrieve_logits_each = logit_scale * torch.matmul(visual_output_each, sequence_output.T )
+        return retrieve_logits, retrieve_logits_each
+        # return torch.matmul(visual_output, sequence_output.T )
 
     def _cross_similarity(self, sequence_output, visual_output, attention_mask, video_mask):
         sequence_output, visual_output = sequence_output.contiguous(), visual_output.contiguous()
@@ -485,13 +552,13 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
 
     #     return retrieve_logits, contrastive_direction
 
-    def get_similarity_logits(self, sequence_output, visual_output, attention_mask, video_mask, sim_header="meanP", loose_type=False):
+    def get_similarity_logits(self, sequence_output, visual_output, sim_header="meanP", loose_type=False, device=None):
         contrastive_direction = ()
         if loose_type:
             assert sim_header in ["meanP", "seqLSTM", "seqTransf"]
-            retrieve_logits = self._loose_similarity(sequence_output, visual_output, attention_mask, video_mask, sim_header=self.sim_header)
+            retrieve_logits, retrieve_logits_each = self._loose_similarity(sequence_output, visual_output, sim_header=sim_header, device=device)
         else:
             assert sim_header in ["tightTransf"]
-            retrieve_logits = self._cross_similarity(sequence_output, visual_output, attention_mask, video_mask, )
+            retrieve_logits = self._cross_similarity(sequence_output, visual_output, )
 
-        return retrieve_logits, contrastive_direction
+        return retrieve_logits, retrieve_logits_each, contrastive_direction

@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 import cv2
+import os
 from config.prompt_config import prompt
 from itertools import product
 from tqdm import tqdm
@@ -64,7 +65,7 @@ def get_args(description='CLIP4Clip on Retrieval Task'):
     parser.add_argument("--output_dir", default='/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType', type=str, required=False,
                         help="The output directory where the model predictions and checkpoints will be written.")
     parser.add_argument("--cross_model", default="cross-base", type=str, required=False, help="Cross module")
-    parser.add_argument("--init_model", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb_20230612-b9706e54.pth", type=str, required=False, help="Initial model.")
+    parser.add_argument("--init_model", default=None, type=str, required=False, help="Initial model.")
     # parser.add_argument("--init_model", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.4", type=str, required=False, help="Initial model.")
     parser.add_argument("--resume_model", default=None, type=str, required=False, help="Resume train model.")
     parser.add_argument("--do_lower_case", action='store_true', help="Set this flag if you are using an uncased model.")
@@ -177,6 +178,20 @@ def init_device(args, local_rank):
 
     return device, n_gpu
 
+def init_model(args, device, n_gpu, local_rank):
+
+    if args.init_model:
+        model_state_dict = torch.load(args.init_model, map_location='cpu')
+    else:
+        model_state_dict = None
+
+    # Prepare model
+    cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE), 'distributed')
+    model = CLIP4Clip.from_pretrained(args.cross_model, cache_dir=cache_dir, state_dict=model_state_dict, task_config=args)
+
+    model.to(device)
+
+    return model
 
 def load_model(epoch, args, n_gpu, device, model_file=None):
     if model_file is None or len(model_file) == 0:
@@ -184,9 +199,10 @@ def load_model(epoch, args, n_gpu, device, model_file=None):
     if os.path.exists(model_file):
         model_state_dict = torch.load(model_file, map_location='cpu')
 
-        # mmaction2 clip4clip weight state_dict
-        if 'meta' in model_state_dict.keys():
-            model_state_dict = model_state_dict['state_dict']
+        if isinstance(model_state_dict, dict):
+            # mmaction2 clip4clip weight state_dict
+            if 'meta' in model_state_dict.keys():
+                model_state_dict = model_state_dict['state_dict']
 
         if args.local_rank == 0:
             logger.info("Model loaded from %s", model_file)
@@ -216,43 +232,39 @@ def load_model(epoch, args, n_gpu, device, model_file=None):
 #         sim_matrix.append(each_row)
 #     return sim_matrix
 
-def _run_on_single_gpu(model, visual_features, text_features, sim_header='meanP', loose_Type=True):
-    sim_matrix = []
-    for idx1, b1 in enumerate(batch_list_t):
-        input_mask, segment_ids, *_tmp = b1
-        sequence_output = batch_sequence_output_list[idx1]
-        each_row = []
-        for idx2, b2 in enumerate(batch_list_v):
-            video_mask, *_tmp = b2
-            visual_output = batch_visual_output_list[idx2]
-            b1b2_logits, *_tmp = model.get_similarity_logits(sequence_output, visual_output, input_mask, video_mask,
-                                                                     loose_type=model.loose_type)
-            b1b2_logits = b1b2_logits.cpu().detach().numpy()
-            each_row.append(b1b2_logits)
-        each_row = np.concatenate(tuple(each_row), axis=-1)
-        sim_matrix.append(each_row)
-    return sim_matrix
+def _run_on_single_gpu(model, visual_features, text_features, sim_header='meanP', loose_type=True, device="cuda:0"):
+    logits, logits_each, *_tmp = model.get_similarity_logits(text_features, visual_features, sim_header=sim_header, loose_type=loose_type, device=device)
+    probs = logits.softmax(dim=-1).cpu().numpy()
+    probs_each = logits_each.softmax(dim=-1).cpu().numpy()
+    return probs, probs_each
 
 def prompt_config(pos, neg, model, device):
         SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
                               "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
         
-        max_words = 32
+        max_words = 77 
 
         tokenizer = ClipTokenizer()
-        # product 함수를 사용하여 가능한 모든 조합 생성
-        positive_combinations = product(*pos)
-        negative_combinations = product(*neg)
+        # # product 함수를 사용하여 가능한 모든 조합 생성
+        # positive_combinations = product(*pos)
+        # negative_combinations = product(*neg)
 
-        Positive=[]
-        for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
-            result = " ".join(combination)
-            Positive.append(result)
+        # Positive=[]
+        # for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
+        #     result = " ".join(combination)
+        #     Positive.append(result)
 
-        Negative=[]
-        for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
-            result = " ".join(combination)
-            Negative.append(result)
+        # Negative=[]
+        # for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
+        #     result = " ".join(combination)
+        #     Negative.append(result)
+
+        # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
+        Positive = ["Two men are kicking each other", "People are fighting in the street", 
+                    "Two men are throwing punches at each other", "People are wrestling",
+                    "People are hugging", "A person is choking another person"]
+        Negative = ["People are standing side by side", "Some people are running on the street happily", "People are walking on the street peacefully",
+                    ]
 
         TextSet = Positive + Negative
 
@@ -292,13 +304,13 @@ def prompt_config(pos, neg, model, device):
 
 def infer(args, model, rtspurl, device, n_gpu):
 
-    # prompt_pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
-    # prompt_neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+    prompt_pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+    prompt_neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
 
 
-    # text_features = prompt_config(prompt_pos, prompt_neg, model, device)
+    text_features = prompt_config(prompt_pos, prompt_neg, model, device)
     # torch.save(text_features, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
-    text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
+    # text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_p.pt")
 
     cap = cv2.VideoCapture(rtspurl)
 
@@ -317,6 +329,7 @@ def infer(args, model, rtspurl, device, n_gpu):
     window_time = 2
     batch_size = fps * window_time
     frame_buffer = []
+    # ori_buffer = []
 
     sim_header = 'meanP'
     loose_type = True
@@ -329,28 +342,50 @@ def infer(args, model, rtspurl, device, n_gpu):
                 print("Error: Failed to capture frame.")
                 break
 
-            resized_frame = cv2.resize(frame, (224, 224))
-            tensor_frame = torch.tensor(resized_frame, device=device)
-
-            frame_buffer.append(tensor_frame)
+            if len(frame_buffer) < batch_size:
+                resized_frame = cv2.resize(frame, (224, 224))
+                # ori_buffer.append(resized_frame)
+                tensor_frame = torch.tensor(resized_frame, device=device)
+                frame_buffer.append(tensor_frame)
 
             if len(frame_buffer) >= batch_size:
-                frame_buffer = torch.stack(frame_buffer).float()
-                bs, h, w, c = frame_buffer.shape
-                frame_buffer = frame_buffer.permute(0, 3, 1, 2)
-                visual_features = model.clip.encode_image(frame_buffer, video_frame=bs).float()
-                print(f"visual encoding output: {visual_features}")
+
+                frames = torch.stack(frame_buffer).float()
+                del frame_buffer[0]
+
+                bs, h, w, c = frames.shape
+                frames = frames.permute(0, 3, 1, 2)
+                visual_features = model.clip.encode_image(frames, video_frame=bs).float()
+                # print(f"visual encoding output: {visual_features}")
 
                 # ----------------------------------
                 # 2. calculate the similarity
                 # ----------------------------------
-                sim_matrix = _run_on_single_gpu(model, visual_features, text_features, loose_type=True)
-                sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
+                probs, probs_each = _run_on_single_gpu(model, visual_features, text_features, sim_header="meanP", loose_type=True, device=device)
+                
 
-                logger.info("sim matrix size: {}, {}".format(sim_matrix.shape[0], sim_matrix.shape[1]))
-                tv_metrics = compute_metrics(sim_matrix)
-                vt_metrics = compute_metrics(sim_matrix.T)
-                logger.info('\t Length-T: {}, Length-V:{}'.format(len(sim_matrix), len(sim_matrix[0])))
+                if probs[0] > 0.7:
+                    text = f"prediction: {probs[0]:.2f} >>>>>>>>>>>> Violence!!!!!!!"
+                else:
+                    text = f"prediction: {probs[0]:.2f} >>>>>>>>>>>> No Event!!!!!"
+
+                print(text)
+
+
+                # for e, i in enumerate(ori_buffer):
+                #     i = cv2.resize(i, (1280, 720))
+                #     cv2.putText(i, f"each: {probs_each[e]} ---------- mean: {probs}", (5,100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+                #     cv2.imwrite(f'/workspace/CLIP4Clip/imgs/{e}.jpg', i)
+                # del ori_buffer[0]
+
+
+                cv2.putText(frame, f"each +: {probs_each[-1][0]:.2f} ---------- each -: {probs_each[-1][1]:.2f}", (50,100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+                cv2.putText(frame, f"event: {text}", (50,150), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+
+                # cv2.putText(frame, text, (50,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+
+                cv2.imshow('Video', frame)
+                cv2.waitKey(1)
 
 def main():
     global logger
@@ -359,12 +394,16 @@ def main():
     device, n_gpu = init_device(args, args.local_rank)
 
     if args.local_rank == 0:
-        model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth")
-   
+        # model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth")
+        model = init_model(args, device, n_gpu, args.local_rank)
+
     # Uncomment if want to test on the best checkpoint
-    rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    # rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    rtsp_url = "rtsp://192.168.0.2:8554/stream"
     if args.do_eval:
         infer(args, model, rtsp_url, device, n_gpu)
+
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()

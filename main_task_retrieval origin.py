@@ -60,7 +60,6 @@ def get_args(description='CLIP4Clip on Retrieval Task'):
                         help="The output directory where the model predictions and checkpoints will be written.")
     parser.add_argument("--cross_model", default="cross-base", type=str, required=False, help="Cross module")
     parser.add_argument("--init_model", default=None, type=str, required=False, help="Initial model.")
-    # parser.add_argument("--init_model", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.4", type=str, required=False, help="Initial model.")
     parser.add_argument("--resume_model", default=None, type=str, required=False, help="Resume train model.")
     parser.add_argument("--do_lower_case", action='store_true', help="Set this flag if you are using an uncased model.")
     parser.add_argument("--warmup_proportion", default=0.1, type=float,
@@ -179,10 +178,6 @@ def init_model(args, device, n_gpu, local_rank):
     else:
         model_state_dict = None
 
-    # mmaction2 clip4clip weight state_dict
-    if 'meta' in model_state_dict.keys():
-        model_state_dict = model_state_dict['state_dict']
-
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE), 'distributed')
     model = CLIP4Clip.from_pretrained(args.cross_model, cache_dir=cache_dir, state_dict=model_state_dict, task_config=args)
@@ -249,11 +244,6 @@ def load_model(epoch, args, n_gpu, device, model_file=None):
         model_file = os.path.join(args.output_dir, "pytorch_model.bin.{}".format(epoch))
     if os.path.exists(model_file):
         model_state_dict = torch.load(model_file, map_location='cpu')
-
-        # mmaction2 clip4clip weight state_dict
-        if 'meta' in model_state_dict.keys():
-            model_state_dict = model_state_dict['state_dict']
-
         if args.local_rank == 0:
             logger.info("Model loaded from %s", model_file)
         # Prepare model
@@ -484,30 +474,28 @@ def main():
     tokenizer = ClipTokenizer()
 
     assert  args.task_type == "retrieval"
-    # model = init_model(args, device, n_gpu, args.local_rank)
-    if args.local_rank == 0:
-        model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth")
-        
-    # ## ####################################
-    # # freeze testing
-    # ## ####################################
-    # assert args.freeze_layer_num <= 12 and args.freeze_layer_num >= -1
-    # if hasattr(model, "clip") and args.freeze_layer_num > -1:
-    #     for name, param in model.clip.named_parameters():
-    #         # top layers always need to train
-    #         if name.find("ln_final.") == 0 or name.find("text_projection") == 0 or name.find("logit_scale") == 0 \
-    #                 or name.find("visual.ln_post.") == 0 or name.find("visual.proj") == 0:
-    #             continue    # need to train
-    #         elif name.find("visual.transformer.resblocks.") == 0 or name.find("transformer.resblocks.") == 0:
-    #             layer_num = int(name.split(".resblocks.")[1].split(".")[0])
-    #             if layer_num >= args.freeze_layer_num:
-    #                 continue    # need to train
+    model = init_model(args, device, n_gpu, args.local_rank)
 
-    #         if args.linear_patch == "3d" and name.find("conv2."):
-    #             continue
-    #         else:
-    #             # paramenters which < freeze_layer_num will be freezed
-    #             param.requires_grad = False
+    ## ####################################
+    # freeze testing
+    ## ####################################
+    assert args.freeze_layer_num <= 12 and args.freeze_layer_num >= -1
+    if hasattr(model, "clip") and args.freeze_layer_num > -1:
+        for name, param in model.clip.named_parameters():
+            # top layers always need to train
+            if name.find("ln_final.") == 0 or name.find("text_projection") == 0 or name.find("logit_scale") == 0 \
+                    or name.find("visual.ln_post.") == 0 or name.find("visual.proj") == 0:
+                continue    # need to train
+            elif name.find("visual.transformer.resblocks.") == 0 or name.find("transformer.resblocks.") == 0:
+                layer_num = int(name.split(".resblocks.")[1].split(".")[0])
+                if layer_num >= args.freeze_layer_num:
+                    continue    # need to train
+
+            if args.linear_patch == "3d" and name.find("conv2."):
+                continue
+            else:
+                # paramenters which < freeze_layer_num will be freezed
+                param.requires_grad = False
 
     ## ####################################
     # dataloader loading
@@ -538,9 +526,63 @@ def main():
         logger.info("***** Running val *****")
         logger.info("  Num examples = %d", val_length)
 
-    # Uncomment if want to test on the best checkpoint
-    if args.do_eval:
-        eval_epoch(args, model, test_dataloader, device, n_gpu)
+    ## ####################################
+    # train and eval
+    ## ####################################
+    if args.do_train:
+        train_dataloader, train_length, train_sampler = DATALOADER_DICT[args.datatype]["train"](args, tokenizer)
+        num_train_optimization_steps = (int(len(train_dataloader) + args.gradient_accumulation_steps - 1)
+                                        / args.gradient_accumulation_steps) * args.epochs
+
+        coef_lr = args.coef_lr
+        optimizer, scheduler, model = prep_optimizer(args, model, num_train_optimization_steps, device, n_gpu, args.local_rank, coef_lr=coef_lr)
+
+        if args.local_rank == 0:
+            logger.info("***** Running training *****")
+            logger.info("  Num examples = %d", train_length)
+            logger.info("  Batch size = %d", args.batch_size)
+            logger.info("  Num steps = %d", num_train_optimization_steps * args.gradient_accumulation_steps)
+
+        best_score = 0.00001
+        best_output_model_file = "None"
+        ## ##############################################################
+        # resume optimizer state besides loss to continue train
+        ## ##############################################################
+        resumed_epoch = 0
+        if args.resume_model:
+            checkpoint = torch.load(args.resume_model, map_location='cpu')
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            resumed_epoch = checkpoint['epoch']+1
+            resumed_loss = checkpoint['loss']
+        
+        global_step = 0
+        for epoch in range(resumed_epoch, args.epochs):
+            train_sampler.set_epoch(epoch)
+            tr_loss, global_step = train_epoch(epoch, args, model, train_dataloader, device, n_gpu, optimizer,
+                                               scheduler, global_step, local_rank=args.local_rank)
+            if args.local_rank == 0:
+                logger.info("Epoch %d/%s Finished, Train Loss: %f", epoch + 1, args.epochs, tr_loss)
+
+                output_model_file = save_model(epoch, args, model, optimizer, tr_loss, type_name="")
+
+                ## Run on val dataset, this process is *TIME-consuming*.
+                # logger.info("Eval on val dataset")
+                # R1 = eval_epoch(args, model, val_dataloader, device, n_gpu)
+
+                R1 = eval_epoch(args, model, test_dataloader, device, n_gpu)
+                if best_score <= R1:
+                    best_score = R1
+                    best_output_model_file = output_model_file
+                logger.info("The best model is: {}, the R1 is: {:.4f}".format(best_output_model_file, best_score))
+
+        ## Uncomment if want to test on the best checkpoint
+        # if args.local_rank == 0:
+        #     model = load_model(-1, args, n_gpu, device, model_file=best_output_model_file)
+        #     eval_epoch(args, model, test_dataloader, device, n_gpu)
+
+    elif args.do_eval:
+        if args.local_rank == 0:
+            eval_epoch(args, model, test_dataloader, device, n_gpu)
 
 if __name__ == "__main__":
     main()
