@@ -398,8 +398,8 @@ def main():
         model = init_model(args, device, n_gpu, args.local_rank)
 
     # Uncomment if want to test on the best checkpoint
-    # rtsp_url = "rtsp://192.168.10.32:8554/stream"
-    rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    # rtsp_url = "rtsp://192.168.0.2:8554/stream"
     if args.do_eval:
         infer(args, model, rtsp_url, device, n_gpu)
 
