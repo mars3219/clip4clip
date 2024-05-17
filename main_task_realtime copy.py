@@ -216,117 +216,102 @@ def load_model(epoch, args, n_gpu, device, model_file=None):
         model = None
     return model
 
+# def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list):
+#     sim_matrix = []
+#     for idx1, b1 in enumerate(batch_list_t):
+#         input_mask, segment_ids, *_tmp = b1
+#         sequence_output = batch_sequence_output_list[idx1]
+#         each_row = []
+#         for idx2, b2 in enumerate(batch_list_v):
+#             video_mask, *_tmp = b2
+#             visual_output = batch_visual_output_list[idx2]
+#             b1b2_logits, *_tmp = model.get_similarity_logits(sequence_output, visual_output, input_mask, video_mask,
+#                                                                      loose_type=model.loose_type)
+#             b1b2_logits = b1b2_logits.cpu().detach().numpy()
+#             each_row.append(b1b2_logits)
+#         each_row = np.concatenate(tuple(each_row), axis=-1)
+#         sim_matrix.append(each_row)
+#     return sim_matrix
+
 def _run_on_single_gpu(model, visual_features, text_features, sim_header='meanP', loose_type=True, device="cuda:0"):
     logits, logits_each, *_tmp = model.get_similarity_logits(text_features, visual_features, sim_header=sim_header, loose_type=loose_type, device=device)
     probs = logits.softmax(dim=-1).cpu().numpy()
     probs_each = logits_each.softmax(dim=-1).cpu().numpy()
     return probs, probs_each
 
-# def prompt_config(pos, neg, model, device):
-#         SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
-#                               "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
-        
-#         max_words = 77 
-
-#         tokenizer = ClipTokenizer()
-#         # # product 함수를 사용하여 가능한 모든 조합 생성
-#         # positive_combinations = product(*pos)
-#         # negative_combinations = product(*neg)
-
-#         # Positive=[]
-#         # for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
-#         #     result = " ".join(combination)
-#         #     Positive.append(result)
-
-#         # Negative=[]
-#         # for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
-#         #     result = " ".join(combination)
-#         #     Negative.append(result)
-
-#         # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
-#         Positive = ["Two men are kicking each other", "People are fighting in the street", 
-#                     "Two men are throwing punches at each other", "People are wrestling",
-#                     "People are hugging", "A person is choking another person"]
-#         Negative = ["People are standing side by side", "Some people are running on the street happily", "People are walking on the street peacefully",
-#                     ]
-
-#         TextSet = Positive + Negative
-
-#         encoding_text = []
-#         for i, text in enumerate(TextSet):
-#             words = tokenizer.tokenize(text)
-#             words = [SPECIAL_TOKEN["CLS_TOKEN"]] + words
-#             total_length_with_CLS = max_words - 1
-#             if len(words) > total_length_with_CLS:
-#                 words = words[:total_length_with_CLS]
-#             words = words + [SPECIAL_TOKEN["SEP_TOKEN"]]
-
-#             input_ids = tokenizer.convert_tokens_to_ids(words)
-
-#             while len(input_ids) < max_words:
-#                 input_ids.append(0)
-
-#             assert len(input_ids) == max_words
-
-#             encoding_text.append(np.array(input_ids))
-
-#         with torch.no_grad():
-#             # Positive/Negative Class Feature들로부터 평균 Feature를 구해 이를 대표로 사용
-#             text = torch.tensor(encoding_text).to(device)
-#             pos_features = model.clip.encode_text(text[0:1]).to(device) / float(len(Positive))
-#             for pos in range(1,len(Positive)):
-#                 pos_features = pos_features + model.clip.encode_text(text[pos:pos + 1]).to(device) / float(len(Positive))
-
-#             neg_features = model.clip.encode_text(text[len(Positive):len(Positive) + 1]).to(device) / float(len(Negative))
-#             for neg in range(len(Positive) + 1, len(text)):
-#                 neg_features = neg_features + model.clip.encode_text(text[neg:neg + 1]).to(device) / float(len(Negative))
-
-#             text_features = torch.cat((pos_features,neg_features),0)
-
-#             return text_features
-
 def prompt_config(pos, neg, model, device):
-        # product 함수를 사용하여 가능한 모든 조합 생성
-        positive_combinations = product(*pos)
-        negative_combinations = product(*neg)
+        SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
+                              "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
+        
+        max_words = 77 
 
-        Positive=[]
-        for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
-            result = " ".join(combination)
-            Positive.append(result)
+        tokenizer = ClipTokenizer()
+        # # product 함수를 사용하여 가능한 모든 조합 생성
+        # positive_combinations = product(*pos)
+        # negative_combinations = product(*neg)
 
-        Negative=[]
-        for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
-            result = " ".join(combination)
-            Negative.append(result)
+        # Positive=[]
+        # for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
+        #     result = " ".join(combination)
+        #     Positive.append(result)
+
+        # Negative=[]
+        # for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
+        #     result = " ".join(combination)
+        #     Negative.append(result)
+
+        # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
+        Positive = ["Two men are kicking each other", "People are fighting in the street", 
+                    "Two men are throwing punches at each other", "People are wrestling",
+                    "People are hugging", "A person is choking another person"]
+        Negative = ["People are standing side by side", "Some people are running on the street happily", "People are walking on the street peacefully",
+                    ]
 
         TextSet = Positive + Negative
-        text = clip.tokenize(TextSet).to(device)
+
+        encoding_text = []
+        for i, text in enumerate(TextSet):
+            words = tokenizer.tokenize(text)
+            words = [SPECIAL_TOKEN["CLS_TOKEN"]] + words
+            total_length_with_CLS = max_words - 1
+            if len(words) > total_length_with_CLS:
+                words = words[:total_length_with_CLS]
+            words = words + [SPECIAL_TOKEN["SEP_TOKEN"]]
+
+            input_ids = tokenizer.convert_tokens_to_ids(words)
+
+            while len(input_ids) < max_words:
+                input_ids.append(0)
+
+            assert len(input_ids) == max_words
+
+            encoding_text.append(np.array(input_ids))
 
         with torch.no_grad():
             # Positive/Negative Class Feature들로부터 평균 Feature를 구해 이를 대표로 사용
-            text_features1 = model.encode_text(text[0:1]).to(device) / float(len(Positive))
-            for ttt in range(1,len(Positive)):
-                text_features1 = text_features1 + model.encode_text(text[ttt:ttt + 1]).to(device) / float(len(Positive))
+            text = torch.tensor(encoding_text).to(device)
+            pos_features = model.clip.encode_text(text[0:1]).to(device) / float(len(Positive))
+            for pos in range(1,len(Positive)):
+                pos_features = pos_features + model.clip.encode_text(text[pos:pos + 1]).to(device) / float(len(Positive))
 
-            text_features2 = model.encode_text(text[len(Positive):len(Positive) + 1]).to(device) / float(len(Negative))
-            for ttt in range(len(Positive) + 1, len(text)):
-                text_features2 = text_features2 + model.encode_text(text[ttt:ttt+1]).to(device) / float(len(Negative))
+            neg_features = model.clip.encode_text(text[len(Positive):len(Positive) + 1]).to(device) / float(len(Negative))
+            for neg in range(len(Positive) + 1, len(text)):
+                neg_features = neg_features + model.clip.encode_text(text[neg:neg + 1]).to(device) / float(len(Negative))
 
-            text_features = torch.cat((text_features1,text_features2),0)
+            text_features = torch.cat((pos_features,neg_features),0)
 
             return text_features
-
+        
 
 def infer(args, model, rtspurl, device, n_gpu):
 
-    prompt_pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
-    prompt_neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+    # prompt_pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+    # prompt_neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
 
 
-    text_features = prompt_config(prompt_pos, prompt_neg, model, device)
+    # text_features = prompt_config(prompt_pos, prompt_neg, model, device)
     # torch.save(text_features, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
-    # text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_p.pt")
+    text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
 
     cap = cv2.VideoCapture(rtspurl)
 
@@ -371,8 +356,7 @@ def infer(args, model, rtspurl, device, n_gpu):
 
                 bs, h, w, c = frames.shape
                 frames = frames.permute(0, 3, 1, 2)
-                visual_features = model.encode_image(frames)
-                # visual_features = model.clip.encode_image(frames, video_frame=bs).float()
+                visual_features = model.clip.encode_image(frames, video_frame=bs).float()
                 # print(f"visual encoding output: {visual_features}")
 
                 # ----------------------------------
@@ -412,8 +396,7 @@ def main():
 
     if args.local_rank == 0:
         # model = load_model(-1, args, n_gpu, device, model_file="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth")
-        # model = init_model(args, device, n_gpu, args.local_rank)
-        model = clip.load("/workspace/CLIP4Clip/modules/ViT-B-32.pt", device=device)
+        model = init_model(args, device, n_gpu, args.local_rank)
 
     # Uncomment if want to test on the best checkpoint
     rtsp_url = "rtsp://192.168.10.32:8554/stream"

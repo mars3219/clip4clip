@@ -15,8 +15,10 @@ def angle_greater_than_180(x0, y0, x1, y1, x2, y2):
 
 def calculate_angle(x0, y0, x1, y1, x2, y2):
     # 시작점과 중심점에서 끝점까지의 벡터를 구합니다.
-    vector1 = [x1 - x0, y1 - y0]
+    vector1 = [x0 - x1, y0 - y1]
     vector2 = [x2 - x0, y2 - y0]
+
+    
 
     # 두 벡터의 내적을 구합니다.
     dot_product = vector1[0] * vector2[0] + vector1[1] * vector2[1]
@@ -35,20 +37,27 @@ def calculate_angle(x0, y0, x1, y1, x2, y2):
 
     angle_deg = math.degrees(angle)
 
-    if not obtuse_angle:
+    if obtuse_angle:
         angle_deg = 360 - angle_deg
 
     return angle_deg
 
 # 예시 시작점, 중심점, 끝점
-x0, y0 = 0, 0  # 중심점
-x1, y1 = -5*math.sqrt(2), -5*math.sqrt(2)  # 시작점
-x2, y2 = 5*math.sqrt(2), 5*math.sqrt(2)
-# x2, y2 = 0, 10
-# x2, y2 = 10, 0  # 끝점
+# x0, y0 = 0, 0  # 중심점
+# x1, y1 = -5*math.sqrt(2), -5*math.sqrt(2)  # 시작점
+# x2, y2 = 5*math.sqrt(2), -5*math.sqrt(2)
+
+x0, y0 = 693, 373
+x1, y1 = 573, 491
+x2, y2 = 816,486
+
+mx0, my0 = x0-x0, y0-y0
+mx1, my1 = x1-x0, y1-y0
+mx2, my2 = x2-x0, y2-y0
+
 
 # 각을 계산합니다.
-angle = calculate_angle(x0, y0, x1, y1, x2, y2)
+angle = calculate_angle(mx0, my0, mx1, my1, mx2, my2)
 
 # 180도를 넘는지 확인합니다.
 if angle > 180:
