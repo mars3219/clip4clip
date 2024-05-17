@@ -21,7 +21,7 @@ def get_args(description='CLIP2Video on Dideo-Text Retrieval Task'):
     parser.add_argument('--max_words', type=int, default=32, help='')
     parser.add_argument('--max_frames', type=int, default=60, help='')
     parser.add_argument('--feature_framerate', type=int, default=2, help='frame rate for uniformly sampling the video')
-    parser.add_argument("--output_dir", default=None, type=str, required=False,
+    parser.add_argument("--output_dir", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/log2.txt", type=str, required=False,
                         help="The output directory where the model predictions and checkpoints will be written.")
     parser.add_argument("--cross_model", default="cross-base", type=str, required=False, help="Cross module")
     parser.add_argument("--do_lower_case", action='store_true', help="Set this flag if you are using an uncased model.")

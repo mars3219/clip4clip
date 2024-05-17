@@ -1,88 +1,14 @@
 # Adapted from https://github.com/ArrowLuo/CLIP4Clip/blob/668334707c493a4eaee7b4a03b2dae04915ce170/main_task_retrieval.py#L457
 
 import os
-from utils.prompt_config import prompt
-from itertools import product
-import tqdm
-
 import sys
 sys.path.append(os.path.dirname(__file__) + os.sep + '../')
 import numpy as np
-
-from modules.tokenization_clip import SimpleTokenizer as ClipTokenizer
 from evaluation.metrics import compute_metrics
 from evaluation.metrics import tensor_text_to_video_metrics
 from evaluation.metrics import tensor_video_to_text_sim
 from utils.utils import parallel_apply
 import torch
-
-
-
-def prompt_config(pos, neg, model, device):
-    SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
-                              "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
-        
-    max_words = 77 
-
-    tokenizer = ClipTokenizer()
-    # product 함수를 사용하여 가능한 모든 조합 생성
-    positive_combinations = product(*pos)
-    negative_combinations = product(*neg)
-
-    Positive=[]
-    for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
-        result = " ".join(combination)
-        Positive.append(result)
-
-    Negative=[]
-    for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
-        result = " ".join(combination)
-        Negative.append(result)
-
-    # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
-    # Positive = ["Two men are kicking each other", "People are fighting in the street", 
-    #             "Two men are throwing punches at each other", "People are wrestling",
-    #             "People are hugging", "A person is choking another person"]
-    # Negative = ["People are standing side by side", "Some people are running on the street happily", "People are walking on the street peacefully",
-    #             ]
-
-    TextSet = Positive + Negative
-
-    encoding_text = []
-    for i, text in enumerate(TextSet):
-        words = tokenizer.tokenize(text)
-        words = [SPECIAL_TOKEN["CLS_TOKEN"]] + words
-        total_length_with_CLS = max_words - 1
-        if len(words) > total_length_with_CLS:
-            words = words[:total_length_with_CLS]
-        words = words + [SPECIAL_TOKEN["SEP_TOKEN"]]
-
-        input_ids = tokenizer.convert_tokens_to_ids(words)
-
-        while len(input_ids) < max_words:
-            input_ids.append(0)
-
-        assert len(input_ids) == max_words
-
-        encoding_text.append(np.array(input_ids))
-
-    with torch.no_grad():
-        # Positive/Negative Class Feature들로부터 평균 Feature를 구해 이를 대표로 사용
-        text = torch.tensor(encoding_text).to(device)
-        pos_features = model.clip.encode_text(text[0:1]).to(device) / float(len(Positive))
-        for pos in range(1,len(Positive)):
-            pos_features = pos_features + model.clip.encode_text(text[pos:pos + 1]).to(device) / float(len(Positive))
-
-        neg_features = model.clip.encode_text(text[len(Positive):len(Positive) + 1]).to(device) / float(len(Negative))
-        for neg in range(len(Positive) + 1, len(text)):
-            neg_features = neg_features + model.clip.encode_text(text[neg:neg + 1]).to(device) / float(len(Negative))
-
-        text_features = torch.cat((pos_features,neg_features),0)
-
-        return text_features
-
-
-
 
 def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list):
     """run similarity in one single gpu
@@ -127,14 +53,6 @@ def eval_epoch(model, test_dataloader, device, n_gpu, logger):
         R1: rank 1 of text-to-video retrieval
 
     """
-
-    prompt_pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
-    prompt_neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
-
-    text_features = prompt_config(prompt_pos, prompt_neg, model, device)
-    # torch.save(text_features, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
-    # text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_p.pt")
-
 
     if hasattr(model, 'module'):
         model = model.module.to(device)

@@ -138,9 +138,12 @@ def main():
     # init model
     model = init_model(args, device)
 
+    rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    # rtsp_url = "rtsp://192.168.0.2:8554/stream"
+
     # evaluation for text-to-video and video-to-text retrieval
     if args.local_rank == 0:
-        eval_epoch(model, , device, n_gpu)
+        eval_epoch(model, rtsp_url, device, n_gpu)
 
 if __name__ == "__main__":
     main()
