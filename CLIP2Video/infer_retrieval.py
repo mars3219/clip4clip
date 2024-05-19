@@ -8,7 +8,9 @@ import torch
 import numpy as np
 import os
 import random
-from modules.tokenization_clip import SimpleTokenizer as ClipTokenizer
+
+from modules.module_txtemb import prompt_embedding
+
 from modules.modeling import CLIP2Video
 from evaluation.eval import eval_epoch
 
@@ -121,7 +123,6 @@ def init_model(args, device):
 
 
 def main():
-
     global logger
 
     # obtain the hyper-parameter
@@ -133,17 +134,21 @@ def main():
     # setting the testing device
     device, n_gpu = init_device(args, args.local_rank)
 
-    # # setting tokenizer
-    # tokenizer = ClipTokenizer()
+
     # init model
     model = init_model(args, device)
 
-    rtsp_url = "rtsp://192.168.10.32:8554/stream"
-    # rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    # setting tokenizer and text_features
+    # torch.save(text_features, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
+    # text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_p.pt")
+    text_features, text_mask = prompt_embedding(model, args.max_words, device)
+
+    # rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    rtsp_url = "rtsp://192.168.0.2:8554/stream"
 
     # evaluation for text-to-video and video-to-text retrieval
     if args.local_rank == 0:
-        eval_epoch(model, rtsp_url, device, n_gpu)
+        eval_epoch(model, rtsp_url, text_features, text_mask, device)
 
 if __name__ == "__main__":
     main()

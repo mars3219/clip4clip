@@ -10,7 +10,7 @@ import os
 import random
 from modules.tokenization_clip import SimpleTokenizer as ClipTokenizer
 from modules.modeling import CLIP2Video
-from evaluation.eval import eval_epoch
+from evaluation.eval_ori import eval_epoch
 
 from utils.config import get_args
 from utils.utils import get_logger

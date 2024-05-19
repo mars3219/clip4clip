@@ -12,13 +12,13 @@ def get_args(description='CLIP2Video on Dideo-Text Retrieval Task'):
     # arugment based on CLIP4clip:
     # https://github.com/ArrowLuo/CLIP4Clip/blob/668334707c493a4eaee7b4a03b2dae04915ce170/main_task_retrieval.py#L457
     parser.add_argument("--do_eval", action='store_false', help="Whether to run eval on the dev set.")
-    parser.add_argument('--val_csv', type=str, default='/workspace/CLIP4Clip/data/MSRVTT_JSFUSION_test.csv', help='')
-    parser.add_argument('--data_path', type=str, default='/workspace/CLIP4Clip/data/MSRVTT_data.json', help='data pickle file path')
-    parser.add_argument('--features_path', type=str, default='/workspace/CLIP4Clip/data/MSRVTT_Videos/output', help='feature path')
+    parser.add_argument('--val_csv', type=str, default='/workspace/CLIP4Clip/data/msrvtt_data/MSRVTT_JSFUSION_test.csv', help='')
+    parser.add_argument('--data_path', type=str, default='/workspace/CLIP4Clip/data/msrvtt_data/MSRVTT_data.json', help='data pickle file path')
+    parser.add_argument('--features_path', type=str, default='/workspace/CLIP4Clip/data/msrvtt_data/MSRVTT_Videos/output', help='feature path')
     parser.add_argument('--num_thread_reader', type=int, default=0, help='')
     parser.add_argument('--batch_size_val', type=int, default=64, help='batch size eval')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
-    parser.add_argument('--max_words', type=int, default=32, help='')
+    parser.add_argument('--max_words', type=int, default=77, help='')
     parser.add_argument('--max_frames', type=int, default=60, help='')
     parser.add_argument('--feature_framerate', type=int, default=2, help='frame rate for uniformly sampling the video')
     parser.add_argument("--output_dir", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/log2.txt", type=str, required=False,
@@ -61,7 +61,7 @@ def get_args(description='CLIP2Video on Dideo-Text Retrieval Task'):
 
     # model path of clip
     parser.add_argument('--clip_path', type=str,
-                        default='/workspace/CLIP4Clip/modules/ViT-B-32.pt',
+                        default='/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/ViT-B-32.pt',
                         help="model path of CLIP")
 
     args = parser.parse_args()

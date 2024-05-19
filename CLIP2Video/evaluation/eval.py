@@ -17,73 +17,6 @@ from utils.utils import parallel_apply
 import torch
 
 
-
-def prompt_config(pos, neg, model, device):
-    SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
-                              "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
-        
-    max_words = 77 
-
-    tokenizer = ClipTokenizer()
-    # product 함수를 사용하여 가능한 모든 조합 생성
-    positive_combinations = product(*pos)
-    negative_combinations = product(*neg)
-
-    Positive=[]
-    for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
-        result = " ".join(combination)
-        Positive.append(result)
-
-    Negative=[]
-    for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
-        result = " ".join(combination)
-        Negative.append(result)
-
-    # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
-    # Positive = ["Two men are kicking each other", "People are fighting in the street", 
-    #             "Two men are throwing punches at each other", "People are wrestling",
-    #             "People are hugging", "A person is choking another person"]
-    # Negative = ["People are standing side by side", "Some people are running on the street happily", "People are walking on the street peacefully",
-    #             ]
-
-    TextSet = Positive + Negative
-
-    encoding_text = []
-    for i, text in enumerate(TextSet):
-        words = tokenizer.tokenize(text)
-        words = [SPECIAL_TOKEN["CLS_TOKEN"]] + words
-        total_length_with_CLS = max_words - 1
-        if len(words) > total_length_with_CLS:
-            words = words[:total_length_with_CLS]
-        words = words + [SPECIAL_TOKEN["SEP_TOKEN"]]
-
-        input_ids = tokenizer.convert_tokens_to_ids(words)
-
-        while len(input_ids) < max_words:
-            input_ids.append(0)
-
-        assert len(input_ids) == max_words
-
-        encoding_text.append(np.array(input_ids))
-
-    with torch.no_grad():
-        # Positive/Negative Class Feature들로부터 평균 Feature를 구해 이를 대표로 사용
-        text = torch.tensor(encoding_text).to(device)
-        pos_features = model.clip.encode_text(text[0:1]).to(device) / float(len(Positive))
-        for pos in range(1,len(Positive)):
-            pos_features = pos_features + model.clip.encode_text(text[pos:pos + 1]).to(device) / float(len(Positive))
-
-        neg_features = model.clip.encode_text(text[len(Positive):len(Positive) + 1]).to(device) / float(len(Negative))
-        for neg in range(len(Positive) + 1, len(text)):
-            neg_features = neg_features + model.clip.encode_text(text[neg:neg + 1]).to(device) / float(len(Negative))
-
-        text_features = torch.cat((pos_features,neg_features),0)
-
-        return text_features
-
-
-
-
 def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list):
     """run similarity in one single gpu
     Args:
@@ -114,7 +47,7 @@ def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_
 
 
 
-def eval_epoch(model, test_dataloader, device, n_gpu, logger):
+def eval_epoch(model, rtsp_url, text_features, text_mask, device):
     """run similarity in one single gpu
     Args:
         model: CLIP2Video
@@ -125,126 +58,27 @@ def eval_epoch(model, test_dataloader, device, n_gpu, logger):
         batch_visual_output_list: batch visual embedding
     Returns:
         R1: rank 1 of text-to-video retrieval
-
     """
-
-    prompt_pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
-    prompt_neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
-
-    text_features = prompt_config(prompt_pos, prompt_neg, model, device)
-    # torch.save(text_features, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
-    # text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_p.pt")
-
 
     if hasattr(model, 'module'):
         model = model.module.to(device)
     else:
         model = model.to(device)
 
-    # if multi_sentence_ == True: compute the similarity with multi-sentences retrieval
-    multi_sentence_ = False
-
-    cut_off_points_, sentence_num_, video_num_ = [], -1, -1
-    if hasattr(test_dataloader.dataset, 'multi_sentence_per_video') \
-            and test_dataloader.dataset.multi_sentence_per_video:
-        multi_sentence_ = True
-        cut_off_points_ = test_dataloader.dataset.cut_off_points # used to tag the label when calculate the metric
-        sentence_num_ = test_dataloader.dataset.sentence_num # used to cut the sentence representation
-        video_num_ = test_dataloader.dataset.video_num # used to cut the video representation
-        cut_off_points_ = [itm - 1 for itm in cut_off_points_]
-
-    if multi_sentence_:
-        logger.warning("Eval under the multi-sentence per video clip setting.")
-        logger.warning("sentence num: {}, video num: {}".format(sentence_num_, video_num_))
-
     model.eval()
 
     with torch.no_grad():
-        batch_list_t = []
-        batch_list_v = []
-        batch_sequence_output_list, batch_visual_output_list = [], []
-        total_video_num = 0
+        visual_output = model.get_visual_output(input_ids, segment_ids, input_mask, video, video_mask)
 
+        batch_sequence_output_list.append(sequence_output)
+        batch_list_t.append((input_mask, segment_ids,))
 
-        for bid, batch in enumerate(test_dataloader):
-            batch = tuple(t.to(device) for t in batch)
-            input_ids, input_mask, segment_ids, video, video_mask = batch
-
-            if multi_sentence_:
-                # multi-sentences retrieval means: one frame clip has two or more descriptions.
-                b, *_t = video.shape
-                sequence_output = model.get_sequence_output(input_ids, segment_ids, input_mask)
-                batch_sequence_output_list.append(sequence_output)
-                batch_list_t.append((input_mask, segment_ids,))
-
-                s_, e_ = total_video_num, total_video_num + b
-                filter_inds = [itm - s_ for itm in cut_off_points_ if itm >= s_ and itm < e_]
-
-                if len(filter_inds) > 0:
-                    video, video_mask = video[filter_inds, ...], video_mask[filter_inds, ...]
-                    visual_output = model.get_visual_output(video, video_mask)
-                    batch_visual_output_list.append(visual_output)
-                    batch_list_v.append((video_mask,))
-                total_video_num += b
-            else:
-                sequence_output, visual_output = model.get_sequence_visual_output(input_ids, segment_ids, input_mask, video, video_mask)
-
-                batch_sequence_output_list.append(sequence_output)
-                batch_list_t.append((input_mask, segment_ids,))
-
-                batch_visual_output_list.append(visual_output)
-                batch_list_v.append((video_mask,))
-
-            print("{}/{}\r".format(bid, len(test_dataloader)), end="")
-
-        if n_gpu > 1:
-            device_ids = list(range(n_gpu))
-            batch_list_t_splits = []
-            batch_list_v_splits = []
-            batch_t_output_splits = []
-            batch_v_output_splits = []
-            bacth_len = len(batch_list_t)
-            split_len = (bacth_len + n_gpu - 1) // n_gpu
-            # split the pairs for multi-GPU
-            for dev_id in device_ids:
-                s_, e_ = dev_id * split_len, (dev_id + 1) * split_len
-                if dev_id == 0:
-                    batch_list_t_splits.append(batch_list_t[s_:e_])
-                    batch_list_v_splits.append(batch_list_v)
-
-                    batch_t_output_splits.append(batch_sequence_output_list[s_:e_])
-                    batch_v_output_splits.append(batch_visual_output_list)
-                else:
-                    devc = torch.device('cuda:{}'.format(str(dev_id)))
-                    devc_batch_list = [tuple(t.to(devc) for t in b) for b in batch_list_t[s_:e_]]
-                    batch_list_t_splits.append(devc_batch_list)
-                    devc_batch_list = [tuple(t.to(devc) for t in b) for b in batch_list_v]
-                    batch_list_v_splits.append(devc_batch_list)
-
-                    if isinstance(batch_sequence_output_list[s_], tuple):
-                        # for multi_output
-                        devc_batch_list = [(b[0].to(devc), b[1].to(devc)) for b in batch_sequence_output_list[s_:e_]]
-                    else:
-                        # for single_output
-                        devc_batch_list = [b.to(devc) for b in batch_sequence_output_list[s_:e_]]
-
-                    batch_t_output_splits.append(devc_batch_list)
-                    devc_batch_list = [b.to(devc) for b in batch_visual_output_list]
-                    batch_v_output_splits.append(devc_batch_list)
-
-            parameters_tuple_list = [(batch_list_t_splits[dev_id], batch_list_v_splits[dev_id],
-                                      batch_t_output_splits[dev_id], batch_v_output_splits[dev_id]) for dev_id in device_ids]
-
-            # calculate the similarity respectively and concatenate them
-            parallel_outputs = parallel_apply(_run_on_single_gpu, model, parameters_tuple_list, device_ids)
-            sim_matrix = []
-            for idx in range(len(parallel_outputs)):
-                sim_matrix += parallel_outputs[idx]
-            sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
-        else:
-            # calculate the similarity  in one GPU
-            sim_matrix = _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list)
-            sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
+        batch_visual_output_list.append(visual_output)
+        batch_list_v.append((video_mask,))
+        
+        # calculate the similarity  in one GPU
+        sim_matrix = _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list)
+        sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
 
         R1 = logging_rank(sim_matrix, multi_sentence_, cut_off_points_, logger)
         return R1
