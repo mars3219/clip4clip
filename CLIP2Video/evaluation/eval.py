@@ -1,20 +1,93 @@
 # Adapted from https://github.com/ArrowLuo/CLIP4Clip/blob/668334707c493a4eaee7b4a03b2dae04915ce170/main_task_retrieval.py#L457
 
 import os
-from utils.prompt_config import prompt
-from itertools import product
-import tqdm
-
 import sys
-sys.path.append(os.path.dirname(__file__) + os.sep + '../')
+
+import cv2
+import torch
+import threading
+import queue
+import tqdm, time
 import numpy as np
 
-from modules.tokenization_clip import SimpleTokenizer as ClipTokenizer
-from evaluation.metrics import compute_metrics
-from evaluation.metrics import tensor_text_to_video_metrics
-from evaluation.metrics import tensor_video_to_text_sim
-from utils.utils import parallel_apply
-import torch
+sys.path.append(os.path.dirname(__file__) + os.sep + '../')
+
+
+# initialize Queue and Variable 
+FRAME_QUEUE = queue.Queue()
+ANALYSIS_INTERVAL = 1
+
+def capture_frames(rtsp_url, frame_queue, max_frames):
+    cap = cv2.VideoCapture(rtsp_url)
+    if not cap.isOpened():
+        print("Error: Could not open RTSP stream")
+        return
+    
+    frame_interval = 1 / max_frames
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            print("Error: Could not read frame")
+            break
+        timestamp = time.time()
+        frame_queue.put((timestamp, frame))
+        time.sleep(frame_interval)
+
+    cap.release()
+
+def analyze_frames(frame_queue, analysis_interval, model, max_frames, text_features, text_mask, device):
+    
+    if hasattr(model, 'module'):
+        model = model.module.to(device)
+    else:
+        model = model.to(device)
+
+    model.eval()
+
+    while True:
+        time.sleep(analysis_interval)
+        frames_to_analyze = []
+        current_time = time.time()
+        
+        while not frame_queue.empty():
+            timestamp, frame = frame_queue.queue[0]
+            if current_time - timestamp <= analysis_interval:
+                img = frame_queue.get()
+                frame = cv2.resize(img[1], (244, 244))
+                frame = torch.tensor(frame).permute(2, 0, 1)
+                frames_to_analyze.append(frame)
+                if len(frames_to_analyze) == max_frames * analysis_interval:
+                    break
+            else:
+                frame_queue.get()  # 오래된 프레임을 버립니다
+
+        if len(frames_to_analyze) >= max_frames:
+            frame = np.stack(frames_to_analyze, axis=0)
+            print(frame.shape)
+            frame_mask = np.ones((1, max_frames), dtype=np.int64)
+            frame = torch.tensor(frame).float().to(device)
+            frame_mask = torch.tensor(frame_mask).to(device)
+
+            with torch.no_grad():
+                batch_list_t = []
+                batch_list_v = []
+                batch_sequence_output_list, batch_visual_output_list = [], []
+                total_video_num = 0
+
+
+                visual_output = model.get_visual_output(frame, frame_mask, shaped=True, video_frame=max_frames)
+
+                batch_sequence_output_list.append(text_features)
+                batch_list_t.append((text_mask, 0,))
+
+                batch_visual_output_list.append(visual_output)
+                batch_list_v.append((frame_mask,))
+                
+                # calculate the similarity  in one GPU
+                sim_matrix = _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list)
+                sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
+
+
 
 
 def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list):
@@ -47,7 +120,7 @@ def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_
 
 
 
-def eval_epoch(model, rtsp_url, text_features, text_mask, device):
+def eval_epoch(model, max_frames, rtsp_url, text_features, text_mask, device):
     """run similarity in one single gpu
     Args:
         model: CLIP2Video
@@ -60,80 +133,11 @@ def eval_epoch(model, rtsp_url, text_features, text_mask, device):
         R1: rank 1 of text-to-video retrieval
     """
 
-    if hasattr(model, 'module'):
-        model = model.module.to(device)
-    else:
-        model = model.to(device)
+    capture_thread = threading.Thread(target=capture_frames, args=(rtsp_url, FRAME_QUEUE, max_frames))
+    analyze_thread = threading.Thread(target=analyze_frames, args=(FRAME_QUEUE, ANALYSIS_INTERVAL, model, max_frames, text_features, text_mask, device))
 
-    model.eval()
+    capture_thread.start()
+    analyze_thread.start()
 
-    with torch.no_grad():
-        visual_output = model.get_visual_output(input_ids, segment_ids, input_mask, video, video_mask)
-
-        batch_sequence_output_list.append(sequence_output)
-        batch_list_t.append((input_mask, segment_ids,))
-
-        batch_visual_output_list.append(visual_output)
-        batch_list_v.append((video_mask,))
-        
-        # calculate the similarity  in one GPU
-        sim_matrix = _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list)
-        sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
-
-        R1 = logging_rank(sim_matrix, multi_sentence_, cut_off_points_, logger)
-        return R1
-
-def logging_rank(sim_matrix, multi_sentence_, cut_off_points_, logger):
-    """run similarity in one single gpu
-    Args:
-        sim_matrix: similarity matrix
-        multi_sentence_: indicate whether the multi sentence retrieval
-        cut_off_points_:  tag the label when calculate the metric
-        logger: logger for metric
-    Returns:
-        R1: rank 1 of text-to-video retrieval
-
-    """
-
-    if multi_sentence_:
-        # if adopting multi-sequence retrieval, the similarity matrix should be reshaped
-        logger.info("before reshape, sim matrix size: {} x {}".format(sim_matrix.shape[0], sim_matrix.shape[1]))
-        cut_off_points2len_ = [itm + 1 for itm in cut_off_points_]
-        max_length = max([e_-s_ for s_, e_ in zip([0]+cut_off_points2len_[:-1], cut_off_points2len_)])
-        sim_matrix_new = []
-        for s_, e_ in zip([0] + cut_off_points2len_[:-1], cut_off_points2len_):
-            sim_matrix_new.append(np.concatenate((sim_matrix[s_:e_],
-                                                  np.full((max_length-e_+s_, sim_matrix.shape[1]), -np.inf)), axis=0))
-        sim_matrix = np.stack(tuple(sim_matrix_new), axis=0)
-        logger.info("after reshape, sim matrix size: {} x {} x {}".
-                    format(sim_matrix.shape[0], sim_matrix.shape[1], sim_matrix.shape[2]))
-
-        # compute text-to-video retrieval
-        tv_metrics = tensor_text_to_video_metrics(sim_matrix)
-
-        # compute video-to-text retrieval
-        vt_metrics = compute_metrics(tensor_video_to_text_sim(sim_matrix))
-    else:
-        logger.info("sim matrix size: {}, {}".format(sim_matrix.shape[0], sim_matrix.shape[1]))
-
-        # compute text-to-video retrieval
-        tv_metrics = compute_metrics(sim_matrix)
-
-        # compute video-to-text retrieval
-        vt_metrics = compute_metrics(sim_matrix.T)
-        logger.info('\t Length-T: {}, Length-V:{}'.format(len(sim_matrix), len(sim_matrix[0])))
-
-
-    # logging the result of text-to-video retrieval
-    logger.info("Text-to-Video:")
-    logger.info('\t>>>  R@1: {:.1f} - R@5: {:.1f} - R@10: {:.1f} - Median R: {:.1f} - Mean R: {:.1f}'.
-                format(tv_metrics['R1'], tv_metrics['R5'], tv_metrics['R10'], tv_metrics['MR'], tv_metrics['MeanR']))
-
-    # logging the result of video-to-text retrieval
-    logger.info("Video-to-Text:")
-    logger.info(
-        '\t>>>  V2T$R@1: {:.1f} - V2T$R@5: {:.1f} - V2T$R@10: {:.1f} - V2T$Median R: {:.1f} - V2T$Mean R: {:.1f}'.format(
-            vt_metrics['R1'], vt_metrics['R5'], vt_metrics['R10'], vt_metrics['MR'], vt_metrics['MeanR']))
-
-    R1 = tv_metrics['R1']
-    return R1
+    capture_thread.join()
+    analyze_thread.join()

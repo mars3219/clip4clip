@@ -139,16 +139,17 @@ def main():
     model = init_model(args, device)
 
     # setting tokenizer and text_features
-    # torch.save(text_features, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features.pt")
-    # text_features = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_p.pt")
-    text_features, text_mask = prompt_embedding(model, args.max_words, device)
+    # text_features_masks = prompt_embedding(model, args.max_words, device)
+    # torch.save(text_features_masks, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_masks.pt")
+    text_features_masks = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_masks.pt")
+    text_features, text_mask = text_features_masks
 
-    # rtsp_url = "rtsp://192.168.10.32:8554/stream"
-    rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    # rtsp_url = "rtsp://192.168.0.2:8554/stream"
 
     # evaluation for text-to-video and video-to-text retrieval
     if args.local_rank == 0:
-        eval_epoch(model, rtsp_url, text_features, text_mask, device)
-
+        eval_epoch(model, args.max_frames, rtsp_url, text_features, text_mask, device)
+    
 if __name__ == "__main__":
     main()
