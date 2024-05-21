@@ -141,8 +141,12 @@ def main():
     # setting tokenizer and text_features
     # text_features_masks = prompt_embedding(model, args.max_words, device)
     # torch.save(text_features_masks, "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_masks.pt")
+
     text_features_masks = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_masks.pt")
     text_features, text_mask = text_features_masks
+
+    # text_features_masks = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_t.pt")
+    # text_features, text_mask = text_features_masks, 0
 
     rtsp_url = "rtsp://192.168.10.32:8554/stream"
     # rtsp_url = "rtsp://192.168.0.2:8554/stream"

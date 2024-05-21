@@ -48,49 +48,60 @@ def analyze_frames(frame_queue, analysis_interval, model, max_frames, text_featu
         time.sleep(analysis_interval)
         frames_to_analyze = []
         current_time = time.time()
-        
+
+        try:
+            t, f = frame_queue.queue[0]
+        except:
+            pass
+
         while not frame_queue.empty():
             timestamp, frame = frame_queue.queue[0]
             if current_time - timestamp <= analysis_interval:
                 img = frame_queue.get()
-                frame = cv2.resize(img[1], (244, 244))
-                frame = torch.tensor(frame).permute(2, 0, 1)
-                frames_to_analyze.append(frame)
+                frames = cv2.resize(img[1], (244, 244))
+                frames = torch.tensor(frames).permute(2, 0, 1)
+                frames_to_analyze.append(frames)
+
                 if len(frames_to_analyze) == max_frames * analysis_interval:
                     break
             else:
                 frame_queue.get()  # 오래된 프레임을 버립니다
 
         if len(frames_to_analyze) >= max_frames:
-            frame = np.stack(frames_to_analyze, axis=0)
-            print(frame.shape)
+            frames = np.stack(frames_to_analyze, axis=0)
+            # print(frame.shape)
             frame_mask = np.ones((1, max_frames), dtype=np.int64)
-            frame = torch.tensor(frame).float().to(device)
+            frames = torch.tensor(frames).float().to(device)
             frame_mask = torch.tensor(frame_mask).to(device)
 
             with torch.no_grad():
-                batch_list_t = []
-                batch_list_v = []
-                batch_sequence_output_list, batch_visual_output_list = [], []
-                total_video_num = 0
 
-
-                visual_output = model.get_visual_output(frame, frame_mask, shaped=True, video_frame=max_frames)
-
-                batch_sequence_output_list.append(text_features)
-                batch_list_t.append((text_mask, 0,))
-
-                batch_visual_output_list.append(visual_output)
-                batch_list_v.append((frame_mask,))
+                visual_output = model.get_visual_output(frames, frame_mask, shaped=True, video_frame=max_frames)
                 
                 # calculate the similarity  in one GPU
-                sim_matrix = _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list)
-                sim_matrix = np.concatenate(tuple(sim_matrix), axis=0)
+                probs = _run_on_single_gpu(model, text_mask, frame_mask, text_features, visual_output)
+
+                
+                if probs[0] > 0.5:
+                    text = f"prediction: {probs[0].item():.2f} >>>>>>>>>>>> Violence!!!!!!!{probs[1].item():.2f}"
+                else:
+                    text = f"prediction: {probs[0].item():.2f} >>>>>>>>>>>> No Event!!!!!{probs[1].item():.2f}"
+
+                print(text)
+                
+              
+        try:        
+            cv2.putText(f, f"event: {text}", (50,150), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+
+            # cv2.putText(frame, text, (50,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+            cv2.imshow("test", f)
+            cv2.waitKey(1)
+        except:
+            pass
+         
 
 
-
-
-def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_list, batch_visual_output_list):
+def _run_on_single_gpu(model, input_mask, video_mask, sequence_output, visual_output):
     """run similarity in one single gpu
     Args:
         model: CLIP2Video
@@ -102,21 +113,13 @@ def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_
         sim_matrix: similarity
 
     """
-    sim_matrix = []
-    for idx1, b1 in enumerate(batch_list_t):
-        input_mask, segment_ids, *_tmp = b1
-        sequence_output = batch_sequence_output_list[idx1]
-        each_row = []
-        for idx2, b2 in enumerate(batch_list_v):
-            video_mask, *_tmp = b2
-            visual_output = batch_visual_output_list[idx2]
-            # calculate the similarity
-            b1b2_logits, *_tmp = model.get_inference_logits(sequence_output, visual_output, input_mask, video_mask)
-            b1b2_logits = b1b2_logits.cpu().detach().numpy()
-            each_row.append(b1b2_logits)
-        each_row = np.concatenate(tuple(each_row), axis=-1)
-        sim_matrix.append(each_row)
-    return sim_matrix
+    
+    # calculate the similarity
+    b1b2_logits, *_tmp = model.get_inference_logits(sequence_output, visual_output, input_mask, video_mask, shaped=True)
+    # b1b2_logits = b1b2_logits.cpu().detach().numpy()
+    probs = b1b2_logits.softmax(dim=0).cpu().numpy()
+    
+    return probs
 
 
 

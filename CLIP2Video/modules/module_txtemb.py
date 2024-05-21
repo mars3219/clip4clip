@@ -54,6 +54,17 @@ def get_text_embedding_output(model, text_l, mask_l, device, center_type="TAB", 
     text_l = torch.tensor(text_l).to(device)
     mask_l = torch.tensor(mask_l).to(device)
 
+    pos_mask = torch.zeros(1, mask_l.size()[1], dtype=torch.int)
+    neg_mask = torch.zeros(1, mask_l.size()[1], dtype=torch.int)
+    
+    pos_mask_mean = round(mask_l[:pos_len + 1].float().mean().item() * mask_l.size()[1])
+    neg_mask_mean = round(mask_l[neg_len :].float().mean().item() * mask_l.size()[1])
+
+    pos_mask[0, :pos_mask_mean] = 1
+    neg_mask[0, :neg_mask_mean] = 1
+
+    text_mask = torch.cat((pos_mask, neg_mask),0).to(device)
+            
     if center_type == 'TAB':
         
         with torch.no_grad():
@@ -74,9 +85,10 @@ def get_text_embedding_output(model, text_l, mask_l, device, center_type="TAB", 
 
             text_features = text_features.float()
             return_hidden = return_hidden.float()
-            return_hidden = return_hidden.view(bs_pair, -1, return_hidden.size(-1))
+            # return_hidden = return_hidden.view(bs_pair, -1, return_hidden.size(-1))
 
-            return text_features, return_hidden
+
+            return text_features, return_hidden, text_mask
     else:
         with torch.no_grad():
             pos_features = model.clip.encode_text(text_l[0:1]) / float(pos_len)
@@ -90,7 +102,7 @@ def get_text_embedding_output(model, text_l, mask_l, device, center_type="TAB", 
             text_features = torch.cat((pos_features, neg_features), 0)
             text_features = text_features.float()
 
-            return text_features 
+            return text_features, text_mask
 
 
 def prompt_embedding(model, max_words=32, device="cuda:0", center_type="TAB"):
@@ -124,4 +136,4 @@ def prompt_embedding(model, max_words=32, device="cuda:0", center_type="TAB"):
 
     text_features = get_text_embedding_output(model, text_encoding_list, text_mask_list, device, center_type="TAB", pos_len=len(Positive))
     
-    return text_features, text_mask_list
+    return (text_features[0], text_features[1]), text_features[2]
