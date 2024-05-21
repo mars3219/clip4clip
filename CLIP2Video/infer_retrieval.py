@@ -148,8 +148,8 @@ def main():
     # text_features_masks = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_t.pt")
     # text_features, text_mask = text_features_masks, 0
 
-    rtsp_url = "rtsp://192.168.10.32:8554/stream"
-    # rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    # rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    rtsp_url = "rtsp://192.168.0.2:8554/stream"
 
     # evaluation for text-to-video and video-to-text retrieval
     if args.local_rank == 0:

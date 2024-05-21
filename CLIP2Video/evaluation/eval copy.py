@@ -14,52 +14,29 @@ sys.path.append(os.path.dirname(__file__) + os.sep + '../')
 
 
 # initialize Queue and Variable 
-FRAME_QUEUE = queue.Queue(maxsize=10)
-RESULT_EVENT = threading.Event()
-INFERENCE_RESULT = None
+FRAME_QUEUE = queue.Queue()
 ANALYSIS_INTERVAL = 1
 
-def capture_frame_and_display(rtsp_url, frame_queue, max_frames):
-    global INFERENCE_RESULT
+def capture_frames(rtsp_url, frame_queue, max_frames):
     cap = cv2.VideoCapture(rtsp_url)
     if not cap.isOpened():
         print("Error: Could not open RTSP stream")
         return
     
     frame_interval = 1 / max_frames
-    dresult = 0
-
-    def add_frame_to_queue(frame):
-        # if FRAME_QUEUE.full():
-        #     FRAME_QUEUE.get()
-        frame_queue.put(frame)
-
     while True:
         ret, frame = cap.read()
         if not ret:
             print("Error: Could not read frame")
             break
-
-        threading.Timer(frame_interval, add_frame_to_queue, args=(frame,)).start()
-
-        if RESULT_EVENT.is_set():
-            result = INFERENCE_RESULT
-            RESULT_EVENT.clear()
-            dresult = result
-        try:        
-            cv2.putText(frame, f"event: {dresult}", (50,150), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
-
-            # cv2.putText(frame, text, (50,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
-            cv2.imshow("inference", frame)
-            cv2.waitKey(1)
-        except:
-            pass
+        timestamp = time.time()
+        frame_queue.put((timestamp, frame))
+        time.sleep(frame_interval)
 
     cap.release()
 
 def analyze_frames(frame_queue, analysis_interval, model, max_frames, text_features, text_mask, device):
-    global INFERENCE_RESULT
-
+    
     if hasattr(model, 'module'):
         model = model.module.to(device)
     else:
@@ -67,20 +44,28 @@ def analyze_frames(frame_queue, analysis_interval, model, max_frames, text_featu
 
     model.eval()
 
-    frames_to_analyze = []
     while True:
-        # print(len(frame_queue.queue))
+        time.sleep(analysis_interval)
+        frames_to_analyze = []
+        current_time = time.time()
+
+        try:
+            t, f = frame_queue.queue[0]
+        except:
+            pass
 
         while not frame_queue.empty():
-            frame = frame_queue.get()
-            frame = cv2.resize(frame, (244, 244))
-            frame = torch.tensor(frame).permute(2, 0, 1)
-            frames_to_analyze.append(frame)
+            timestamp, frame = frame_queue.queue[0]
+            if current_time - timestamp <= analysis_interval:
+                img = frame_queue.get()
+                frames = cv2.resize(img[1], (244, 244))
+                frames = torch.tensor(frames).permute(2, 0, 1)
+                frames_to_analyze.append(frames)
 
-            if len(frames_to_analyze) == max_frames:
-                # while not frame_queue.empty():
-                #     frame_queue.get()
-                break
+                if len(frames_to_analyze) == max_frames * analysis_interval:
+                    break
+            else:
+                frame_queue.get()  # 오래된 프레임을 버립니다
 
         if len(frames_to_analyze) >= max_frames:
             frames = np.stack(frames_to_analyze, axis=0)
@@ -88,8 +73,6 @@ def analyze_frames(frame_queue, analysis_interval, model, max_frames, text_featu
             frame_mask = np.ones((1, max_frames), dtype=np.int64)
             frames = torch.tensor(frames).float().to(device)
             frame_mask = torch.tensor(frame_mask).to(device)
-
-            frames_to_analyze.clear()
 
             with torch.no_grad():
 
@@ -105,14 +88,19 @@ def analyze_frames(frame_queue, analysis_interval, model, max_frames, text_featu
                     text = f"prediction: {probs[0].item():.2f} >>>>>>>>>>>> No Event!!!!!{probs[1].item():.2f}"
 
                 print(text)
-
-
-                INFERENCE_RESULT = text
-                RESULT_EVENT.set()
-
-                # frame_queue.task_done()
                 
               
+        try:        
+            cv2.putText(f, f"event: {text}", (50,150), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+
+            # cv2.putText(frame, text, (50,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+            cv2.imshow("test", f)
+            cv2.waitKey(1)
+        except:
+            pass
+         
+
+
 def _run_on_single_gpu(model, input_mask, video_mask, sequence_output, visual_output):
     """run similarity in one single gpu
     Args:
@@ -148,7 +136,7 @@ def eval_epoch(model, max_frames, rtsp_url, text_features, text_mask, device):
         R1: rank 1 of text-to-video retrieval
     """
 
-    capture_thread = threading.Thread(target=capture_frame_and_display, args=(rtsp_url, FRAME_QUEUE, max_frames))
+    capture_thread = threading.Thread(target=capture_frames, args=(rtsp_url, FRAME_QUEUE, max_frames))
     analyze_thread = threading.Thread(target=analyze_frames, args=(FRAME_QUEUE, ANALYSIS_INTERVAL, model, max_frames, text_features, text_mask, device))
 
     capture_thread.start()

@@ -66,8 +66,8 @@ def get_args(description='CLIP4Clip on Retrieval Task'):
     parser.add_argument("--output_dir", default='/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType', type=str, required=False,
                         help="The output directory where the model predictions and checkpoints will be written.")
     parser.add_argument("--cross_model", default="cross-base", type=str, required=False, help="Cross module")
-    parser.add_argument("--init_model", default=None, type=str, required=False, help="Initial model.")
-    # parser.add_argument("--init_model", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.4", type=str, required=False, help="Initial model.")
+    # parser.add_argument("--init_model", default=None, type=str, required=False, help="Initial model.")
+    parser.add_argument("--init_model", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth", type=str, required=False, help="Initial model.")
     parser.add_argument("--resume_model", default=None, type=str, required=False, help="Resume train model.")
     parser.add_argument("--do_lower_case", action='store_true', help="Set this flag if you are using an uncased model.")
     parser.add_argument("--warmup_proportion", default=0.1, type=float,
@@ -399,8 +399,8 @@ def main():
         model = init_model(args, device, n_gpu, args.local_rank)
 
     # Uncomment if want to test on the best checkpoint
-    rtsp_url = "rtsp://192.168.10.32:8554/stream"
-    # rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    # rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    rtsp_url = "rtsp://192.168.0.2:8554/stream"
     if args.do_eval:
         infer(args, model, rtsp_url, device, n_gpu)
 
