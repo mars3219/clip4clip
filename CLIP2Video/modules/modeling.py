@@ -498,7 +498,7 @@ class CLIP2Video(CLIP2VideoPreTrainedModel):
         bs_pair = video_mask.size(0)
         visual_hidden = self.clip.encode_image(video, video_frame=video_frame).float()
         visual_hidden = visual_hidden.view(bs_pair, -1, visual_hidden.size(-1))
-
+        visual_real = torch.load("/workspace/CLIP4Clip/CLIP2Video/evaluation/real_visual_output.pt")
         return visual_hidden
 
     def get_sequence_visual_output(self, input_ids, token_type_ids, attention_mask, video, video_mask, shaped=False,

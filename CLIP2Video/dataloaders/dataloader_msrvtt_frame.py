@@ -3,7 +3,7 @@
 # @Author : Han Fang
 # @File: dataloader_msrvtt_frame.py
 # @Version: version 1.0
-
+import cv2, time
 import os
 from torch.utils.data import Dataset
 import numpy as np
@@ -149,6 +149,20 @@ class MSRVTT_single_sentence_dataLoader(Dataset):
 
         else:
             print("get raw video error, skip it.")
+        
+        # video1 = video.reshape(12,3,224,224)
+        # video1 = np.transpose(video1, (0,2,3,1))
+        # for i in range(video1.shape[0]):
+        #     img = video1[i]
+        #     imgs=img.astype(np.uint8)
+        #     # cv2.putText(imgs, f"event: {time.time()}", (10,180), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+        #     file_name = f"file_image_{i}.jpg"
+        #     destination_path = os.path.join("/workspace/CLIP4Clip/CLIP2Video/test/output/file", file_name)
+            
+        #     # NumPy 배열을 이미지로 저장
+        #     cv2.imwrite(destination_path, imgs)
+        #     print(f"Image saved to {destination_path}")
+
 
         return video, video_mask
 

@@ -63,7 +63,6 @@ def get_text_embedding_output(model, text_l, mask_l, device, center_type="TAB", 
     pos_mask[0, :pos_mask_mean] = 1
     neg_mask[0, :neg_mask_mean] = 1
 
-    text_mask = torch.cat((pos_mask, neg_mask),0).to(device)
             
     if center_type == 'TAB':
         
@@ -74,14 +73,20 @@ def get_text_embedding_output(model, text_l, mask_l, device, center_type="TAB", 
                 pos_features += pos_features_next
                 pos_hidden += pos_hidden_next
 
-            neg_features, neg_hidden = map(lambda x: x / float(neg_len), model.clip.encode_text(text_l[pos_len:pos_len + 1], return_hidden=True))
-            for neg in range(pos_len + 1, len(text_l)):
-                neg_features_next, neg_hidden_next = map(lambda x: x / float(pos_len), model.clip.encode_text(text_l[neg:neg + 1], return_hidden=True))
-                neg_features += neg_features_next
-                neg_hidden += neg_hidden_next
+            if neg_len != 0:
+                neg_features, neg_hidden = map(lambda x: x / float(neg_len), model.clip.encode_text(text_l[pos_len:pos_len + 1], return_hidden=True))
+                for neg in range(pos_len + 1, len(text_l)):
+                    neg_features_next, neg_hidden_next = map(lambda x: x / float(pos_len), model.clip.encode_text(text_l[neg:neg + 1], return_hidden=True))
+                    neg_features += neg_features_next
+                    neg_hidden += neg_hidden_next
 
-            text_features = torch.cat((pos_features, neg_features), 0)
-            return_hidden = torch.cat((pos_hidden, neg_hidden), 0) 
+                text_features = torch.cat((pos_features, neg_features), 0)
+                return_hidden = torch.cat((pos_hidden, neg_hidden), 0) 
+                text_mask = torch.cat((pos_mask, neg_mask),0).to(device)
+            else:
+                text_features = pos_features
+                return_hidden = pos_hidden
+                text_mask = pos_mask.to(device)
 
             text_features = text_features.float()
             return_hidden = return_hidden.float()
@@ -107,31 +112,28 @@ def get_text_embedding_output(model, text_l, mask_l, device, center_type="TAB", 
 
 def prompt_embedding(model, max_words=32, device="cuda:0", center_type="TAB"):
 
-    pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
-    neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+    # pos=[prompt['outdoor']['start'], prompt['outdoor']['pos_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
+    # neg=[prompt['outdoor']['start'], prompt['outdoor']['neg_words'], prompt['outdoor']['gender'], prompt['outdoor']['loc'], prompt['outdoor']['time_env']]
 
-    # product 함수를 사용하여 가능한 모든 조합 생성
-    positive_combinations = product(*pos)
-    negative_combinations = product(*neg)
+    # # product 함수를 사용하여 가능한 모든 조합 생성
+    # positive_combinations = product(*pos)
+    # negative_combinations = product(*neg)
 
-    Positive=[]
-    for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
-        result = " ".join(combination)
-        Positive.append(result)
+    # Positive=[]
+    # for combination in tqdm(positive_combinations, desc="Positive prompt", mininterval=0.01):
+    #     result = " ".join(combination)
+    #     Positive.append(result)
 
-    Negative=[]
-    for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
-        result = " ".join(combination)
-        Negative.append(result)
+    # Negative=[]
+    # for combination in tqdm(negative_combinations, desc="Negative prompt", mininterval=0.01):
+    #     result = " ".join(combination)
+    #     Negative.append(result)
 
     # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
-    # Positive = ["Two men are kicking each other", "People are fighting in the street", 
-    #             "Two men are throwing punches at each other", "People are wrestling",
-    #             "People are hugging", "A person is choking another person"]
-    # Negative = ["People are standing side by side", "Some people are running on the street happily", "People are walking on the street peacefully",
-    #             ]
-
-    TextSet = Positive + Negative
+    Positive = ["men are doing wrestling"]
+    Negative = ["cars are moving on the road"]
+    TextSet = Positive
+    # TextSet = Positive + Negative
     text_encoding_list, text_mask_list = get_text(TextSet, max_words)
 
     text_features = get_text_embedding_output(model, text_encoding_list, text_mask_list, device, center_type="TAB", pos_len=len(Positive))

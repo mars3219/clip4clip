@@ -19,8 +19,8 @@ def process(line):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Get frames from video')
-    parser.add_argument('--input_path', type=str, default='/workspace/CLIP4Clip/data/MSRVTT_Videos/output', help='input directory of videos')
-    parser.add_argument('--output_path', type=str, default='/workspace/CLIP4Clip/data/MSRVTT_Videos/output', help='output directory of sampled frames')
+    parser.add_argument('--input_path', type=str, default='/workspace/CLIP4Clip/data/msrvtt_data/MSRVTT_Videos', help='input directory of videos')
+    parser.add_argument('--output_path', type=str, default='/workspace/CLIP4Clip/data/msrvtt_data/MSRVTT_Videos/output', help='output directory of sampled frames')
     args = parser.parse_args()
 
     if not os.path.exists(args.output_path):

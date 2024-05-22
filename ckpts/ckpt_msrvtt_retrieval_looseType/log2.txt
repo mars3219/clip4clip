@@ -8070,3 +8070,3307 @@
    emb_center
    trans_layernorm.weight
    trans_layernorm.bias
+2024-05-22 00:14:56,404:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 00:14:56,404:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 00:14:56,688:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 00:14:56,689:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 00:14:56,689:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 00:14:56,690:WARNING: 	 embed_dim: 512
+2024-05-22 00:14:56,690:WARNING: 	 image_resolution: 224
+2024-05-22 00:14:56,690:WARNING: 	 vision_layers: 12
+2024-05-22 00:14:56,690:WARNING: 	 vision_width: 768
+2024-05-22 00:14:56,690:WARNING: 	 vision_patch_size: 32
+2024-05-22 00:14:56,691:WARNING: 	 context_length: 77
+2024-05-22 00:14:56,691:WARNING: 	 vocab_size: 49408
+2024-05-22 00:14:56,691:WARNING: 	 transformer_width: 512
+2024-05-22 00:14:56,691:WARNING: 	 transformer_heads: 8
+2024-05-22 00:14:56,691:WARNING: 	 transformer_layers: 12
+2024-05-22 00:14:56,691:WARNING: 	 cut_top_layer: 0
+2024-05-22 00:14:57,716:WARNING: 	 sim_type: seqTransf
+2024-05-22 00:15:02,242:INFO: --------------------
+2024-05-22 00:15:02,242:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 00:24:15,593:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 00:24:15,659:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 00:24:15,899:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 00:24:15,900:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 00:24:15,900:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 00:24:15,901:WARNING: 	 embed_dim: 512
+2024-05-22 00:24:15,901:WARNING: 	 image_resolution: 224
+2024-05-22 00:24:15,901:WARNING: 	 vision_layers: 12
+2024-05-22 00:24:15,901:WARNING: 	 vision_width: 768
+2024-05-22 00:24:15,901:WARNING: 	 vision_patch_size: 32
+2024-05-22 00:24:15,901:WARNING: 	 context_length: 77
+2024-05-22 00:24:15,901:WARNING: 	 vocab_size: 49408
+2024-05-22 00:24:15,902:WARNING: 	 transformer_width: 512
+2024-05-22 00:24:15,902:WARNING: 	 transformer_heads: 8
+2024-05-22 00:24:15,902:WARNING: 	 transformer_layers: 12
+2024-05-22 00:24:15,902:WARNING: 	 cut_top_layer: 0
+2024-05-22 00:24:16,881:WARNING: 	 sim_type: seqTransf
+2024-05-22 00:24:21,375:INFO: --------------------
+2024-05-22 00:24:21,375:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 00:24:23,112:INFO: ***** Running test *****
+2024-05-22 00:24:23,113:INFO:   Num examples = 1
+2024-05-22 00:24:23,113:INFO:   Batch size = 64
+2024-05-22 00:24:23,113:INFO:   Num steps = 1
+2024-05-22 00:25:09,778:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 00:25:09,846:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 00:25:10,079:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 00:25:10,080:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 00:25:10,081:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 00:25:10,081:WARNING: 	 embed_dim: 512
+2024-05-22 00:25:10,082:WARNING: 	 image_resolution: 224
+2024-05-22 00:25:10,082:WARNING: 	 vision_layers: 12
+2024-05-22 00:25:10,082:WARNING: 	 vision_width: 768
+2024-05-22 00:25:10,082:WARNING: 	 vision_patch_size: 32
+2024-05-22 00:25:10,082:WARNING: 	 context_length: 77
+2024-05-22 00:25:10,082:WARNING: 	 vocab_size: 49408
+2024-05-22 00:25:10,082:WARNING: 	 transformer_width: 512
+2024-05-22 00:25:10,082:WARNING: 	 transformer_heads: 8
+2024-05-22 00:25:10,082:WARNING: 	 transformer_layers: 12
+2024-05-22 00:25:10,082:WARNING: 	 cut_top_layer: 0
+2024-05-22 00:25:11,076:WARNING: 	 sim_type: seqTransf
+2024-05-22 00:25:15,596:INFO: --------------------
+2024-05-22 00:25:15,597:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 00:25:17,348:INFO: ***** Running test *****
+2024-05-22 00:25:17,349:INFO:   Num examples = 1
+2024-05-22 00:25:17,349:INFO:   Batch size = 64
+2024-05-22 00:25:17,349:INFO:   Num steps = 1
+2024-05-22 00:44:42,228:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 00:44:42,298:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 00:44:42,512:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 00:44:42,512:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 00:44:42,512:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 00:44:42,512:WARNING: 	 embed_dim: 512
+2024-05-22 00:44:42,512:WARNING: 	 image_resolution: 224
+2024-05-22 00:44:42,512:WARNING: 	 vision_layers: 12
+2024-05-22 00:44:42,512:WARNING: 	 vision_width: 768
+2024-05-22 00:44:42,512:WARNING: 	 vision_patch_size: 32
+2024-05-22 00:44:42,512:WARNING: 	 context_length: 77
+2024-05-22 00:44:42,512:WARNING: 	 vocab_size: 49408
+2024-05-22 00:44:42,512:WARNING: 	 transformer_width: 512
+2024-05-22 00:44:42,513:WARNING: 	 transformer_heads: 8
+2024-05-22 00:44:42,513:WARNING: 	 transformer_layers: 12
+2024-05-22 00:44:42,513:WARNING: 	 cut_top_layer: 0
+2024-05-22 00:44:43,471:WARNING: 	 sim_type: seqTransf
+2024-05-22 00:44:47,948:INFO: --------------------
+2024-05-22 00:44:47,948:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 00:44:49,669:INFO: ***** Running test *****
+2024-05-22 00:44:49,669:INFO:   Num examples = 1
+2024-05-22 00:44:49,669:INFO:   Batch size = 64
+2024-05-22 00:44:49,669:INFO:   Num steps = 1
+2024-05-22 00:44:49,860:INFO: sim matrix size: 1, 1
+2024-05-22 00:44:49,860:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 00:44:49,860:INFO: Text-to-Video:
+2024-05-22 00:44:49,860:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 00:44:49,860:INFO: Video-to-Text:
+2024-05-22 00:44:49,860:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 00:45:01,251:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 00:45:01,317:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 00:45:01,547:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 00:45:01,548:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 00:45:01,548:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 00:45:01,549:WARNING: 	 embed_dim: 512
+2024-05-22 00:45:01,549:WARNING: 	 image_resolution: 224
+2024-05-22 00:45:01,549:WARNING: 	 vision_layers: 12
+2024-05-22 00:45:01,549:WARNING: 	 vision_width: 768
+2024-05-22 00:45:01,549:WARNING: 	 vision_patch_size: 32
+2024-05-22 00:45:01,550:WARNING: 	 context_length: 77
+2024-05-22 00:45:01,550:WARNING: 	 vocab_size: 49408
+2024-05-22 00:45:01,550:WARNING: 	 transformer_width: 512
+2024-05-22 00:45:01,550:WARNING: 	 transformer_heads: 8
+2024-05-22 00:45:01,550:WARNING: 	 transformer_layers: 12
+2024-05-22 00:45:01,550:WARNING: 	 cut_top_layer: 0
+2024-05-22 00:45:02,545:WARNING: 	 sim_type: seqTransf
+2024-05-22 00:45:07,057:INFO: --------------------
+2024-05-22 00:45:07,057:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 00:45:08,803:INFO: ***** Running test *****
+2024-05-22 00:45:08,803:INFO:   Num examples = 1
+2024-05-22 00:45:08,803:INFO:   Batch size = 64
+2024-05-22 00:45:08,803:INFO:   Num steps = 1
+2024-05-22 00:48:22,786:INFO: sim matrix size: 1, 1
+2024-05-22 00:54:29,279:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 00:54:50,792:INFO: Text-to-Video:
+2024-05-22 00:54:52,391:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 00:54:53,261:INFO: Video-to-Text:
+2024-05-22 00:54:54,894:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 01:38:50,970:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 01:38:51,037:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 01:38:51,332:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 01:38:51,334:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 01:38:51,334:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 01:38:51,335:WARNING: 	 embed_dim: 512
+2024-05-22 01:38:51,335:WARNING: 	 image_resolution: 224
+2024-05-22 01:38:51,335:WARNING: 	 vision_layers: 12
+2024-05-22 01:38:51,335:WARNING: 	 vision_width: 768
+2024-05-22 01:38:51,335:WARNING: 	 vision_patch_size: 32
+2024-05-22 01:38:51,335:WARNING: 	 context_length: 77
+2024-05-22 01:38:51,335:WARNING: 	 vocab_size: 49408
+2024-05-22 01:38:51,335:WARNING: 	 transformer_width: 512
+2024-05-22 01:38:51,335:WARNING: 	 transformer_heads: 8
+2024-05-22 01:38:51,335:WARNING: 	 transformer_layers: 12
+2024-05-22 01:38:51,335:WARNING: 	 cut_top_layer: 0
+2024-05-22 01:38:52,323:WARNING: 	 sim_type: seqTransf
+2024-05-22 01:38:56,811:INFO: --------------------
+2024-05-22 01:38:56,811:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 01:38:58,595:INFO: ***** Running test *****
+2024-05-22 01:38:58,595:INFO:   Num examples = 1
+2024-05-22 01:38:58,595:INFO:   Batch size = 64
+2024-05-22 01:38:58,595:INFO:   Num steps = 1
+2024-05-22 01:39:52,438:INFO: sim matrix size: 1, 1
+2024-05-22 01:39:52,439:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 01:39:52,439:INFO: Text-to-Video:
+2024-05-22 01:39:52,440:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 01:39:52,440:INFO: Video-to-Text:
+2024-05-22 01:39:52,441:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 01:53:21,351:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 01:53:21,352:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 01:53:21,585:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 01:53:21,587:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 01:53:21,587:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 01:53:21,588:WARNING: 	 embed_dim: 512
+2024-05-22 01:53:21,588:WARNING: 	 image_resolution: 224
+2024-05-22 01:53:21,588:WARNING: 	 vision_layers: 12
+2024-05-22 01:53:21,588:WARNING: 	 vision_width: 768
+2024-05-22 01:53:21,588:WARNING: 	 vision_patch_size: 32
+2024-05-22 01:53:21,588:WARNING: 	 context_length: 77
+2024-05-22 01:53:21,588:WARNING: 	 vocab_size: 49408
+2024-05-22 01:53:21,588:WARNING: 	 transformer_width: 512
+2024-05-22 01:53:21,588:WARNING: 	 transformer_heads: 8
+2024-05-22 01:53:21,588:WARNING: 	 transformer_layers: 12
+2024-05-22 01:53:21,588:WARNING: 	 cut_top_layer: 0
+2024-05-22 01:53:22,588:WARNING: 	 sim_type: seqTransf
+2024-05-22 01:53:27,089:INFO: --------------------
+2024-05-22 01:53:27,089:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 01:54:24,565:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 01:54:24,565:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 01:54:24,794:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 01:54:24,794:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 01:54:24,794:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 01:54:24,794:WARNING: 	 embed_dim: 512
+2024-05-22 01:54:24,794:WARNING: 	 image_resolution: 224
+2024-05-22 01:54:24,794:WARNING: 	 vision_layers: 12
+2024-05-22 01:54:24,794:WARNING: 	 vision_width: 768
+2024-05-22 01:54:24,794:WARNING: 	 vision_patch_size: 32
+2024-05-22 01:54:24,794:WARNING: 	 context_length: 77
+2024-05-22 01:54:24,794:WARNING: 	 vocab_size: 49408
+2024-05-22 01:54:24,794:WARNING: 	 transformer_width: 512
+2024-05-22 01:54:24,794:WARNING: 	 transformer_heads: 8
+2024-05-22 01:54:24,794:WARNING: 	 transformer_layers: 12
+2024-05-22 01:54:24,794:WARNING: 	 cut_top_layer: 0
+2024-05-22 01:54:25,782:WARNING: 	 sim_type: seqTransf
+2024-05-22 01:54:30,263:INFO: --------------------
+2024-05-22 01:54:30,263:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 01:54:48,673:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 01:54:48,673:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 01:54:48,900:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 01:54:48,901:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 01:54:48,901:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 01:54:48,901:WARNING: 	 embed_dim: 512
+2024-05-22 01:54:48,901:WARNING: 	 image_resolution: 224
+2024-05-22 01:54:48,901:WARNING: 	 vision_layers: 12
+2024-05-22 01:54:48,901:WARNING: 	 vision_width: 768
+2024-05-22 01:54:48,901:WARNING: 	 vision_patch_size: 32
+2024-05-22 01:54:48,901:WARNING: 	 context_length: 77
+2024-05-22 01:54:48,901:WARNING: 	 vocab_size: 49408
+2024-05-22 01:54:48,901:WARNING: 	 transformer_width: 512
+2024-05-22 01:54:48,901:WARNING: 	 transformer_heads: 8
+2024-05-22 01:54:48,901:WARNING: 	 transformer_layers: 12
+2024-05-22 01:54:48,901:WARNING: 	 cut_top_layer: 0
+2024-05-22 01:54:49,873:WARNING: 	 sim_type: seqTransf
+2024-05-22 01:54:54,345:INFO: --------------------
+2024-05-22 01:54:54,345:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 01:56:27,253:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 01:56:27,253:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 01:56:27,497:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 01:56:27,497:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 01:56:27,497:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 01:56:27,497:WARNING: 	 embed_dim: 512
+2024-05-22 01:56:27,497:WARNING: 	 image_resolution: 224
+2024-05-22 01:56:27,497:WARNING: 	 vision_layers: 12
+2024-05-22 01:56:27,497:WARNING: 	 vision_width: 768
+2024-05-22 01:56:27,497:WARNING: 	 vision_patch_size: 32
+2024-05-22 01:56:27,497:WARNING: 	 context_length: 77
+2024-05-22 01:56:27,497:WARNING: 	 vocab_size: 49408
+2024-05-22 01:56:27,497:WARNING: 	 transformer_width: 512
+2024-05-22 01:56:27,497:WARNING: 	 transformer_heads: 8
+2024-05-22 01:56:27,497:WARNING: 	 transformer_layers: 12
+2024-05-22 01:56:27,497:WARNING: 	 cut_top_layer: 0
+2024-05-22 01:56:28,469:WARNING: 	 sim_type: seqTransf
+2024-05-22 01:56:32,932:INFO: --------------------
+2024-05-22 01:56:32,932:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 01:57:19,002:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 01:57:19,002:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 01:57:19,237:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 01:57:19,238:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 01:57:19,238:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 01:57:19,239:WARNING: 	 embed_dim: 512
+2024-05-22 01:57:19,239:WARNING: 	 image_resolution: 224
+2024-05-22 01:57:19,239:WARNING: 	 vision_layers: 12
+2024-05-22 01:57:19,239:WARNING: 	 vision_width: 768
+2024-05-22 01:57:19,239:WARNING: 	 vision_patch_size: 32
+2024-05-22 01:57:19,239:WARNING: 	 context_length: 77
+2024-05-22 01:57:19,239:WARNING: 	 vocab_size: 49408
+2024-05-22 01:57:19,239:WARNING: 	 transformer_width: 512
+2024-05-22 01:57:19,240:WARNING: 	 transformer_heads: 8
+2024-05-22 01:57:19,240:WARNING: 	 transformer_layers: 12
+2024-05-22 01:57:19,240:WARNING: 	 cut_top_layer: 0
+2024-05-22 01:57:20,245:WARNING: 	 sim_type: seqTransf
+2024-05-22 01:57:24,750:INFO: --------------------
+2024-05-22 01:57:24,750:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 01:59:37,393:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 01:59:37,393:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 01:59:37,629:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 01:59:37,630:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 01:59:37,630:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 01:59:37,631:WARNING: 	 embed_dim: 512
+2024-05-22 01:59:37,631:WARNING: 	 image_resolution: 224
+2024-05-22 01:59:37,631:WARNING: 	 vision_layers: 12
+2024-05-22 01:59:37,631:WARNING: 	 vision_width: 768
+2024-05-22 01:59:37,631:WARNING: 	 vision_patch_size: 32
+2024-05-22 01:59:37,631:WARNING: 	 context_length: 77
+2024-05-22 01:59:37,631:WARNING: 	 vocab_size: 49408
+2024-05-22 01:59:37,631:WARNING: 	 transformer_width: 512
+2024-05-22 01:59:37,631:WARNING: 	 transformer_heads: 8
+2024-05-22 01:59:37,632:WARNING: 	 transformer_layers: 12
+2024-05-22 01:59:37,632:WARNING: 	 cut_top_layer: 0
+2024-05-22 01:59:38,624:WARNING: 	 sim_type: seqTransf
+2024-05-22 01:59:43,123:INFO: --------------------
+2024-05-22 01:59:43,123:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:02:20,293:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:02:20,293:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:02:20,518:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:02:20,518:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:02:20,518:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:02:20,518:WARNING: 	 embed_dim: 512
+2024-05-22 02:02:20,518:WARNING: 	 image_resolution: 224
+2024-05-22 02:02:20,518:WARNING: 	 vision_layers: 12
+2024-05-22 02:02:20,518:WARNING: 	 vision_width: 768
+2024-05-22 02:02:20,518:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:02:20,518:WARNING: 	 context_length: 77
+2024-05-22 02:02:20,518:WARNING: 	 vocab_size: 49408
+2024-05-22 02:02:20,518:WARNING: 	 transformer_width: 512
+2024-05-22 02:02:20,518:WARNING: 	 transformer_heads: 8
+2024-05-22 02:02:20,518:WARNING: 	 transformer_layers: 12
+2024-05-22 02:02:20,518:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:02:21,498:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:02:25,989:INFO: --------------------
+2024-05-22 02:02:25,989:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:04:25,279:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:04:25,279:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:04:25,507:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:04:25,507:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:04:25,507:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:04:25,507:WARNING: 	 embed_dim: 512
+2024-05-22 02:04:25,507:WARNING: 	 image_resolution: 224
+2024-05-22 02:04:25,508:WARNING: 	 vision_layers: 12
+2024-05-22 02:04:25,508:WARNING: 	 vision_width: 768
+2024-05-22 02:04:25,508:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:04:25,508:WARNING: 	 context_length: 77
+2024-05-22 02:04:25,508:WARNING: 	 vocab_size: 49408
+2024-05-22 02:04:25,508:WARNING: 	 transformer_width: 512
+2024-05-22 02:04:25,508:WARNING: 	 transformer_heads: 8
+2024-05-22 02:04:25,508:WARNING: 	 transformer_layers: 12
+2024-05-22 02:04:25,508:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:04:26,490:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:04:30,967:INFO: --------------------
+2024-05-22 02:04:30,967:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:06:22,725:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:06:22,725:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:06:22,953:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:06:22,953:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:06:22,953:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:06:22,953:WARNING: 	 embed_dim: 512
+2024-05-22 02:06:22,953:WARNING: 	 image_resolution: 224
+2024-05-22 02:06:22,953:WARNING: 	 vision_layers: 12
+2024-05-22 02:06:22,953:WARNING: 	 vision_width: 768
+2024-05-22 02:06:22,953:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:06:22,953:WARNING: 	 context_length: 77
+2024-05-22 02:06:22,953:WARNING: 	 vocab_size: 49408
+2024-05-22 02:06:22,953:WARNING: 	 transformer_width: 512
+2024-05-22 02:06:22,953:WARNING: 	 transformer_heads: 8
+2024-05-22 02:06:22,954:WARNING: 	 transformer_layers: 12
+2024-05-22 02:06:22,954:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:06:23,924:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:06:28,405:INFO: --------------------
+2024-05-22 02:06:28,405:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:08:55,337:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:08:55,337:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:08:55,563:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:08:55,564:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:08:55,564:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:08:55,564:WARNING: 	 embed_dim: 512
+2024-05-22 02:08:55,564:WARNING: 	 image_resolution: 224
+2024-05-22 02:08:55,564:WARNING: 	 vision_layers: 12
+2024-05-22 02:08:55,564:WARNING: 	 vision_width: 768
+2024-05-22 02:08:55,564:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:08:55,564:WARNING: 	 context_length: 77
+2024-05-22 02:08:55,564:WARNING: 	 vocab_size: 49408
+2024-05-22 02:08:55,564:WARNING: 	 transformer_width: 512
+2024-05-22 02:08:55,564:WARNING: 	 transformer_heads: 8
+2024-05-22 02:08:55,564:WARNING: 	 transformer_layers: 12
+2024-05-22 02:08:55,564:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:08:56,545:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:09:01,025:INFO: --------------------
+2024-05-22 02:09:01,025:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:10:08,225:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:10:08,225:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:10:08,458:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:10:08,458:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:10:08,458:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:10:08,459:WARNING: 	 embed_dim: 512
+2024-05-22 02:10:08,459:WARNING: 	 image_resolution: 224
+2024-05-22 02:10:08,459:WARNING: 	 vision_layers: 12
+2024-05-22 02:10:08,459:WARNING: 	 vision_width: 768
+2024-05-22 02:10:08,459:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:10:08,459:WARNING: 	 context_length: 77
+2024-05-22 02:10:08,459:WARNING: 	 vocab_size: 49408
+2024-05-22 02:10:08,459:WARNING: 	 transformer_width: 512
+2024-05-22 02:10:08,459:WARNING: 	 transformer_heads: 8
+2024-05-22 02:10:08,459:WARNING: 	 transformer_layers: 12
+2024-05-22 02:10:08,459:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:10:09,438:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:10:13,918:INFO: --------------------
+2024-05-22 02:10:13,918:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:10:23,294:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:10:23,294:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:10:23,522:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:10:23,522:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:10:23,522:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:10:23,522:WARNING: 	 embed_dim: 512
+2024-05-22 02:10:23,522:WARNING: 	 image_resolution: 224
+2024-05-22 02:10:23,522:WARNING: 	 vision_layers: 12
+2024-05-22 02:10:23,522:WARNING: 	 vision_width: 768
+2024-05-22 02:10:23,522:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:10:23,522:WARNING: 	 context_length: 77
+2024-05-22 02:10:23,522:WARNING: 	 vocab_size: 49408
+2024-05-22 02:10:23,522:WARNING: 	 transformer_width: 512
+2024-05-22 02:10:23,522:WARNING: 	 transformer_heads: 8
+2024-05-22 02:10:23,522:WARNING: 	 transformer_layers: 12
+2024-05-22 02:10:23,522:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:10:24,504:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:10:28,988:INFO: --------------------
+2024-05-22 02:10:28,988:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:12:17,717:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:12:17,717:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:12:17,954:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:12:17,955:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:12:17,955:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:12:17,956:WARNING: 	 embed_dim: 512
+2024-05-22 02:12:17,956:WARNING: 	 image_resolution: 224
+2024-05-22 02:12:17,956:WARNING: 	 vision_layers: 12
+2024-05-22 02:12:17,956:WARNING: 	 vision_width: 768
+2024-05-22 02:12:17,956:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:12:17,957:WARNING: 	 context_length: 77
+2024-05-22 02:12:17,957:WARNING: 	 vocab_size: 49408
+2024-05-22 02:12:17,957:WARNING: 	 transformer_width: 512
+2024-05-22 02:12:17,957:WARNING: 	 transformer_heads: 8
+2024-05-22 02:12:17,957:WARNING: 	 transformer_layers: 12
+2024-05-22 02:12:17,957:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:12:18,957:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:12:23,475:INFO: --------------------
+2024-05-22 02:12:23,475:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:15:06,084:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:15:06,085:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:15:06,321:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:15:06,323:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:15:06,323:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:15:06,324:WARNING: 	 embed_dim: 512
+2024-05-22 02:15:06,324:WARNING: 	 image_resolution: 224
+2024-05-22 02:15:06,324:WARNING: 	 vision_layers: 12
+2024-05-22 02:15:06,324:WARNING: 	 vision_width: 768
+2024-05-22 02:15:06,324:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:15:06,324:WARNING: 	 context_length: 77
+2024-05-22 02:15:06,324:WARNING: 	 vocab_size: 49408
+2024-05-22 02:15:06,324:WARNING: 	 transformer_width: 512
+2024-05-22 02:15:06,324:WARNING: 	 transformer_heads: 8
+2024-05-22 02:15:06,324:WARNING: 	 transformer_layers: 12
+2024-05-22 02:15:06,324:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:15:07,323:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:15:11,816:INFO: --------------------
+2024-05-22 02:15:11,816:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:15:50,473:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:15:50,473:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:15:50,702:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:15:50,702:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:15:50,702:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:15:50,702:WARNING: 	 embed_dim: 512
+2024-05-22 02:15:50,702:WARNING: 	 image_resolution: 224
+2024-05-22 02:15:50,702:WARNING: 	 vision_layers: 12
+2024-05-22 02:15:50,703:WARNING: 	 vision_width: 768
+2024-05-22 02:15:50,703:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:15:50,703:WARNING: 	 context_length: 77
+2024-05-22 02:15:50,703:WARNING: 	 vocab_size: 49408
+2024-05-22 02:15:50,703:WARNING: 	 transformer_width: 512
+2024-05-22 02:15:50,703:WARNING: 	 transformer_heads: 8
+2024-05-22 02:15:50,703:WARNING: 	 transformer_layers: 12
+2024-05-22 02:15:50,703:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:15:51,695:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:15:56,172:INFO: --------------------
+2024-05-22 02:15:56,172:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:17:00,901:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:17:00,901:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:17:01,133:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:17:01,133:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:17:01,133:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:17:01,133:WARNING: 	 embed_dim: 512
+2024-05-22 02:17:01,133:WARNING: 	 image_resolution: 224
+2024-05-22 02:17:01,133:WARNING: 	 vision_layers: 12
+2024-05-22 02:17:01,133:WARNING: 	 vision_width: 768
+2024-05-22 02:17:01,133:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:17:01,133:WARNING: 	 context_length: 77
+2024-05-22 02:17:01,133:WARNING: 	 vocab_size: 49408
+2024-05-22 02:17:01,133:WARNING: 	 transformer_width: 512
+2024-05-22 02:17:01,133:WARNING: 	 transformer_heads: 8
+2024-05-22 02:17:01,133:WARNING: 	 transformer_layers: 12
+2024-05-22 02:17:01,133:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:17:02,111:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:17:06,584:INFO: --------------------
+2024-05-22 02:17:06,584:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:17:55,591:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:17:55,591:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:17:55,824:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:17:55,825:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:17:55,825:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:17:55,825:WARNING: 	 embed_dim: 512
+2024-05-22 02:17:55,825:WARNING: 	 image_resolution: 224
+2024-05-22 02:17:55,825:WARNING: 	 vision_layers: 12
+2024-05-22 02:17:55,825:WARNING: 	 vision_width: 768
+2024-05-22 02:17:55,825:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:17:55,825:WARNING: 	 context_length: 77
+2024-05-22 02:17:55,825:WARNING: 	 vocab_size: 49408
+2024-05-22 02:17:55,825:WARNING: 	 transformer_width: 512
+2024-05-22 02:17:55,825:WARNING: 	 transformer_heads: 8
+2024-05-22 02:17:55,825:WARNING: 	 transformer_layers: 12
+2024-05-22 02:17:55,825:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:17:56,798:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:18:01,280:INFO: --------------------
+2024-05-22 02:18:01,280:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:19:47,225:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:19:47,305:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:19:47,522:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:19:47,522:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:19:47,522:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:19:47,523:WARNING: 	 embed_dim: 512
+2024-05-22 02:19:47,523:WARNING: 	 image_resolution: 224
+2024-05-22 02:19:47,523:WARNING: 	 vision_layers: 12
+2024-05-22 02:19:47,523:WARNING: 	 vision_width: 768
+2024-05-22 02:19:47,523:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:19:47,523:WARNING: 	 context_length: 77
+2024-05-22 02:19:47,523:WARNING: 	 vocab_size: 49408
+2024-05-22 02:19:47,523:WARNING: 	 transformer_width: 512
+2024-05-22 02:19:47,523:WARNING: 	 transformer_heads: 8
+2024-05-22 02:19:47,523:WARNING: 	 transformer_layers: 12
+2024-05-22 02:19:47,523:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:19:48,501:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:19:52,986:INFO: --------------------
+2024-05-22 02:19:52,986:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:19:54,735:INFO: ***** Running test *****
+2024-05-22 02:19:54,735:INFO:   Num examples = 1
+2024-05-22 02:19:54,735:INFO:   Batch size = 64
+2024-05-22 02:19:54,735:INFO:   Num steps = 1
+2024-05-22 02:19:54,927:INFO: sim matrix size: 1, 1
+2024-05-22 02:19:54,927:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 02:19:54,927:INFO: Text-to-Video:
+2024-05-22 02:19:54,927:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 02:19:54,927:INFO: Video-to-Text:
+2024-05-22 02:19:54,927:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 02:21:07,561:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:21:07,631:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:21:07,845:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:21:07,845:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:21:07,845:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:21:07,846:WARNING: 	 embed_dim: 512
+2024-05-22 02:21:07,846:WARNING: 	 image_resolution: 224
+2024-05-22 02:21:07,846:WARNING: 	 vision_layers: 12
+2024-05-22 02:21:07,846:WARNING: 	 vision_width: 768
+2024-05-22 02:21:07,846:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:21:07,846:WARNING: 	 context_length: 77
+2024-05-22 02:21:07,846:WARNING: 	 vocab_size: 49408
+2024-05-22 02:21:07,846:WARNING: 	 transformer_width: 512
+2024-05-22 02:21:07,846:WARNING: 	 transformer_heads: 8
+2024-05-22 02:21:07,846:WARNING: 	 transformer_layers: 12
+2024-05-22 02:21:07,846:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:21:08,813:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:21:13,278:INFO: --------------------
+2024-05-22 02:21:13,279:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:21:15,030:INFO: ***** Running test *****
+2024-05-22 02:21:15,030:INFO:   Num examples = 1
+2024-05-22 02:21:15,030:INFO:   Batch size = 64
+2024-05-22 02:21:15,030:INFO:   Num steps = 1
+2024-05-22 02:21:15,222:INFO: sim matrix size: 1, 1
+2024-05-22 02:21:15,222:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 02:21:15,222:INFO: Text-to-Video:
+2024-05-22 02:21:15,222:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 02:21:15,222:INFO: Video-to-Text:
+2024-05-22 02:21:15,222:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 02:49:40,189:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:49:40,259:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:49:40,483:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:49:40,483:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:49:40,483:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:49:40,483:WARNING: 	 embed_dim: 512
+2024-05-22 02:49:40,483:WARNING: 	 image_resolution: 224
+2024-05-22 02:49:40,483:WARNING: 	 vision_layers: 12
+2024-05-22 02:49:40,483:WARNING: 	 vision_width: 768
+2024-05-22 02:49:40,483:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:49:40,483:WARNING: 	 context_length: 77
+2024-05-22 02:49:40,483:WARNING: 	 vocab_size: 49408
+2024-05-22 02:49:40,483:WARNING: 	 transformer_width: 512
+2024-05-22 02:49:40,483:WARNING: 	 transformer_heads: 8
+2024-05-22 02:49:40,483:WARNING: 	 transformer_layers: 12
+2024-05-22 02:49:40,483:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:49:41,468:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:49:45,943:INFO: --------------------
+2024-05-22 02:49:45,944:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:49:47,724:INFO: ***** Running test *****
+2024-05-22 02:49:47,724:INFO:   Num examples = 1
+2024-05-22 02:49:47,724:INFO:   Batch size = 64
+2024-05-22 02:49:47,724:INFO:   Num steps = 1
+2024-05-22 02:50:23,273:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:50:23,344:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:50:23,566:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:50:23,567:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:50:23,567:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:50:23,567:WARNING: 	 embed_dim: 512
+2024-05-22 02:50:23,567:WARNING: 	 image_resolution: 224
+2024-05-22 02:50:23,567:WARNING: 	 vision_layers: 12
+2024-05-22 02:50:23,567:WARNING: 	 vision_width: 768
+2024-05-22 02:50:23,567:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:50:23,567:WARNING: 	 context_length: 77
+2024-05-22 02:50:23,567:WARNING: 	 vocab_size: 49408
+2024-05-22 02:50:23,567:WARNING: 	 transformer_width: 512
+2024-05-22 02:50:23,567:WARNING: 	 transformer_heads: 8
+2024-05-22 02:50:23,567:WARNING: 	 transformer_layers: 12
+2024-05-22 02:50:23,567:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:50:24,540:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:50:29,012:INFO: --------------------
+2024-05-22 02:50:29,013:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:50:30,785:INFO: ***** Running test *****
+2024-05-22 02:50:30,785:INFO:   Num examples = 1
+2024-05-22 02:50:30,785:INFO:   Batch size = 64
+2024-05-22 02:50:30,785:INFO:   Num steps = 1
+2024-05-22 02:50:30,987:INFO: sim matrix size: 1, 1
+2024-05-22 02:50:30,987:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 02:50:30,987:INFO: Text-to-Video:
+2024-05-22 02:50:30,988:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 02:50:30,988:INFO: Video-to-Text:
+2024-05-22 02:50:30,988:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 02:51:36,161:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:51:36,232:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:51:36,472:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:51:36,474:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:51:36,474:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:51:36,475:WARNING: 	 embed_dim: 512
+2024-05-22 02:51:36,475:WARNING: 	 image_resolution: 224
+2024-05-22 02:51:36,475:WARNING: 	 vision_layers: 12
+2024-05-22 02:51:36,475:WARNING: 	 vision_width: 768
+2024-05-22 02:51:36,475:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:51:36,475:WARNING: 	 context_length: 77
+2024-05-22 02:51:36,475:WARNING: 	 vocab_size: 49408
+2024-05-22 02:51:36,475:WARNING: 	 transformer_width: 512
+2024-05-22 02:51:36,475:WARNING: 	 transformer_heads: 8
+2024-05-22 02:51:36,475:WARNING: 	 transformer_layers: 12
+2024-05-22 02:51:36,475:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:51:37,478:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:51:41,957:INFO: --------------------
+2024-05-22 02:51:41,957:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:51:43,749:INFO: ***** Running test *****
+2024-05-22 02:51:43,749:INFO:   Num examples = 1
+2024-05-22 02:51:43,749:INFO:   Batch size = 64
+2024-05-22 02:51:43,749:INFO:   Num steps = 1
+2024-05-22 02:52:34,578:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:52:34,646:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:52:34,884:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:52:34,885:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:52:34,885:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:52:34,886:WARNING: 	 embed_dim: 512
+2024-05-22 02:52:34,886:WARNING: 	 image_resolution: 224
+2024-05-22 02:52:34,886:WARNING: 	 vision_layers: 12
+2024-05-22 02:52:34,886:WARNING: 	 vision_width: 768
+2024-05-22 02:52:34,886:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:52:34,886:WARNING: 	 context_length: 77
+2024-05-22 02:52:34,886:WARNING: 	 vocab_size: 49408
+2024-05-22 02:52:34,887:WARNING: 	 transformer_width: 512
+2024-05-22 02:52:34,887:WARNING: 	 transformer_heads: 8
+2024-05-22 02:52:34,887:WARNING: 	 transformer_layers: 12
+2024-05-22 02:52:34,887:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:52:35,907:WARNING: 	 sim_type: seqTransf
+2024-05-22 02:52:40,404:INFO: --------------------
+2024-05-22 02:52:40,404:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 02:52:42,189:INFO: ***** Running test *****
+2024-05-22 02:52:42,189:INFO:   Num examples = 1
+2024-05-22 02:52:42,190:INFO:   Batch size = 64
+2024-05-22 02:52:42,190:INFO:   Num steps = 1
+2024-05-22 02:59:58,141:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 02:59:58,141:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 02:59:58,373:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 02:59:58,373:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 02:59:58,373:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 02:59:58,373:WARNING: 	 embed_dim: 512
+2024-05-22 02:59:58,373:WARNING: 	 image_resolution: 224
+2024-05-22 02:59:58,373:WARNING: 	 vision_layers: 12
+2024-05-22 02:59:58,373:WARNING: 	 vision_width: 768
+2024-05-22 02:59:58,373:WARNING: 	 vision_patch_size: 32
+2024-05-22 02:59:58,373:WARNING: 	 context_length: 77
+2024-05-22 02:59:58,373:WARNING: 	 vocab_size: 49408
+2024-05-22 02:59:58,373:WARNING: 	 transformer_width: 512
+2024-05-22 02:59:58,373:WARNING: 	 transformer_heads: 8
+2024-05-22 02:59:58,373:WARNING: 	 transformer_layers: 12
+2024-05-22 02:59:58,373:WARNING: 	 cut_top_layer: 0
+2024-05-22 02:59:59,362:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:00:03,863:INFO: --------------------
+2024-05-22 03:00:03,863:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:01:19,672:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:01:19,746:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:01:19,984:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:01:19,985:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:01:19,986:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:01:19,986:WARNING: 	 embed_dim: 512
+2024-05-22 03:01:19,986:WARNING: 	 image_resolution: 224
+2024-05-22 03:01:19,987:WARNING: 	 vision_layers: 12
+2024-05-22 03:01:19,987:WARNING: 	 vision_width: 768
+2024-05-22 03:01:19,987:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:01:19,987:WARNING: 	 context_length: 77
+2024-05-22 03:01:19,987:WARNING: 	 vocab_size: 49408
+2024-05-22 03:01:19,987:WARNING: 	 transformer_width: 512
+2024-05-22 03:01:19,987:WARNING: 	 transformer_heads: 8
+2024-05-22 03:01:19,987:WARNING: 	 transformer_layers: 12
+2024-05-22 03:01:19,987:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:01:20,984:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:01:25,453:INFO: --------------------
+2024-05-22 03:01:25,453:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:01:27,242:INFO: ***** Running test *****
+2024-05-22 03:01:27,242:INFO:   Num examples = 1
+2024-05-22 03:01:27,242:INFO:   Batch size = 64
+2024-05-22 03:01:27,242:INFO:   Num steps = 1
+2024-05-22 03:05:37,919:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:05:37,994:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:05:38,232:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:05:38,233:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:05:38,233:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:05:38,234:WARNING: 	 embed_dim: 512
+2024-05-22 03:05:38,234:WARNING: 	 image_resolution: 224
+2024-05-22 03:05:38,234:WARNING: 	 vision_layers: 12
+2024-05-22 03:05:38,234:WARNING: 	 vision_width: 768
+2024-05-22 03:05:38,234:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:05:38,234:WARNING: 	 context_length: 77
+2024-05-22 03:05:38,235:WARNING: 	 vocab_size: 49408
+2024-05-22 03:05:38,235:WARNING: 	 transformer_width: 512
+2024-05-22 03:05:38,235:WARNING: 	 transformer_heads: 8
+2024-05-22 03:05:38,235:WARNING: 	 transformer_layers: 12
+2024-05-22 03:05:38,235:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:05:39,239:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:05:43,740:INFO: --------------------
+2024-05-22 03:05:43,740:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:05:45,571:INFO: ***** Running test *****
+2024-05-22 03:05:45,571:INFO:   Num examples = 1
+2024-05-22 03:05:45,571:INFO:   Batch size = 64
+2024-05-22 03:05:45,571:INFO:   Num steps = 1
+2024-05-22 03:09:44,852:INFO: sim matrix size: 1, 1
+2024-05-22 03:09:44,853:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 03:09:44,853:INFO: Text-to-Video:
+2024-05-22 03:09:44,854:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 03:09:44,854:INFO: Video-to-Text:
+2024-05-22 03:09:44,854:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 03:09:48,834:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:09:48,903:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:09:49,143:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:09:49,144:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:09:49,144:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:09:49,145:WARNING: 	 embed_dim: 512
+2024-05-22 03:09:49,145:WARNING: 	 image_resolution: 224
+2024-05-22 03:09:49,145:WARNING: 	 vision_layers: 12
+2024-05-22 03:09:49,145:WARNING: 	 vision_width: 768
+2024-05-22 03:09:49,146:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:09:49,146:WARNING: 	 context_length: 77
+2024-05-22 03:09:49,146:WARNING: 	 vocab_size: 49408
+2024-05-22 03:09:49,146:WARNING: 	 transformer_width: 512
+2024-05-22 03:09:49,146:WARNING: 	 transformer_heads: 8
+2024-05-22 03:09:49,146:WARNING: 	 transformer_layers: 12
+2024-05-22 03:09:49,146:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:09:50,149:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:09:54,653:INFO: --------------------
+2024-05-22 03:09:54,653:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:09:56,440:INFO: ***** Running test *****
+2024-05-22 03:09:56,440:INFO:   Num examples = 1
+2024-05-22 03:09:56,440:INFO:   Batch size = 64
+2024-05-22 03:09:56,440:INFO:   Num steps = 1
+2024-05-22 03:10:14,301:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:10:14,375:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:10:14,623:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:10:14,624:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:10:14,624:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:10:14,625:WARNING: 	 embed_dim: 512
+2024-05-22 03:10:14,625:WARNING: 	 image_resolution: 224
+2024-05-22 03:10:14,625:WARNING: 	 vision_layers: 12
+2024-05-22 03:10:14,625:WARNING: 	 vision_width: 768
+2024-05-22 03:10:14,625:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:10:14,625:WARNING: 	 context_length: 77
+2024-05-22 03:10:14,626:WARNING: 	 vocab_size: 49408
+2024-05-22 03:10:14,626:WARNING: 	 transformer_width: 512
+2024-05-22 03:10:14,626:WARNING: 	 transformer_heads: 8
+2024-05-22 03:10:14,626:WARNING: 	 transformer_layers: 12
+2024-05-22 03:10:14,626:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:10:15,634:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:10:20,124:INFO: --------------------
+2024-05-22 03:10:20,124:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:10:21,924:INFO: ***** Running test *****
+2024-05-22 03:10:21,924:INFO:   Num examples = 1
+2024-05-22 03:10:21,924:INFO:   Batch size = 64
+2024-05-22 03:10:21,924:INFO:   Num steps = 1
+2024-05-22 03:12:31,878:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:12:31,878:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:12:32,110:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:12:32,110:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:12:32,110:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:12:32,111:WARNING: 	 embed_dim: 512
+2024-05-22 03:12:32,111:WARNING: 	 image_resolution: 224
+2024-05-22 03:12:32,111:WARNING: 	 vision_layers: 12
+2024-05-22 03:12:32,111:WARNING: 	 vision_width: 768
+2024-05-22 03:12:32,111:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:12:32,111:WARNING: 	 context_length: 77
+2024-05-22 03:12:32,111:WARNING: 	 vocab_size: 49408
+2024-05-22 03:12:32,111:WARNING: 	 transformer_width: 512
+2024-05-22 03:12:32,111:WARNING: 	 transformer_heads: 8
+2024-05-22 03:12:32,111:WARNING: 	 transformer_layers: 12
+2024-05-22 03:12:32,111:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:12:33,107:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:12:37,626:INFO: --------------------
+2024-05-22 03:12:37,626:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:13:06,715:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:13:06,715:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:13:06,953:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:13:06,953:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:13:06,953:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:13:06,954:WARNING: 	 embed_dim: 512
+2024-05-22 03:13:06,954:WARNING: 	 image_resolution: 224
+2024-05-22 03:13:06,954:WARNING: 	 vision_layers: 12
+2024-05-22 03:13:06,954:WARNING: 	 vision_width: 768
+2024-05-22 03:13:06,954:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:13:06,954:WARNING: 	 context_length: 77
+2024-05-22 03:13:06,954:WARNING: 	 vocab_size: 49408
+2024-05-22 03:13:06,954:WARNING: 	 transformer_width: 512
+2024-05-22 03:13:06,954:WARNING: 	 transformer_heads: 8
+2024-05-22 03:13:06,954:WARNING: 	 transformer_layers: 12
+2024-05-22 03:13:06,954:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:13:07,946:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:13:12,427:INFO: --------------------
+2024-05-22 03:13:12,428:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:14:06,017:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:14:06,018:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:14:06,249:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:14:06,249:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:14:06,249:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:14:06,249:WARNING: 	 embed_dim: 512
+2024-05-22 03:14:06,250:WARNING: 	 image_resolution: 224
+2024-05-22 03:14:06,250:WARNING: 	 vision_layers: 12
+2024-05-22 03:14:06,250:WARNING: 	 vision_width: 768
+2024-05-22 03:14:06,250:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:14:06,250:WARNING: 	 context_length: 77
+2024-05-22 03:14:06,250:WARNING: 	 vocab_size: 49408
+2024-05-22 03:14:06,250:WARNING: 	 transformer_width: 512
+2024-05-22 03:14:06,250:WARNING: 	 transformer_heads: 8
+2024-05-22 03:14:06,250:WARNING: 	 transformer_layers: 12
+2024-05-22 03:14:06,250:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:14:07,234:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:14:11,693:INFO: --------------------
+2024-05-22 03:14:11,693:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:19:34,570:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:19:34,570:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:19:34,801:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:19:34,801:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:19:34,801:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:19:34,801:WARNING: 	 embed_dim: 512
+2024-05-22 03:19:34,801:WARNING: 	 image_resolution: 224
+2024-05-22 03:19:34,801:WARNING: 	 vision_layers: 12
+2024-05-22 03:19:34,801:WARNING: 	 vision_width: 768
+2024-05-22 03:19:34,801:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:19:34,801:WARNING: 	 context_length: 77
+2024-05-22 03:19:34,801:WARNING: 	 vocab_size: 49408
+2024-05-22 03:19:34,801:WARNING: 	 transformer_width: 512
+2024-05-22 03:19:34,801:WARNING: 	 transformer_heads: 8
+2024-05-22 03:19:34,801:WARNING: 	 transformer_layers: 12
+2024-05-22 03:19:34,801:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:19:35,799:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:19:40,305:INFO: --------------------
+2024-05-22 03:19:40,305:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:20:30,662:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:20:30,662:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:20:30,902:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:20:30,903:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:20:30,903:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:20:30,903:WARNING: 	 embed_dim: 512
+2024-05-22 03:20:30,903:WARNING: 	 image_resolution: 224
+2024-05-22 03:20:30,903:WARNING: 	 vision_layers: 12
+2024-05-22 03:20:30,903:WARNING: 	 vision_width: 768
+2024-05-22 03:20:30,903:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:20:30,903:WARNING: 	 context_length: 77
+2024-05-22 03:20:30,903:WARNING: 	 vocab_size: 49408
+2024-05-22 03:20:30,903:WARNING: 	 transformer_width: 512
+2024-05-22 03:20:30,903:WARNING: 	 transformer_heads: 8
+2024-05-22 03:20:30,903:WARNING: 	 transformer_layers: 12
+2024-05-22 03:20:30,903:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:20:31,897:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:20:36,368:INFO: --------------------
+2024-05-22 03:20:36,368:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:21:03,738:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:21:03,739:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:21:03,986:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:21:03,987:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:21:03,987:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:21:03,988:WARNING: 	 embed_dim: 512
+2024-05-22 03:21:03,988:WARNING: 	 image_resolution: 224
+2024-05-22 03:21:03,988:WARNING: 	 vision_layers: 12
+2024-05-22 03:21:03,988:WARNING: 	 vision_width: 768
+2024-05-22 03:21:03,988:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:21:03,988:WARNING: 	 context_length: 77
+2024-05-22 03:21:03,988:WARNING: 	 vocab_size: 49408
+2024-05-22 03:21:03,988:WARNING: 	 transformer_width: 512
+2024-05-22 03:21:03,989:WARNING: 	 transformer_heads: 8
+2024-05-22 03:21:03,989:WARNING: 	 transformer_layers: 12
+2024-05-22 03:21:03,989:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:21:04,999:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:21:09,507:INFO: --------------------
+2024-05-22 03:21:09,507:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:22:08,254:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:22:08,254:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:22:08,485:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:22:08,486:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:22:08,486:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:22:08,486:WARNING: 	 embed_dim: 512
+2024-05-22 03:22:08,486:WARNING: 	 image_resolution: 224
+2024-05-22 03:22:08,486:WARNING: 	 vision_layers: 12
+2024-05-22 03:22:08,486:WARNING: 	 vision_width: 768
+2024-05-22 03:22:08,486:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:22:08,486:WARNING: 	 context_length: 77
+2024-05-22 03:22:08,486:WARNING: 	 vocab_size: 49408
+2024-05-22 03:22:08,486:WARNING: 	 transformer_width: 512
+2024-05-22 03:22:08,486:WARNING: 	 transformer_heads: 8
+2024-05-22 03:22:08,486:WARNING: 	 transformer_layers: 12
+2024-05-22 03:22:08,486:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:22:09,482:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:22:13,972:INFO: --------------------
+2024-05-22 03:22:13,972:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:29:30,222:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:29:30,222:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:29:30,454:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:29:30,454:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:29:30,454:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:29:30,454:WARNING: 	 embed_dim: 512
+2024-05-22 03:29:30,454:WARNING: 	 image_resolution: 224
+2024-05-22 03:29:30,454:WARNING: 	 vision_layers: 12
+2024-05-22 03:29:30,455:WARNING: 	 vision_width: 768
+2024-05-22 03:29:30,455:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:29:30,455:WARNING: 	 context_length: 77
+2024-05-22 03:29:30,455:WARNING: 	 vocab_size: 49408
+2024-05-22 03:29:30,455:WARNING: 	 transformer_width: 512
+2024-05-22 03:29:30,455:WARNING: 	 transformer_heads: 8
+2024-05-22 03:29:30,455:WARNING: 	 transformer_layers: 12
+2024-05-22 03:29:30,455:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:29:31,452:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:29:35,934:INFO: --------------------
+2024-05-22 03:29:35,935:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:29:43,221:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:29:43,221:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:29:43,452:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:29:43,452:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:29:43,452:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:29:43,453:WARNING: 	 embed_dim: 512
+2024-05-22 03:29:43,453:WARNING: 	 image_resolution: 224
+2024-05-22 03:29:43,453:WARNING: 	 vision_layers: 12
+2024-05-22 03:29:43,453:WARNING: 	 vision_width: 768
+2024-05-22 03:29:43,453:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:29:43,453:WARNING: 	 context_length: 77
+2024-05-22 03:29:43,453:WARNING: 	 vocab_size: 49408
+2024-05-22 03:29:43,453:WARNING: 	 transformer_width: 512
+2024-05-22 03:29:43,453:WARNING: 	 transformer_heads: 8
+2024-05-22 03:29:43,453:WARNING: 	 transformer_layers: 12
+2024-05-22 03:29:43,453:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:29:44,447:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:29:48,936:INFO: --------------------
+2024-05-22 03:29:48,936:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:32:29,358:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:32:29,359:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:32:29,593:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:32:29,593:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:32:29,593:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:32:29,594:WARNING: 	 embed_dim: 512
+2024-05-22 03:32:29,594:WARNING: 	 image_resolution: 224
+2024-05-22 03:32:29,594:WARNING: 	 vision_layers: 12
+2024-05-22 03:32:29,594:WARNING: 	 vision_width: 768
+2024-05-22 03:32:29,594:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:32:29,594:WARNING: 	 context_length: 77
+2024-05-22 03:32:29,594:WARNING: 	 vocab_size: 49408
+2024-05-22 03:32:29,594:WARNING: 	 transformer_width: 512
+2024-05-22 03:32:29,594:WARNING: 	 transformer_heads: 8
+2024-05-22 03:32:29,594:WARNING: 	 transformer_layers: 12
+2024-05-22 03:32:29,594:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:32:30,600:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:32:35,102:INFO: --------------------
+2024-05-22 03:32:35,102:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:49:58,641:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:49:58,711:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:49:58,949:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:49:58,950:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:49:58,951:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:49:58,951:WARNING: 	 embed_dim: 512
+2024-05-22 03:49:58,952:WARNING: 	 image_resolution: 224
+2024-05-22 03:49:58,952:WARNING: 	 vision_layers: 12
+2024-05-22 03:49:58,952:WARNING: 	 vision_width: 768
+2024-05-22 03:49:58,952:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:49:58,952:WARNING: 	 context_length: 77
+2024-05-22 03:49:58,952:WARNING: 	 vocab_size: 49408
+2024-05-22 03:49:58,952:WARNING: 	 transformer_width: 512
+2024-05-22 03:49:58,952:WARNING: 	 transformer_heads: 8
+2024-05-22 03:49:58,952:WARNING: 	 transformer_layers: 12
+2024-05-22 03:49:58,952:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:49:59,960:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:50:04,460:INFO: --------------------
+2024-05-22 03:50:04,460:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:50:06,248:INFO: ***** Running test *****
+2024-05-22 03:50:06,249:INFO:   Num examples = 1
+2024-05-22 03:50:06,249:INFO:   Batch size = 64
+2024-05-22 03:50:06,249:INFO:   Num steps = 1
+2024-05-22 03:52:01,029:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 03:52:01,099:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 03:52:01,340:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 03:52:01,341:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 03:52:01,341:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 03:52:01,342:WARNING: 	 embed_dim: 512
+2024-05-22 03:52:01,342:WARNING: 	 image_resolution: 224
+2024-05-22 03:52:01,342:WARNING: 	 vision_layers: 12
+2024-05-22 03:52:01,343:WARNING: 	 vision_width: 768
+2024-05-22 03:52:01,343:WARNING: 	 vision_patch_size: 32
+2024-05-22 03:52:01,343:WARNING: 	 context_length: 77
+2024-05-22 03:52:01,343:WARNING: 	 vocab_size: 49408
+2024-05-22 03:52:01,343:WARNING: 	 transformer_width: 512
+2024-05-22 03:52:01,343:WARNING: 	 transformer_heads: 8
+2024-05-22 03:52:01,343:WARNING: 	 transformer_layers: 12
+2024-05-22 03:52:01,343:WARNING: 	 cut_top_layer: 0
+2024-05-22 03:52:02,347:WARNING: 	 sim_type: seqTransf
+2024-05-22 03:52:06,847:INFO: --------------------
+2024-05-22 03:52:06,847:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 03:52:08,630:INFO: ***** Running test *****
+2024-05-22 03:52:08,630:INFO:   Num examples = 1
+2024-05-22 03:52:08,630:INFO:   Batch size = 64
+2024-05-22 03:52:08,630:INFO:   Num steps = 1
+2024-05-22 04:10:18,081:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:10:18,150:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:10:18,368:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:10:18,368:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:10:18,368:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:10:18,368:WARNING: 	 embed_dim: 512
+2024-05-22 04:10:18,368:WARNING: 	 image_resolution: 224
+2024-05-22 04:10:18,368:WARNING: 	 vision_layers: 12
+2024-05-22 04:10:18,368:WARNING: 	 vision_width: 768
+2024-05-22 04:10:18,368:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:10:18,368:WARNING: 	 context_length: 77
+2024-05-22 04:10:18,368:WARNING: 	 vocab_size: 49408
+2024-05-22 04:10:18,368:WARNING: 	 transformer_width: 512
+2024-05-22 04:10:18,368:WARNING: 	 transformer_heads: 8
+2024-05-22 04:10:18,368:WARNING: 	 transformer_layers: 12
+2024-05-22 04:10:18,368:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:10:19,338:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:10:23,804:INFO: --------------------
+2024-05-22 04:10:23,804:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:10:25,584:INFO: ***** Running test *****
+2024-05-22 04:10:25,584:INFO:   Num examples = 1
+2024-05-22 04:10:25,584:INFO:   Batch size = 64
+2024-05-22 04:10:25,584:INFO:   Num steps = 1
+2024-05-22 04:10:50,349:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:10:50,416:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:10:50,660:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:10:50,661:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:10:50,661:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:10:50,662:WARNING: 	 embed_dim: 512
+2024-05-22 04:10:50,662:WARNING: 	 image_resolution: 224
+2024-05-22 04:10:50,662:WARNING: 	 vision_layers: 12
+2024-05-22 04:10:50,662:WARNING: 	 vision_width: 768
+2024-05-22 04:10:50,662:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:10:50,662:WARNING: 	 context_length: 77
+2024-05-22 04:10:50,662:WARNING: 	 vocab_size: 49408
+2024-05-22 04:10:50,663:WARNING: 	 transformer_width: 512
+2024-05-22 04:10:50,663:WARNING: 	 transformer_heads: 8
+2024-05-22 04:10:50,663:WARNING: 	 transformer_layers: 12
+2024-05-22 04:10:50,663:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:10:51,661:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:10:56,147:INFO: --------------------
+2024-05-22 04:10:56,148:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:10:57,960:INFO: ***** Running test *****
+2024-05-22 04:10:57,960:INFO:   Num examples = 1
+2024-05-22 04:10:57,960:INFO:   Batch size = 64
+2024-05-22 04:10:57,960:INFO:   Num steps = 1
+2024-05-22 04:11:43,565:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:11:43,632:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:11:43,877:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:11:43,878:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:11:43,878:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:11:43,879:WARNING: 	 embed_dim: 512
+2024-05-22 04:11:43,879:WARNING: 	 image_resolution: 224
+2024-05-22 04:11:43,879:WARNING: 	 vision_layers: 12
+2024-05-22 04:11:43,879:WARNING: 	 vision_width: 768
+2024-05-22 04:11:43,879:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:11:43,879:WARNING: 	 context_length: 77
+2024-05-22 04:11:43,879:WARNING: 	 vocab_size: 49408
+2024-05-22 04:11:43,879:WARNING: 	 transformer_width: 512
+2024-05-22 04:11:43,879:WARNING: 	 transformer_heads: 8
+2024-05-22 04:11:43,879:WARNING: 	 transformer_layers: 12
+2024-05-22 04:11:43,880:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:11:44,884:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:11:49,385:INFO: --------------------
+2024-05-22 04:11:49,385:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:11:51,194:INFO: ***** Running test *****
+2024-05-22 04:11:51,194:INFO:   Num examples = 1
+2024-05-22 04:11:51,194:INFO:   Batch size = 64
+2024-05-22 04:11:51,194:INFO:   Num steps = 1
+2024-05-22 04:13:12,827:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:13:12,827:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:13:13,071:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:13:13,073:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:13:13,073:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:13:13,074:WARNING: 	 embed_dim: 512
+2024-05-22 04:13:13,074:WARNING: 	 image_resolution: 224
+2024-05-22 04:13:13,074:WARNING: 	 vision_layers: 12
+2024-05-22 04:13:13,074:WARNING: 	 vision_width: 768
+2024-05-22 04:13:13,074:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:13:13,074:WARNING: 	 context_length: 77
+2024-05-22 04:13:13,074:WARNING: 	 vocab_size: 49408
+2024-05-22 04:13:13,074:WARNING: 	 transformer_width: 512
+2024-05-22 04:13:13,074:WARNING: 	 transformer_heads: 8
+2024-05-22 04:13:13,074:WARNING: 	 transformer_layers: 12
+2024-05-22 04:13:13,074:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:13:14,080:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:13:18,571:INFO: --------------------
+2024-05-22 04:13:18,571:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:13:56,122:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:13:56,194:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:13:56,432:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:13:56,434:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:13:56,434:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:13:56,435:WARNING: 	 embed_dim: 512
+2024-05-22 04:13:56,435:WARNING: 	 image_resolution: 224
+2024-05-22 04:13:56,435:WARNING: 	 vision_layers: 12
+2024-05-22 04:13:56,435:WARNING: 	 vision_width: 768
+2024-05-22 04:13:56,435:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:13:56,435:WARNING: 	 context_length: 77
+2024-05-22 04:13:56,435:WARNING: 	 vocab_size: 49408
+2024-05-22 04:13:56,435:WARNING: 	 transformer_width: 512
+2024-05-22 04:13:56,435:WARNING: 	 transformer_heads: 8
+2024-05-22 04:13:56,435:WARNING: 	 transformer_layers: 12
+2024-05-22 04:13:56,435:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:13:57,432:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:14:01,910:INFO: --------------------
+2024-05-22 04:14:01,911:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:14:03,706:INFO: ***** Running test *****
+2024-05-22 04:14:03,706:INFO:   Num examples = 1
+2024-05-22 04:14:03,706:INFO:   Batch size = 64
+2024-05-22 04:14:03,706:INFO:   Num steps = 1
+2024-05-22 04:14:40,818:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:14:40,889:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:14:41,130:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:14:41,132:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:14:41,132:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:14:41,133:WARNING: 	 embed_dim: 512
+2024-05-22 04:14:41,133:WARNING: 	 image_resolution: 224
+2024-05-22 04:14:41,133:WARNING: 	 vision_layers: 12
+2024-05-22 04:14:41,133:WARNING: 	 vision_width: 768
+2024-05-22 04:14:41,133:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:14:41,133:WARNING: 	 context_length: 77
+2024-05-22 04:14:41,133:WARNING: 	 vocab_size: 49408
+2024-05-22 04:14:41,133:WARNING: 	 transformer_width: 512
+2024-05-22 04:14:41,133:WARNING: 	 transformer_heads: 8
+2024-05-22 04:14:41,133:WARNING: 	 transformer_layers: 12
+2024-05-22 04:14:41,133:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:14:42,134:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:14:46,667:INFO: --------------------
+2024-05-22 04:14:46,668:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:14:48,457:INFO: ***** Running test *****
+2024-05-22 04:14:48,457:INFO:   Num examples = 1
+2024-05-22 04:14:48,457:INFO:   Batch size = 64
+2024-05-22 04:14:48,457:INFO:   Num steps = 1
+2024-05-22 04:15:01,034:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:15:01,103:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:15:01,342:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:15:01,344:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:15:01,344:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:15:01,345:WARNING: 	 embed_dim: 512
+2024-05-22 04:15:01,345:WARNING: 	 image_resolution: 224
+2024-05-22 04:15:01,345:WARNING: 	 vision_layers: 12
+2024-05-22 04:15:01,345:WARNING: 	 vision_width: 768
+2024-05-22 04:15:01,345:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:15:01,345:WARNING: 	 context_length: 77
+2024-05-22 04:15:01,345:WARNING: 	 vocab_size: 49408
+2024-05-22 04:15:01,345:WARNING: 	 transformer_width: 512
+2024-05-22 04:15:01,345:WARNING: 	 transformer_heads: 8
+2024-05-22 04:15:01,345:WARNING: 	 transformer_layers: 12
+2024-05-22 04:15:01,345:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:15:02,355:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:15:06,854:INFO: --------------------
+2024-05-22 04:15:06,854:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:15:08,654:INFO: ***** Running test *****
+2024-05-22 04:15:08,654:INFO:   Num examples = 1
+2024-05-22 04:15:08,654:INFO:   Batch size = 64
+2024-05-22 04:15:08,655:INFO:   Num steps = 1
+2024-05-22 04:16:12,735:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:16:12,809:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:16:13,048:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:16:13,049:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:16:13,050:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:16:13,050:WARNING: 	 embed_dim: 512
+2024-05-22 04:16:13,051:WARNING: 	 image_resolution: 224
+2024-05-22 04:16:13,051:WARNING: 	 vision_layers: 12
+2024-05-22 04:16:13,051:WARNING: 	 vision_width: 768
+2024-05-22 04:16:13,051:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:16:13,051:WARNING: 	 context_length: 77
+2024-05-22 04:16:13,051:WARNING: 	 vocab_size: 49408
+2024-05-22 04:16:13,051:WARNING: 	 transformer_width: 512
+2024-05-22 04:16:13,051:WARNING: 	 transformer_heads: 8
+2024-05-22 04:16:13,051:WARNING: 	 transformer_layers: 12
+2024-05-22 04:16:13,051:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:16:14,055:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:16:18,571:INFO: --------------------
+2024-05-22 04:16:18,571:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:16:20,353:INFO: ***** Running test *****
+2024-05-22 04:16:20,353:INFO:   Num examples = 1
+2024-05-22 04:16:20,354:INFO:   Batch size = 64
+2024-05-22 04:16:20,354:INFO:   Num steps = 1
+2024-05-22 04:16:58,022:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:16:58,092:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:16:58,332:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:16:58,334:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:16:58,334:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:16:58,334:WARNING: 	 embed_dim: 512
+2024-05-22 04:16:58,335:WARNING: 	 image_resolution: 224
+2024-05-22 04:16:58,335:WARNING: 	 vision_layers: 12
+2024-05-22 04:16:58,335:WARNING: 	 vision_width: 768
+2024-05-22 04:16:58,335:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:16:58,335:WARNING: 	 context_length: 77
+2024-05-22 04:16:58,335:WARNING: 	 vocab_size: 49408
+2024-05-22 04:16:58,335:WARNING: 	 transformer_width: 512
+2024-05-22 04:16:58,335:WARNING: 	 transformer_heads: 8
+2024-05-22 04:16:58,335:WARNING: 	 transformer_layers: 12
+2024-05-22 04:16:58,335:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:16:59,342:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:17:03,834:INFO: --------------------
+2024-05-22 04:17:03,834:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:17:05,643:INFO: ***** Running test *****
+2024-05-22 04:17:05,643:INFO:   Num examples = 1
+2024-05-22 04:17:05,643:INFO:   Batch size = 64
+2024-05-22 04:17:05,644:INFO:   Num steps = 1
+2024-05-22 04:19:51,477:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:19:51,478:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:19:51,720:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:19:51,721:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:19:51,721:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:19:51,722:WARNING: 	 embed_dim: 512
+2024-05-22 04:19:51,722:WARNING: 	 image_resolution: 224
+2024-05-22 04:19:51,722:WARNING: 	 vision_layers: 12
+2024-05-22 04:19:51,722:WARNING: 	 vision_width: 768
+2024-05-22 04:19:51,722:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:19:51,722:WARNING: 	 context_length: 77
+2024-05-22 04:19:51,722:WARNING: 	 vocab_size: 49408
+2024-05-22 04:19:51,722:WARNING: 	 transformer_width: 512
+2024-05-22 04:19:51,722:WARNING: 	 transformer_heads: 8
+2024-05-22 04:19:51,722:WARNING: 	 transformer_layers: 12
+2024-05-22 04:19:51,722:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:19:52,743:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:19:57,234:INFO: --------------------
+2024-05-22 04:19:57,235:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:20:49,197:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:20:49,267:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:20:49,509:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:20:49,510:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:20:49,510:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:20:49,511:WARNING: 	 embed_dim: 512
+2024-05-22 04:20:49,511:WARNING: 	 image_resolution: 224
+2024-05-22 04:20:49,511:WARNING: 	 vision_layers: 12
+2024-05-22 04:20:49,511:WARNING: 	 vision_width: 768
+2024-05-22 04:20:49,511:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:20:49,511:WARNING: 	 context_length: 77
+2024-05-22 04:20:49,511:WARNING: 	 vocab_size: 49408
+2024-05-22 04:20:49,511:WARNING: 	 transformer_width: 512
+2024-05-22 04:20:49,511:WARNING: 	 transformer_heads: 8
+2024-05-22 04:20:49,511:WARNING: 	 transformer_layers: 12
+2024-05-22 04:20:49,511:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:20:50,517:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:20:55,011:INFO: --------------------
+2024-05-22 04:20:55,012:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:20:56,799:INFO: ***** Running test *****
+2024-05-22 04:20:56,799:INFO:   Num examples = 1
+2024-05-22 04:20:56,799:INFO:   Batch size = 64
+2024-05-22 04:20:56,799:INFO:   Num steps = 1
+2024-05-22 04:21:15,710:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:21:15,779:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:21:16,016:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:21:16,018:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:21:16,018:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:21:16,019:WARNING: 	 embed_dim: 512
+2024-05-22 04:21:16,019:WARNING: 	 image_resolution: 224
+2024-05-22 04:21:16,019:WARNING: 	 vision_layers: 12
+2024-05-22 04:21:16,019:WARNING: 	 vision_width: 768
+2024-05-22 04:21:16,019:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:21:16,019:WARNING: 	 context_length: 77
+2024-05-22 04:21:16,019:WARNING: 	 vocab_size: 49408
+2024-05-22 04:21:16,019:WARNING: 	 transformer_width: 512
+2024-05-22 04:21:16,019:WARNING: 	 transformer_heads: 8
+2024-05-22 04:21:16,019:WARNING: 	 transformer_layers: 12
+2024-05-22 04:21:16,019:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:21:17,023:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:21:21,475:INFO: --------------------
+2024-05-22 04:21:21,476:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:21:23,265:INFO: ***** Running test *****
+2024-05-22 04:21:23,266:INFO:   Num examples = 1
+2024-05-22 04:21:23,266:INFO:   Batch size = 64
+2024-05-22 04:21:23,266:INFO:   Num steps = 1
+2024-05-22 04:21:45,904:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:21:45,975:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:21:46,213:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:21:46,214:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:21:46,214:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:21:46,215:WARNING: 	 embed_dim: 512
+2024-05-22 04:21:46,215:WARNING: 	 image_resolution: 224
+2024-05-22 04:21:46,215:WARNING: 	 vision_layers: 12
+2024-05-22 04:21:46,215:WARNING: 	 vision_width: 768
+2024-05-22 04:21:46,215:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:21:46,215:WARNING: 	 context_length: 77
+2024-05-22 04:21:46,215:WARNING: 	 vocab_size: 49408
+2024-05-22 04:21:46,216:WARNING: 	 transformer_width: 512
+2024-05-22 04:21:46,216:WARNING: 	 transformer_heads: 8
+2024-05-22 04:21:46,216:WARNING: 	 transformer_layers: 12
+2024-05-22 04:21:46,216:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:21:47,224:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:21:51,737:INFO: --------------------
+2024-05-22 04:21:51,737:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:21:53,523:INFO: ***** Running test *****
+2024-05-22 04:21:53,523:INFO:   Num examples = 1
+2024-05-22 04:21:53,523:INFO:   Batch size = 64
+2024-05-22 04:21:53,523:INFO:   Num steps = 1
+2024-05-22 04:23:31,309:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:23:31,310:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:23:31,555:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:23:31,556:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:23:31,556:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:23:31,557:WARNING: 	 embed_dim: 512
+2024-05-22 04:23:31,557:WARNING: 	 image_resolution: 224
+2024-05-22 04:23:31,557:WARNING: 	 vision_layers: 12
+2024-05-22 04:23:31,557:WARNING: 	 vision_width: 768
+2024-05-22 04:23:31,557:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:23:31,557:WARNING: 	 context_length: 77
+2024-05-22 04:23:31,557:WARNING: 	 vocab_size: 49408
+2024-05-22 04:23:31,557:WARNING: 	 transformer_width: 512
+2024-05-22 04:23:31,557:WARNING: 	 transformer_heads: 8
+2024-05-22 04:23:31,557:WARNING: 	 transformer_layers: 12
+2024-05-22 04:23:31,557:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:23:32,566:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:23:37,058:INFO: --------------------
+2024-05-22 04:23:37,059:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:24:48,502:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:24:48,570:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:24:48,821:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:24:48,823:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:24:48,823:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:24:48,824:WARNING: 	 embed_dim: 512
+2024-05-22 04:24:48,824:WARNING: 	 image_resolution: 224
+2024-05-22 04:24:48,824:WARNING: 	 vision_layers: 12
+2024-05-22 04:24:48,824:WARNING: 	 vision_width: 768
+2024-05-22 04:24:48,824:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:24:48,824:WARNING: 	 context_length: 77
+2024-05-22 04:24:48,824:WARNING: 	 vocab_size: 49408
+2024-05-22 04:24:48,824:WARNING: 	 transformer_width: 512
+2024-05-22 04:24:48,824:WARNING: 	 transformer_heads: 8
+2024-05-22 04:24:48,824:WARNING: 	 transformer_layers: 12
+2024-05-22 04:24:48,824:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:24:49,838:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:24:54,338:INFO: --------------------
+2024-05-22 04:24:54,338:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:24:56,136:INFO: ***** Running test *****
+2024-05-22 04:24:56,136:INFO:   Num examples = 1
+2024-05-22 04:24:56,136:INFO:   Batch size = 64
+2024-05-22 04:24:56,136:INFO:   Num steps = 1
+2024-05-22 04:25:30,217:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:25:30,285:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:25:30,524:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:25:30,525:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:25:30,525:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:25:30,526:WARNING: 	 embed_dim: 512
+2024-05-22 04:25:30,526:WARNING: 	 image_resolution: 224
+2024-05-22 04:25:30,526:WARNING: 	 vision_layers: 12
+2024-05-22 04:25:30,526:WARNING: 	 vision_width: 768
+2024-05-22 04:25:30,526:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:25:30,526:WARNING: 	 context_length: 77
+2024-05-22 04:25:30,526:WARNING: 	 vocab_size: 49408
+2024-05-22 04:25:30,526:WARNING: 	 transformer_width: 512
+2024-05-22 04:25:30,526:WARNING: 	 transformer_heads: 8
+2024-05-22 04:25:30,526:WARNING: 	 transformer_layers: 12
+2024-05-22 04:25:30,526:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:25:31,542:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:25:36,043:INFO: --------------------
+2024-05-22 04:25:36,043:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:25:37,841:INFO: ***** Running test *****
+2024-05-22 04:25:37,841:INFO:   Num examples = 1
+2024-05-22 04:25:37,841:INFO:   Batch size = 64
+2024-05-22 04:25:37,841:INFO:   Num steps = 1
+2024-05-22 04:25:49,610:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:25:49,685:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:25:49,928:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:25:49,929:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:25:49,930:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:25:49,930:WARNING: 	 embed_dim: 512
+2024-05-22 04:25:49,931:WARNING: 	 image_resolution: 224
+2024-05-22 04:25:49,931:WARNING: 	 vision_layers: 12
+2024-05-22 04:25:49,931:WARNING: 	 vision_width: 768
+2024-05-22 04:25:49,931:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:25:49,931:WARNING: 	 context_length: 77
+2024-05-22 04:25:49,931:WARNING: 	 vocab_size: 49408
+2024-05-22 04:25:49,931:WARNING: 	 transformer_width: 512
+2024-05-22 04:25:49,931:WARNING: 	 transformer_heads: 8
+2024-05-22 04:25:49,931:WARNING: 	 transformer_layers: 12
+2024-05-22 04:25:49,931:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:25:50,922:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:25:55,392:INFO: --------------------
+2024-05-22 04:25:55,392:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:25:57,180:INFO: ***** Running test *****
+2024-05-22 04:25:57,180:INFO:   Num examples = 1
+2024-05-22 04:25:57,180:INFO:   Batch size = 64
+2024-05-22 04:25:57,180:INFO:   Num steps = 1
+2024-05-22 04:26:23,861:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:26:23,930:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:26:24,173:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:26:24,175:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:26:24,175:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:26:24,176:WARNING: 	 embed_dim: 512
+2024-05-22 04:26:24,176:WARNING: 	 image_resolution: 224
+2024-05-22 04:26:24,176:WARNING: 	 vision_layers: 12
+2024-05-22 04:26:24,176:WARNING: 	 vision_width: 768
+2024-05-22 04:26:24,176:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:26:24,176:WARNING: 	 context_length: 77
+2024-05-22 04:26:24,176:WARNING: 	 vocab_size: 49408
+2024-05-22 04:26:24,176:WARNING: 	 transformer_width: 512
+2024-05-22 04:26:24,176:WARNING: 	 transformer_heads: 8
+2024-05-22 04:26:24,176:WARNING: 	 transformer_layers: 12
+2024-05-22 04:26:24,176:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:26:25,185:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:26:29,690:INFO: --------------------
+2024-05-22 04:26:29,690:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:26:31,464:INFO: ***** Running test *****
+2024-05-22 04:26:31,464:INFO:   Num examples = 1
+2024-05-22 04:26:31,465:INFO:   Batch size = 64
+2024-05-22 04:26:31,465:INFO:   Num steps = 1
+2024-05-22 04:27:18,390:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:27:18,461:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:27:18,685:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:27:18,685:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:27:18,685:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:27:18,685:WARNING: 	 embed_dim: 512
+2024-05-22 04:27:18,685:WARNING: 	 image_resolution: 224
+2024-05-22 04:27:18,685:WARNING: 	 vision_layers: 12
+2024-05-22 04:27:18,685:WARNING: 	 vision_width: 768
+2024-05-22 04:27:18,685:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:27:18,685:WARNING: 	 context_length: 77
+2024-05-22 04:27:18,685:WARNING: 	 vocab_size: 49408
+2024-05-22 04:27:18,685:WARNING: 	 transformer_width: 512
+2024-05-22 04:27:18,685:WARNING: 	 transformer_heads: 8
+2024-05-22 04:27:18,685:WARNING: 	 transformer_layers: 12
+2024-05-22 04:27:18,685:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:27:19,665:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:27:24,120:INFO: --------------------
+2024-05-22 04:27:24,120:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:27:25,897:INFO: ***** Running test *****
+2024-05-22 04:27:25,897:INFO:   Num examples = 1
+2024-05-22 04:27:25,898:INFO:   Batch size = 64
+2024-05-22 04:27:25,898:INFO:   Num steps = 1
+2024-05-22 04:27:26,179:INFO: sim matrix size: 1, 1
+2024-05-22 04:27:26,179:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 04:27:26,179:INFO: Text-to-Video:
+2024-05-22 04:27:26,179:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 04:27:26,179:INFO: Video-to-Text:
+2024-05-22 04:27:26,179:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 04:56:47,762:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:56:47,762:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:56:47,998:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:56:47,998:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:56:47,998:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:56:47,998:WARNING: 	 embed_dim: 512
+2024-05-22 04:56:47,998:WARNING: 	 image_resolution: 224
+2024-05-22 04:56:47,998:WARNING: 	 vision_layers: 12
+2024-05-22 04:56:47,998:WARNING: 	 vision_width: 768
+2024-05-22 04:56:47,998:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:56:47,998:WARNING: 	 context_length: 77
+2024-05-22 04:56:47,998:WARNING: 	 vocab_size: 49408
+2024-05-22 04:56:47,998:WARNING: 	 transformer_width: 512
+2024-05-22 04:56:47,998:WARNING: 	 transformer_heads: 8
+2024-05-22 04:56:47,998:WARNING: 	 transformer_layers: 12
+2024-05-22 04:56:47,998:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:56:49,114:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:56:53,628:INFO: --------------------
+2024-05-22 04:56:53,628:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:57:43,704:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:57:43,704:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:57:43,945:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:57:43,946:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:57:43,946:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:57:43,947:WARNING: 	 embed_dim: 512
+2024-05-22 04:57:43,947:WARNING: 	 image_resolution: 224
+2024-05-22 04:57:43,947:WARNING: 	 vision_layers: 12
+2024-05-22 04:57:43,947:WARNING: 	 vision_width: 768
+2024-05-22 04:57:43,947:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:57:43,947:WARNING: 	 context_length: 77
+2024-05-22 04:57:43,947:WARNING: 	 vocab_size: 49408
+2024-05-22 04:57:43,947:WARNING: 	 transformer_width: 512
+2024-05-22 04:57:43,947:WARNING: 	 transformer_heads: 8
+2024-05-22 04:57:43,947:WARNING: 	 transformer_layers: 12
+2024-05-22 04:57:43,947:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:57:44,949:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:57:49,440:INFO: --------------------
+2024-05-22 04:57:49,440:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:58:46,493:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:58:46,493:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:58:46,745:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:58:46,746:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:58:46,746:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:58:46,747:WARNING: 	 embed_dim: 512
+2024-05-22 04:58:46,747:WARNING: 	 image_resolution: 224
+2024-05-22 04:58:46,747:WARNING: 	 vision_layers: 12
+2024-05-22 04:58:46,747:WARNING: 	 vision_width: 768
+2024-05-22 04:58:46,747:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:58:46,747:WARNING: 	 context_length: 77
+2024-05-22 04:58:46,747:WARNING: 	 vocab_size: 49408
+2024-05-22 04:58:46,747:WARNING: 	 transformer_width: 512
+2024-05-22 04:58:46,748:WARNING: 	 transformer_heads: 8
+2024-05-22 04:58:46,748:WARNING: 	 transformer_layers: 12
+2024-05-22 04:58:46,748:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:58:47,764:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:58:52,274:INFO: --------------------
+2024-05-22 04:58:52,274:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 04:59:26,225:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 04:59:26,225:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 04:59:26,456:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 04:59:26,456:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 04:59:26,456:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 04:59:26,456:WARNING: 	 embed_dim: 512
+2024-05-22 04:59:26,456:WARNING: 	 image_resolution: 224
+2024-05-22 04:59:26,456:WARNING: 	 vision_layers: 12
+2024-05-22 04:59:26,456:WARNING: 	 vision_width: 768
+2024-05-22 04:59:26,456:WARNING: 	 vision_patch_size: 32
+2024-05-22 04:59:26,456:WARNING: 	 context_length: 77
+2024-05-22 04:59:26,456:WARNING: 	 vocab_size: 49408
+2024-05-22 04:59:26,456:WARNING: 	 transformer_width: 512
+2024-05-22 04:59:26,456:WARNING: 	 transformer_heads: 8
+2024-05-22 04:59:26,456:WARNING: 	 transformer_layers: 12
+2024-05-22 04:59:26,456:WARNING: 	 cut_top_layer: 0
+2024-05-22 04:59:27,444:WARNING: 	 sim_type: seqTransf
+2024-05-22 04:59:31,923:INFO: --------------------
+2024-05-22 04:59:31,923:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 05:06:49,789:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 05:06:49,789:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 05:06:50,020:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 05:06:50,020:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 05:06:50,020:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 05:06:50,020:WARNING: 	 embed_dim: 512
+2024-05-22 05:06:50,020:WARNING: 	 image_resolution: 224
+2024-05-22 05:06:50,020:WARNING: 	 vision_layers: 12
+2024-05-22 05:06:50,020:WARNING: 	 vision_width: 768
+2024-05-22 05:06:50,020:WARNING: 	 vision_patch_size: 32
+2024-05-22 05:06:50,020:WARNING: 	 context_length: 77
+2024-05-22 05:06:50,020:WARNING: 	 vocab_size: 49408
+2024-05-22 05:06:50,020:WARNING: 	 transformer_width: 512
+2024-05-22 05:06:50,020:WARNING: 	 transformer_heads: 8
+2024-05-22 05:06:50,020:WARNING: 	 transformer_layers: 12
+2024-05-22 05:06:50,020:WARNING: 	 cut_top_layer: 0
+2024-05-22 05:06:51,060:WARNING: 	 sim_type: seqTransf
+2024-05-22 05:06:55,552:INFO: --------------------
+2024-05-22 05:06:55,552:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 05:07:06,881:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 05:07:06,881:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 05:07:07,112:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 05:07:07,113:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 05:07:07,113:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 05:07:07,113:WARNING: 	 embed_dim: 512
+2024-05-22 05:07:07,113:WARNING: 	 image_resolution: 224
+2024-05-22 05:07:07,113:WARNING: 	 vision_layers: 12
+2024-05-22 05:07:07,113:WARNING: 	 vision_width: 768
+2024-05-22 05:07:07,113:WARNING: 	 vision_patch_size: 32
+2024-05-22 05:07:07,113:WARNING: 	 context_length: 77
+2024-05-22 05:07:07,113:WARNING: 	 vocab_size: 49408
+2024-05-22 05:07:07,113:WARNING: 	 transformer_width: 512
+2024-05-22 05:07:07,113:WARNING: 	 transformer_heads: 8
+2024-05-22 05:07:07,113:WARNING: 	 transformer_layers: 12
+2024-05-22 05:07:07,113:WARNING: 	 cut_top_layer: 0
+2024-05-22 05:07:08,110:WARNING: 	 sim_type: seqTransf
+2024-05-22 05:07:12,596:INFO: --------------------
+2024-05-22 05:07:12,596:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:03:44,351:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:03:44,351:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:03:44,581:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:03:44,581:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:03:44,581:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:03:44,581:WARNING: 	 embed_dim: 512
+2024-05-22 06:03:44,581:WARNING: 	 image_resolution: 224
+2024-05-22 06:03:44,581:WARNING: 	 vision_layers: 12
+2024-05-22 06:03:44,581:WARNING: 	 vision_width: 768
+2024-05-22 06:03:44,581:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:03:44,581:WARNING: 	 context_length: 77
+2024-05-22 06:03:44,581:WARNING: 	 vocab_size: 49408
+2024-05-22 06:03:44,581:WARNING: 	 transformer_width: 512
+2024-05-22 06:03:44,581:WARNING: 	 transformer_heads: 8
+2024-05-22 06:03:44,581:WARNING: 	 transformer_layers: 12
+2024-05-22 06:03:44,581:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:03:45,570:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:03:50,058:INFO: --------------------
+2024-05-22 06:03:50,058:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:06:00,537:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:06:00,537:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:06:00,767:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:06:00,767:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:06:00,767:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:06:00,767:WARNING: 	 embed_dim: 512
+2024-05-22 06:06:00,767:WARNING: 	 image_resolution: 224
+2024-05-22 06:06:00,767:WARNING: 	 vision_layers: 12
+2024-05-22 06:06:00,767:WARNING: 	 vision_width: 768
+2024-05-22 06:06:00,767:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:06:00,767:WARNING: 	 context_length: 77
+2024-05-22 06:06:00,767:WARNING: 	 vocab_size: 49408
+2024-05-22 06:06:00,767:WARNING: 	 transformer_width: 512
+2024-05-22 06:06:00,767:WARNING: 	 transformer_heads: 8
+2024-05-22 06:06:00,767:WARNING: 	 transformer_layers: 12
+2024-05-22 06:06:00,767:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:06:01,758:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:06:06,243:INFO: --------------------
+2024-05-22 06:06:06,243:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:06:54,841:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:06:54,842:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:06:55,087:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:06:55,088:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:06:55,088:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:06:55,089:WARNING: 	 embed_dim: 512
+2024-05-22 06:06:55,090:WARNING: 	 image_resolution: 224
+2024-05-22 06:06:55,090:WARNING: 	 vision_layers: 12
+2024-05-22 06:06:55,090:WARNING: 	 vision_width: 768
+2024-05-22 06:06:55,090:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:06:55,090:WARNING: 	 context_length: 77
+2024-05-22 06:06:55,090:WARNING: 	 vocab_size: 49408
+2024-05-22 06:06:55,090:WARNING: 	 transformer_width: 512
+2024-05-22 06:06:55,090:WARNING: 	 transformer_heads: 8
+2024-05-22 06:06:55,090:WARNING: 	 transformer_layers: 12
+2024-05-22 06:06:55,091:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:06:56,111:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:07:00,549:INFO: --------------------
+2024-05-22 06:07:00,549:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:09:10,757:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:09:10,757:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:09:10,998:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:09:10,999:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:09:10,999:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:09:11,000:WARNING: 	 embed_dim: 512
+2024-05-22 06:09:11,000:WARNING: 	 image_resolution: 224
+2024-05-22 06:09:11,000:WARNING: 	 vision_layers: 12
+2024-05-22 06:09:11,000:WARNING: 	 vision_width: 768
+2024-05-22 06:09:11,000:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:09:11,000:WARNING: 	 context_length: 77
+2024-05-22 06:09:11,000:WARNING: 	 vocab_size: 49408
+2024-05-22 06:09:11,000:WARNING: 	 transformer_width: 512
+2024-05-22 06:09:11,000:WARNING: 	 transformer_heads: 8
+2024-05-22 06:09:11,000:WARNING: 	 transformer_layers: 12
+2024-05-22 06:09:11,000:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:09:12,015:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:09:16,543:INFO: --------------------
+2024-05-22 06:09:16,543:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:10:48,403:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:10:48,403:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:10:48,636:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:10:48,636:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:10:48,637:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:10:48,637:WARNING: 	 embed_dim: 512
+2024-05-22 06:10:48,637:WARNING: 	 image_resolution: 224
+2024-05-22 06:10:48,637:WARNING: 	 vision_layers: 12
+2024-05-22 06:10:48,637:WARNING: 	 vision_width: 768
+2024-05-22 06:10:48,637:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:10:48,637:WARNING: 	 context_length: 77
+2024-05-22 06:10:48,637:WARNING: 	 vocab_size: 49408
+2024-05-22 06:10:48,637:WARNING: 	 transformer_width: 512
+2024-05-22 06:10:48,637:WARNING: 	 transformer_heads: 8
+2024-05-22 06:10:48,637:WARNING: 	 transformer_layers: 12
+2024-05-22 06:10:48,637:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:10:49,632:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:10:54,143:INFO: --------------------
+2024-05-22 06:10:54,143:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:12:30,045:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:12:30,046:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:12:30,276:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:12:30,277:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:12:30,277:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:12:30,277:WARNING: 	 embed_dim: 512
+2024-05-22 06:12:30,277:WARNING: 	 image_resolution: 224
+2024-05-22 06:12:30,277:WARNING: 	 vision_layers: 12
+2024-05-22 06:12:30,277:WARNING: 	 vision_width: 768
+2024-05-22 06:12:30,277:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:12:30,277:WARNING: 	 context_length: 77
+2024-05-22 06:12:30,277:WARNING: 	 vocab_size: 49408
+2024-05-22 06:12:30,277:WARNING: 	 transformer_width: 512
+2024-05-22 06:12:30,277:WARNING: 	 transformer_heads: 8
+2024-05-22 06:12:30,277:WARNING: 	 transformer_layers: 12
+2024-05-22 06:12:30,277:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:12:31,264:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:12:35,740:INFO: --------------------
+2024-05-22 06:12:35,740:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:15:55,871:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:15:55,871:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:15:56,106:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:15:56,106:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:15:56,107:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:15:56,107:WARNING: 	 embed_dim: 512
+2024-05-22 06:15:56,107:WARNING: 	 image_resolution: 224
+2024-05-22 06:15:56,107:WARNING: 	 vision_layers: 12
+2024-05-22 06:15:56,107:WARNING: 	 vision_width: 768
+2024-05-22 06:15:56,107:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:15:56,107:WARNING: 	 context_length: 77
+2024-05-22 06:15:56,107:WARNING: 	 vocab_size: 49408
+2024-05-22 06:15:56,107:WARNING: 	 transformer_width: 512
+2024-05-22 06:15:56,107:WARNING: 	 transformer_heads: 8
+2024-05-22 06:15:56,107:WARNING: 	 transformer_layers: 12
+2024-05-22 06:15:56,107:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:15:57,102:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:16:01,611:INFO: --------------------
+2024-05-22 06:16:01,611:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:16:13,634:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:16:13,634:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:16:13,869:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:16:13,869:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:16:13,869:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:16:13,869:WARNING: 	 embed_dim: 512
+2024-05-22 06:16:13,869:WARNING: 	 image_resolution: 224
+2024-05-22 06:16:13,869:WARNING: 	 vision_layers: 12
+2024-05-22 06:16:13,869:WARNING: 	 vision_width: 768
+2024-05-22 06:16:13,869:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:16:13,869:WARNING: 	 context_length: 77
+2024-05-22 06:16:13,869:WARNING: 	 vocab_size: 49408
+2024-05-22 06:16:13,869:WARNING: 	 transformer_width: 512
+2024-05-22 06:16:13,869:WARNING: 	 transformer_heads: 8
+2024-05-22 06:16:13,869:WARNING: 	 transformer_layers: 12
+2024-05-22 06:16:13,869:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:16:14,865:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:16:19,352:INFO: --------------------
+2024-05-22 06:16:19,352:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:17:47,800:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:17:47,870:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:17:48,092:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:17:48,092:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:17:48,093:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:17:48,093:WARNING: 	 embed_dim: 512
+2024-05-22 06:17:48,093:WARNING: 	 image_resolution: 224
+2024-05-22 06:17:48,093:WARNING: 	 vision_layers: 12
+2024-05-22 06:17:48,093:WARNING: 	 vision_width: 768
+2024-05-22 06:17:48,093:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:17:48,093:WARNING: 	 context_length: 77
+2024-05-22 06:17:48,093:WARNING: 	 vocab_size: 49408
+2024-05-22 06:17:48,093:WARNING: 	 transformer_width: 512
+2024-05-22 06:17:48,093:WARNING: 	 transformer_heads: 8
+2024-05-22 06:17:48,093:WARNING: 	 transformer_layers: 12
+2024-05-22 06:17:48,093:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:17:49,078:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:17:53,562:INFO: --------------------
+2024-05-22 06:17:53,562:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:17:55,352:INFO: ***** Running test *****
+2024-05-22 06:17:55,352:INFO:   Num examples = 1
+2024-05-22 06:17:55,352:INFO:   Batch size = 64
+2024-05-22 06:17:55,352:INFO:   Num steps = 1
+2024-05-22 06:19:14,345:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:19:14,416:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:19:14,637:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:19:14,638:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:19:14,638:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:19:14,638:WARNING: 	 embed_dim: 512
+2024-05-22 06:19:14,638:WARNING: 	 image_resolution: 224
+2024-05-22 06:19:14,638:WARNING: 	 vision_layers: 12
+2024-05-22 06:19:14,638:WARNING: 	 vision_width: 768
+2024-05-22 06:19:14,638:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:19:14,638:WARNING: 	 context_length: 77
+2024-05-22 06:19:14,638:WARNING: 	 vocab_size: 49408
+2024-05-22 06:19:14,638:WARNING: 	 transformer_width: 512
+2024-05-22 06:19:14,638:WARNING: 	 transformer_heads: 8
+2024-05-22 06:19:14,638:WARNING: 	 transformer_layers: 12
+2024-05-22 06:19:14,638:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:19:15,629:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:19:20,115:INFO: --------------------
+2024-05-22 06:19:20,115:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:19:21,880:INFO: ***** Running test *****
+2024-05-22 06:19:21,880:INFO:   Num examples = 1
+2024-05-22 06:19:21,880:INFO:   Batch size = 64
+2024-05-22 06:19:21,880:INFO:   Num steps = 1
+2024-05-22 06:19:22,128:INFO: sim matrix size: 1, 1
+2024-05-22 06:19:22,128:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 06:19:22,128:INFO: Text-to-Video:
+2024-05-22 06:19:22,128:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 06:19:22,128:INFO: Video-to-Text:
+2024-05-22 06:19:22,128:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 06:22:14,960:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:22:14,960:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:22:15,191:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:22:15,191:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:22:15,191:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:22:15,191:WARNING: 	 embed_dim: 512
+2024-05-22 06:22:15,191:WARNING: 	 image_resolution: 224
+2024-05-22 06:22:15,191:WARNING: 	 vision_layers: 12
+2024-05-22 06:22:15,191:WARNING: 	 vision_width: 768
+2024-05-22 06:22:15,191:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:22:15,191:WARNING: 	 context_length: 77
+2024-05-22 06:22:15,191:WARNING: 	 vocab_size: 49408
+2024-05-22 06:22:15,191:WARNING: 	 transformer_width: 512
+2024-05-22 06:22:15,191:WARNING: 	 transformer_heads: 8
+2024-05-22 06:22:15,191:WARNING: 	 transformer_layers: 12
+2024-05-22 06:22:15,191:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:22:16,178:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:22:20,660:INFO: --------------------
+2024-05-22 06:22:20,660:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:22:36,973:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:22:36,973:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:22:37,203:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:22:37,204:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:22:37,204:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:22:37,204:WARNING: 	 embed_dim: 512
+2024-05-22 06:22:37,204:WARNING: 	 image_resolution: 224
+2024-05-22 06:22:37,204:WARNING: 	 vision_layers: 12
+2024-05-22 06:22:37,204:WARNING: 	 vision_width: 768
+2024-05-22 06:22:37,204:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:22:37,204:WARNING: 	 context_length: 77
+2024-05-22 06:22:37,204:WARNING: 	 vocab_size: 49408
+2024-05-22 06:22:37,204:WARNING: 	 transformer_width: 512
+2024-05-22 06:22:37,204:WARNING: 	 transformer_heads: 8
+2024-05-22 06:22:37,204:WARNING: 	 transformer_layers: 12
+2024-05-22 06:22:37,204:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:22:38,205:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:22:42,684:INFO: --------------------
+2024-05-22 06:22:42,684:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:23:25,468:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:23:25,537:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:23:25,757:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:23:25,757:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:23:25,757:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:23:25,757:WARNING: 	 embed_dim: 512
+2024-05-22 06:23:25,757:WARNING: 	 image_resolution: 224
+2024-05-22 06:23:25,757:WARNING: 	 vision_layers: 12
+2024-05-22 06:23:25,757:WARNING: 	 vision_width: 768
+2024-05-22 06:23:25,757:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:23:25,757:WARNING: 	 context_length: 77
+2024-05-22 06:23:25,757:WARNING: 	 vocab_size: 49408
+2024-05-22 06:23:25,757:WARNING: 	 transformer_width: 512
+2024-05-22 06:23:25,757:WARNING: 	 transformer_heads: 8
+2024-05-22 06:23:25,757:WARNING: 	 transformer_layers: 12
+2024-05-22 06:23:25,757:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:23:26,744:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:23:31,231:INFO: --------------------
+2024-05-22 06:23:31,231:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:23:33,005:INFO: ***** Running test *****
+2024-05-22 06:23:33,005:INFO:   Num examples = 1
+2024-05-22 06:23:33,005:INFO:   Batch size = 64
+2024-05-22 06:23:33,005:INFO:   Num steps = 1
+2024-05-22 06:23:33,251:INFO: sim matrix size: 1, 1
+2024-05-22 06:23:33,251:INFO: 	 Length-T: 1, Length-V:1
+2024-05-22 06:23:33,251:INFO: Text-to-Video:
+2024-05-22 06:23:33,251:INFO: 	>>>  R@1: 100.0 - R@5: 100.0 - R@10: 100.0 - Median R: 1.0 - Mean R: 1.0
+2024-05-22 06:23:33,251:INFO: Video-to-Text:
+2024-05-22 06:23:33,251:INFO: 	>>>  V2T$R@1: 100.0 - V2T$R@5: 100.0 - V2T$R@10: 100.0 - V2T$Median R: 1.0 - V2T$Mean R: 1.0
+2024-05-22 06:33:19,844:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:33:19,844:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:33:20,076:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:33:20,076:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:33:20,076:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:33:20,077:WARNING: 	 embed_dim: 512
+2024-05-22 06:33:20,077:WARNING: 	 image_resolution: 224
+2024-05-22 06:33:20,077:WARNING: 	 vision_layers: 12
+2024-05-22 06:33:20,077:WARNING: 	 vision_width: 768
+2024-05-22 06:33:20,077:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:33:20,077:WARNING: 	 context_length: 77
+2024-05-22 06:33:20,077:WARNING: 	 vocab_size: 49408
+2024-05-22 06:33:20,077:WARNING: 	 transformer_width: 512
+2024-05-22 06:33:20,077:WARNING: 	 transformer_heads: 8
+2024-05-22 06:33:20,077:WARNING: 	 transformer_layers: 12
+2024-05-22 06:33:20,077:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:33:21,073:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:33:25,562:INFO: --------------------
+2024-05-22 06:33:25,562:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:35:30,881:INFO: device: cuda:0 n_gpu: 1
+2024-05-22 06:35:30,951:INFO: Model loaded fail /workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2/pytorch_model.bin.2
+2024-05-22 06:35:31,199:INFO: loading archive file /workspace/CLIP4Clip/CLIP2Video/modules/cross-base
+2024-05-22 06:35:31,200:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-05-22 06:35:31,200:INFO: Weight doesn't exsits. /workspace/CLIP4Clip/CLIP2Video/modules/cross-base/cross_pytorch_model.bin
+2024-05-22 06:35:31,201:WARNING: 	 embed_dim: 512
+2024-05-22 06:35:31,201:WARNING: 	 image_resolution: 224
+2024-05-22 06:35:31,201:WARNING: 	 vision_layers: 12
+2024-05-22 06:35:31,201:WARNING: 	 vision_width: 768
+2024-05-22 06:35:31,201:WARNING: 	 vision_patch_size: 32
+2024-05-22 06:35:31,201:WARNING: 	 context_length: 77
+2024-05-22 06:35:31,201:WARNING: 	 vocab_size: 49408
+2024-05-22 06:35:31,201:WARNING: 	 transformer_width: 512
+2024-05-22 06:35:31,201:WARNING: 	 transformer_heads: 8
+2024-05-22 06:35:31,202:WARNING: 	 transformer_layers: 12
+2024-05-22 06:35:31,202:WARNING: 	 cut_top_layer: 0
+2024-05-22 06:35:32,208:WARNING: 	 sim_type: seqTransf
+2024-05-22 06:35:36,717:INFO: --------------------
+2024-05-22 06:35:36,718:INFO: Weights of CLIP2Video not initialized from pretrained model: 
+   weight_center
+   emb_center
+   trans_layernorm.weight
+   trans_layernorm.bias
+2024-05-22 06:35:38,497:INFO: ***** Running test *****
+2024-05-22 06:35:38,497:INFO:   Num examples = 1
+2024-05-22 06:35:38,497:INFO:   Batch size = 64
+2024-05-22 06:35:38,497:INFO:   Num steps = 1

@@ -4,6 +4,6 @@ data/
 *.pth
 *.pt
 clip4clip/
-log.txt
+*.txt
 *.bin*
 *.jpg

@@ -18,7 +18,7 @@ def get_args(description='CLIP2Video on Dideo-Text Retrieval Task'):
     parser.add_argument('--num_thread_reader', type=int, default=0, help='')
     parser.add_argument('--batch_size_val', type=int, default=64, help='batch size eval')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
-    parser.add_argument('--max_words', type=int, default=77, help='')
+    parser.add_argument('--max_words', type=int, default=32, help='')
     parser.add_argument('--max_frames', type=int, default=6, help='')
     parser.add_argument('--feature_framerate', type=int, default=2, help='frame rate for uniformly sampling the video')
     parser.add_argument("--output_dir", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/log2.txt", type=str, required=False,

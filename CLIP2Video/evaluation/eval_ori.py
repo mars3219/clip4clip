@@ -4,6 +4,9 @@ import os
 import sys
 sys.path.append(os.path.dirname(__file__) + os.sep + '../')
 import numpy as np
+
+from modules.module_txtemb import prompt_embedding
+
 from evaluation.metrics import compute_metrics
 from evaluation.metrics import tensor_text_to_video_metrics
 from evaluation.metrics import tensor_video_to_text_sim
@@ -33,6 +36,7 @@ def _run_on_single_gpu(model, batch_list_t, batch_list_v, batch_sequence_output_
             # calculate the similarity
             b1b2_logits, *_tmp = model.get_inference_logits(sequence_output, visual_output, input_mask, video_mask)
             b1b2_logits = b1b2_logits.cpu().detach().numpy()
+            print(b1b2_logits)
             each_row.append(b1b2_logits)
         each_row = np.concatenate(tuple(each_row), axis=-1)
         sim_matrix.append(each_row)
@@ -87,6 +91,8 @@ def eval_epoch(model, test_dataloader, device, n_gpu, logger):
         for bid, batch in enumerate(test_dataloader):
             batch = tuple(t.to(device) for t in batch)
             input_ids, input_mask, segment_ids, video, video_mask = batch
+
+            text_features_masks = prompt_embedding(model, 32, device)
 
             if multi_sentence_:
                 # multi-sentences retrieval means: one frame clip has two or more descriptions.
