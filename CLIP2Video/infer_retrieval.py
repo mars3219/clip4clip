@@ -9,7 +9,7 @@ import numpy as np
 import os
 import random
 
-from modules.module_txtemb import prompt_embedding
+from modules.module_embedding import prompt_embedding
 
 from modules.modeling import CLIP2Video
 from evaluation.eval import eval_epoch
@@ -32,7 +32,6 @@ DATALOADER_DICT["msrvtt"] = {"train":dataloader_msrvtt_train, "test":dataloader_
 DATALOADER_DICT["msrvttfull"] = {"train":dataloader_msrvtt_train, "val":dataloader_msrvttfull_test, "test":dataloader_msrvttfull_test}
 DATALOADER_DICT["msvd"] = {"train":dataloader_msvd_train, "val":dataloader_msvd_test, "test":dataloader_msvd_test}
 DATALOADER_DICT["vatexEnglish"] = {"train":dataloader_vatexEnglish_train, "test":dataloader_vatexEnglish_test}
-
 
 
 def set_seed_logger(args):

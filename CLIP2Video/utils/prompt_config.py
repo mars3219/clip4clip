@@ -13,10 +13,10 @@
 prompt = dict(
     outdoor=dict(
         start=['there is', 'there are', 'a photo of', 'a scene of', ' '],
-        pos_words=["wrestling", "kicking", "boxing", "fight", "punching", "seizing", "a fistfight of", "battle of", "assult of", "group fighting of", "gang fight of"],
-        neg_words=[ "an usual state of", "normal group of", "peaceful State of", "normal State of", "a daily scene of", "a stable scene of", "a ordery scene of", "walking", "talking", "taking a walk", "walking side by side"],
-        gender = ['man', 'woman', 'men', 'women', 'persons', 'people'],
-        loc = ['at center', 'at right', 'at left', 'at top', 'at bottom', 'at top-right', 'at top-left', 'at bottom-right', 'at bottom-left', 'at side', 'in middle'],
+        pos_words=["wrestling", "kicking", "boxing", "fighting", "punching", "seizing", "a fistfight of", "battle of", "assult of", "group fighting of", "gang fight of"],
+        neg_words=[ "playing soccer", "an usual state of", "normal group of", "peaceful State of", "normal State of", "a daily scene of", "a stable scene of", "a ordery scene of", "walking", "talking", "taking a walk", "walking side by side"],
+        gender = ['men', 'women', 'persons', 'people'],
+        loc = ['at center', 'at right', 'at left', 'at top', 'at bottom', 'at top-right', 'at top-left', 'at bottom-right', 'at bottom-left', 'at side', 'in middle', 'on the street'],
         time_env = ['in daytime' , 'at night' ],
     ),
     elevator=dict(

@@ -58,7 +58,7 @@ def add_frame_to_queue(rtsp_url, frame_queue, max_frames):
                 frame_queue.put(frame)
 
 
-def capture_frame_and_display(num_splits, rtsp_url, frame_queue, max_frames):
+def capture_frame_and_display(rtsp_url, frame_queue, max_frames):
     global INFERENCE_RESULT
     QUEUE_EVENT.set()
     cap = cv2.VideoCapture(rtsp_url)
@@ -66,54 +66,26 @@ def capture_frame_and_display(num_splits, rtsp_url, frame_queue, max_frames):
         print("Error: Could not open RTSP stream")
         return
     
+    dresult = 0
+
     while True:
         ret, frame = cap.read()
         if not ret:
             print("Error: Could not read frame")
             break
 
-        # 프레임의 높이와 너비 가져오기
-        height, width = frame.shape[:2]
-
-        split_count = int(math.sqrt(num_splits))
-        # 분할된 이미지 생성
-        split_height = height // split_count
-        split_width = width // split_count
-        split_images = []
-
-        for i in range(split_count):
-            for j in range(split_count):
-                split_images.append(frame[i*split_height:(i+1)*split_height, j*split_width:(j+1)*split_width])
-
-        # 분할된 이미지를 디스플레이
-        for idx, split_image in enumerate(split_images):
-            if RESULT_EVENT.is_set():
-                result = INFERENCE_RESULT[idx]
-            try:        
-                cv2.putText(split_image, f"event: {result}", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
-                cv2.imshow("inference", split_image)
-                cv2.waitKey(1)
-            except:
-                pass
-
-        RESULT_EVENT.clear()
-
-        # 'q' 키를 누르면 종료
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        if RESULT_EVENT.is_set():
+            result = INFERENCE_RESULT
+            RESULT_EVENT.clear()
+            dresult = result
+        try:        
+            cv2.putText(frame, f"event: {dresult}", (10,10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+            cv2.imshow("inference", frame)
+            cv2.waitKey(1)
+        except:
+            pass
 
     cap.release()
-    cv2.destroyAllWindows()
-
-def visual_encoding(model, queue, frames, frame_mask, text_mask, text_features, shaped, video_frame):
-    with torch.no_grad():
-
-        visual_output = model.get_visual_output(frames, frame_mask, shaped, video_frame)
-        # torch.save(visual_output, "/workspace/CLIP4Clip/CLIP2Video/evaluation/real_visual_output.pt")
-        
-        # calculate the similarity  in one GPU
-        probs = _run_on_single_gpu(model, text_mask, frame_mask, text_features, visual_output)
-        queue.put(probs)
 
 def multi_crop(image, n, preprocess):
 
@@ -133,12 +105,9 @@ def multi_crop(image, n, preprocess):
             lower = upper + crop_height
             tmp_img = image.crop((left, upper, right, lower))
 
-            if preprocess is not None:
-                # preprocessing frames
-                img = preprocess(tmp_img)
-                crops.append(img)
-            else:
-                crops.append(tmp_img)
+            # preprocessing frames
+            img = preprocess(tmp_img)
+            crops.append(img)
     
     return crops
 
@@ -153,10 +122,10 @@ def analyze_frames(num_splits, frame_queue, model, max_frames, text_features, te
 
     model.eval()
 
-    origin_frames = []
     frames_to_analyze = []
-    frame_masks = []
     
+    origin_frames = []
+
     crop_lists = [[] for _ in range(num_splits)]  # screen_lists: [[],[],...,[]]
     trans_crop = Lambda(lambda img: multi_crop(img, num_splits, preprocess_fn))
 
@@ -172,58 +141,53 @@ def analyze_frames(num_splits, frame_queue, model, max_frames, text_features, te
                 origin_frames.append(frame)  #   FrameExtractor: def get_video_data/ video_to_tensor(dataloaders/rawframe_util.py)
 
             for img0 in origin_frames:
+                # # 파일 이름 생성
+                # file_name = f"rtsp_image_{idx + 1}.jpg"
+                # destination_path = os.path.join("/workspace/CLIP4Clip/CLIP2Video/test/output/real", file_name)
+                
+                # # NumPy 배열을 이미지로 저장
+                # img0.save(destination_path)
+                # print(f"Image saved to {destination_path}")
+
                 cropped_img = trans_crop(img0)
                 for i, crop in enumerate(cropped_img):
                     crop_lists[i].append(crop)
                 
-            for i in crop_lists:
-                frames = torch.tensor(np.stack(i, axis=0))
-                frames = torch.tensor(frames).float().to(device)
-                frames_to_analyze.append(frames)
-
-                frame_mask = np.ones((1, max_frames), dtype=np.int64)
-                frame_mask = torch.tensor(frame_mask).to(device)
-                frame_masks.append(frame_mask)
-
-            # 결과를 저장할 큐
-            output_queue = queue.Queue()
-
-            # 쓰레드 생성 및 시작
-            threads = []
-            for crop_l, mask_l in zip(frames_to_analyze, frame_masks):
-                t = threading.Thread(target=visual_encoding, args=(model, output_queue, crop_l, mask_l, text_mask, text_features, True, max_frames))
-                t.start()
-                threads.append(t)
-
-            # 모든 쓰레드가 작업을 마치기를 기다림
-            for t in threads:
-                t.join()
-
-            # 결과 취합
-            all_results = []
-            while not output_queue.empty():
-                all_results.extend(output_queue.get())
-
-            # 결과 확인 (여기서는 각 탐지 결과를 출력)
-            for result in all_results:
-                print(result)
-
-            # if probs[0] > 0.65:
-            #     text = f"pred: {probs[0].item():.2f} >> Violence >> {probs[1].item():.2f} >>> interval: {time.time()-ss}"
-            # else:
-            #     text = f"pred: {probs[0].item():.2f} >> No Event >> {probs[1].item():.2f} >>> interval: {time.time()-ss}"
+                # # preprocessing frames
+                # img = preprocess_fn(img0)
+                # frames_to_analyze.append(img)
+                    
+                    
 
             origin_frames.clear()
-            frames_to_analyze.clear()
-            frame_masks.clear()
-            for i in range(len(crop_lists)):
-                crop_lists[i].clear()
 
+            frames = torch.tensor(np.stack(frames_to_analyze, axis=0))
+
+            frame_mask = np.ones((1, max_frames), dtype=np.int64)
+            frames = torch.tensor(frames).float().to(device)
+            frame_mask = torch.tensor(frame_mask).to(device)
+
+            frames_to_analyze.clear()
             QUEUE_EVENT.set()
 
-            INFERENCE_RESULT = all_results
-            RESULT_EVENT.set()
-            all_results.clear()
+            with torch.no_grad():
+
+                visual_output = model.get_visual_output(frames, frame_mask, shaped=True, video_frame=max_frames)
+                # torch.save(visual_output, "/workspace/CLIP4Clip/CLIP2Video/evaluation/real_visual_output.pt")
+                
+                # calculate the similarity  in one GPU
+                probs = _run_on_single_gpu(model, text_mask, frame_mask, text_features, visual_output)
+
+                if probs[0] > 0.65:
+                    text = f"pred: {probs[0].item():.2f} >> Violence >> {probs[1].item():.2f} >>> interval: {time.time()-ss}"
+                else:
+                    text = f"pred: {probs[0].item():.2f} >> No Event >> {probs[1].item():.2f} >>> interval: {time.time()-ss}"
+
+
+                print(text)
+
+                INFERENCE_RESULT = text
+                RESULT_EVENT.set()
 
               
 def _run_on_single_gpu(model, input_mask, video_mask, sequence_output, visual_output):
@@ -263,7 +227,7 @@ def eval_epoch(model, max_frames, rtsp_url, text_features, text_mask, device):
     """
 
     queueing = threading.Thread(target=add_frame_to_queue, args=(rtsp_url, FRAME_QUEUE, max_frames,))
-    capture_thread = threading.Thread(target=capture_frame_and_display, args=(NUM_SPLITS, rtsp_url, FRAME_QUEUE, max_frames))
+    capture_thread = threading.Thread(target=capture_frame_and_display, args=(rtsp_url, FRAME_QUEUE, max_frames))
     analyze_thread = threading.Thread(target=analyze_frames, args=(NUM_SPLITS, FRAME_QUEUE, model, max_frames, text_features, text_mask, device))
 
     queueing.start()

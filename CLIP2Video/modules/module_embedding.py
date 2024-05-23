@@ -6,6 +6,7 @@ from utils.prompt_config import prompt
 
 from modules.tokenization_clip import SimpleTokenizer as ClipTokenizer
 
+
 def get_text(caption, max_words):
 
     SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
@@ -130,10 +131,14 @@ def prompt_embedding(model, max_words=32, device="cuda:0", center_type="TAB"):
     #     Negative.append(result)
 
     # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
-    Positive = ["men are doing wrestling"]
-    Negative = ["cars are moving on the road"]
+    Positive = ["men are doing wrestling", "some people are fighting in the streets",
+                "people are punching each other in the street", "people are kicking each other in the street",
+                "men are boxing", ]
+    Negative = ["cars are moving on the road", "players are playing a soccer on the playground",
+                "some people are running in the streets", "some people are walking in the streets",
+                "people are playing on the playground"]
     TextSet = Positive
-    # TextSet = Positive + Negative
+    TextSet = Positive + Negative
     text_encoding_list, text_mask_list = get_text(TextSet, max_words)
 
     text_features = get_text_embedding_output(model, text_encoding_list, text_mask_list, device, center_type="TAB", pos_len=len(Positive))

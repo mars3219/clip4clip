@@ -5,7 +5,7 @@ import sys
 sys.path.append(os.path.dirname(__file__) + os.sep + '../')
 import numpy as np
 
-from modules.module_txtemb import prompt_embedding
+from modules.module_embedding import prompt_embedding
 
 from evaluation.metrics import compute_metrics
 from evaluation.metrics import tensor_text_to_video_metrics
@@ -112,6 +112,9 @@ def eval_epoch(model, test_dataloader, device, n_gpu, logger):
                 total_video_num += b
             else:
                 sequence_output, visual_output = model.get_sequence_visual_output(input_ids, segment_ids, input_mask, video, video_mask)
+                real_visual_output = torch.load("/workspace/CLIP4Clip/CLIP2Video/evaluation/real_visual_output.pt")
+                print(visual_output)
+                print(real_visual_output)
 
                 batch_sequence_output_list.append(sequence_output)
                 batch_list_t.append((input_mask, segment_ids,))
