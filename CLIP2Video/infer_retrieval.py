@@ -104,6 +104,7 @@ def init_model(args, device):
 
     # resume model if pre-trained model exist.
     model_file = os.path.join(args.checkpoint, "pytorch_model.bin.{}".format(args.model_num))
+    # model_file = "/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/clip4clip_vit-base-p32-res224-clip-pre_8xb16-u12-5e_msrvtt-9k-rgb.pth"
     if os.path.exists(model_file):
         model_state_dict = torch.load(model_file, map_location='cpu')
         if args.local_rank == 0:
@@ -143,12 +144,13 @@ def main():
 
     # text_features_masks = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_masks.pt")
     text_features, text_mask = text_features_masks
-
+                                                             
     # text_features_masks = torch.load("/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/text_features_t.pt")
     # text_features, text_mask = text_features_masks, 0
 
-    rtsp_url = "rtsp://192.168.10.32:8554/stream"
-    # rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    # rtsp_url = "rtsp://192.168.10.32:8554/stream"
+    rtsp_url = "rtsp://192.168.0.2:8554/stream"
+    # rtsp_url = "rtsp://192.168.0.4:28550/h264_ulaw.sdp"
 
     # evaluation for text-to-video and video-to-text retrieval
     if args.local_rank == 0:

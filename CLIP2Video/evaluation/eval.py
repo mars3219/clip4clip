@@ -19,10 +19,11 @@ sys.path.append(os.path.dirname(__file__) + os.sep + '../')
 
 
 # initialize Queue and Variable
-NUM_SPLITS = 4 
-FRAME_QUEUE = queue.Queue(maxsize=10)
+NUM_SPLITS = 4
+MAX_FRAMES = 12
+FRAME_QUEUE = queue.Queue(maxsize=MAX_FRAMES)
+TIME_INTERVAL = 6 / MAX_FRAMES
 RESULT_EVENT = threading.Event()
-QUEUE_EVENT = threading.Event()
 INFERENCE_RESULT = None
 ANALYSIS_INTERVAL = 1
 
@@ -36,8 +37,6 @@ def _transform(n_px):
 
 
 def add_frame_to_queue(rtsp_url, frame_queue, max_frames):
-    time_interval = 10 / max_frames
-    st = time.time()
     cap = cv2.VideoCapture(rtsp_url)
     if not cap.isOpened():
         print("Error: Could not open RTSP stream")
@@ -48,20 +47,25 @@ def add_frame_to_queue(rtsp_url, frame_queue, max_frames):
         if not ret:
             print("Error: Could not read frame")
             break
-        if QUEUE_EVENT.is_set():
-            if (time.time() - st) >= time_interval:
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                st = time.time()
-                now = datetime.now()
-                cv2.putText(frame, f"event: {now.strftime('%H:%M:%S')}", (10,180), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
-                frame = Image.fromarray(frame)
-                frame_queue.put(frame)
+
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        now = datetime.now()
+        cv2.putText(frame, f"event: {now.strftime('%H:%M:%S')}", (10,180), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+        frame = Image.fromarray(frame)
+
+        try:
+            frame_queue.put_nowait(frame)
+        except:
+            frame_queue.get()
+            frame_queue.put_nowait(frame)
+        time.sleep(TIME_INTERVAL)
 
 
 def capture_frame_and_display(num_splits, rtsp_url, frame_queue, max_frames):
     global INFERENCE_RESULT
-    QUEUE_EVENT.set()
+
     cap = cv2.VideoCapture(rtsp_url)
+    cap.set(cv2.CAP_PROP_BUFFERSIZE, 3)
     if not cap.isOpened():
         print("Error: Could not open RTSP stream")
         return
@@ -84,19 +88,28 @@ def capture_frame_and_display(num_splits, rtsp_url, frame_queue, max_frames):
         for i in range(split_count):
             for j in range(split_count):
                 split_images.append(frame[i*split_height:(i+1)*split_height, j*split_width:(j+1)*split_width])
+        
+        if RESULT_EVENT.is_set():
+            result = INFERENCE_RESULT
+            RESULT_EVENT.clear()
 
         # 분할된 이미지를 디스플레이
         for idx, split_image in enumerate(split_images):
-            if RESULT_EVENT.is_set():
-                result = INFERENCE_RESULT[idx]
-            try:        
-                cv2.putText(split_image, f"event: {result}", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
-                cv2.imshow("inference", split_image)
+            try: 
+                cv2.putText(split_image, f"event: {result[idx * 2]}", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+                cv2.imshow(f"window_{idx}", split_image)
                 cv2.waitKey(1)
             except:
                 pass
+        
+        # try:        
+        #     cv2.putText(frame, f"event: {result}", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
+        #     cv2.imshow(f"window", frame)
+        #     cv2.waitKey(1)
+        # except:
+        #     pass
 
-        RESULT_EVENT.clear()
+
 
         # 'q' 키를 누르면 종료
         if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -113,6 +126,7 @@ def visual_encoding(model, queue, frames, frame_mask, text_mask, text_features, 
         
         # calculate the similarity  in one GPU
         probs = _run_on_single_gpu(model, text_mask, frame_mask, text_features, visual_output)
+        # print(f'probs: {probs}----- {datetime.now()}')
         queue.put(probs)
 
 def multi_crop(image, n, preprocess):
@@ -153,7 +167,7 @@ def analyze_frames(num_splits, frame_queue, model, max_frames, text_features, te
 
     model.eval()
 
-    origin_frames = []
+    # origin_frames = []
     frames_to_analyze = []
     frame_masks = []
     
@@ -162,14 +176,13 @@ def analyze_frames(num_splits, frame_queue, model, max_frames, text_features, te
 
     while True:
         if frame_queue.qsize() >= max_frames:
-            QUEUE_EVENT.clear()
-
-            ss = time.time()
-
-            while not frame_queue.empty():
-                frame = frame_queue.get()
-
-                origin_frames.append(frame)  #   FrameExtractor: def get_video_data/ video_to_tensor(dataloaders/rawframe_util.py)
+                                                                          
+            # while not frame_queue.empty():
+                # frame = frame_queue.get()
+            with frame_queue.mutex:
+                origin_frames = list(frame_queue.queue)
+                # print(origin_frames)
+                # origin_frames.append(frame)  #   FrameExtractor: def get_video_data/ video_to_tensor(dataloaders/rawframe_util.py)
 
             for img0 in origin_frames:
                 cropped_img = trans_crop(img0)
@@ -204,9 +217,9 @@ def analyze_frames(num_splits, frame_queue, model, max_frames, text_features, te
             while not output_queue.empty():
                 all_results.extend(output_queue.get())
 
-            # 결과 확인 (여기서는 각 탐지 결과를 출력)
-            for result in all_results:
-                print(result)
+            # # 결과 확인 (여기서는 각 탐지 결과를 출력)
+            # for result in all_results:
+            #     print(result)
 
             # if probs[0] > 0.65:
             #     text = f"pred: {probs[0].item():.2f} >> Violence >> {probs[1].item():.2f} >>> interval: {time.time()-ss}"
@@ -219,11 +232,12 @@ def analyze_frames(num_splits, frame_queue, model, max_frames, text_features, te
             for i in range(len(crop_lists)):
                 crop_lists[i].clear()
 
-            QUEUE_EVENT.set()
-
-            INFERENCE_RESULT = all_results
-            RESULT_EVENT.set()
+            INFERENCE_RESULT = all_results.copy()
+            # print(f'all: {all_results[0]}----- {datetime.now()}')
             all_results.clear()
+            
+            RESULT_EVENT.set()
+        time.sleep(TIME_INTERVAL*2)
 
               
 def _run_on_single_gpu(model, input_mask, video_mask, sequence_output, visual_output):

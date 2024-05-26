@@ -130,14 +130,19 @@ def prompt_embedding(model, max_words=32, device="cuda:0", center_type="TAB"):
     #     result = " ".join(combination)
     #     Negative.append(result)
 
-    # "Two men are kicking each other", "People are fighting in the street", "Two men are throwing punches at each other"
-    Positive = ["men are doing wrestling", "some people are fighting in the streets",
-                "people are punching each other in the street", "people are kicking each other in the street",
-                "men are boxing", ]
-    Negative = ["cars are moving on the road", "players are playing a soccer on the playground",
-                "some people are running in the streets", "some people are walking in the streets",
-                "people are playing on the playground"]
-    TextSet = Positive
+    # Positive = ["men are doing wrestling", "some people are fighting",
+    #             "people are punching each other", "people are kicking each other",
+    #             "men are boxing", ]
+    # Negative = ["cars are moving on the road", "players are playing a soccer on the playground",
+    #             "some people are running in the streets", "some people are walking in the streets",
+    #             "people are playing on the playground"]
+
+
+    Positive = ["men are doing wrestling", "peple are fighting each other", "men are punching each other",
+                "people are kicking each other",]
+    Negative = ["people are walking on the street", "there is no people", "people are walking", "people are playing tennis",
+                "people are play with racket"]
+    # TextSet = Positive
     TextSet = Positive + Negative
     text_encoding_list, text_mask_list = get_text(TextSet, max_words)
 

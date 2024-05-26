@@ -19,7 +19,7 @@ def get_args(description='CLIP2Video on Dideo-Text Retrieval Task'):
     parser.add_argument('--batch_size_val', type=int, default=64, help='batch size eval')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     parser.add_argument('--max_words', type=int, default=32, help='')
-    parser.add_argument('--max_frames', type=int, default=6, help='')
+    parser.add_argument('--max_frames', type=int, default=12, help='')
     parser.add_argument('--feature_framerate', type=int, default=1, help='frame rate for uniformly sampling the video')
     parser.add_argument("--output_dir", default="/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/log2.txt", type=str, required=False,
                         help="The output directory where the model predictions and checkpoints will be written.")
@@ -41,7 +41,7 @@ def get_args(description='CLIP2Video on Dideo-Text Retrieval Task'):
                         help="choice a similarity header.")
 
     # argument for testing
-    parser.add_argument('--checkpoint', type=str, default='/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/pytorch_model.bin.2', help="checkpoint dir")
+    parser.add_argument('--checkpoint', type=str, default='/workspace/CLIP4Clip/ckpts/ckpt_msrvtt_retrieval_looseType/', help="checkpoint dir")
     parser.add_argument('--model_num', type=str, default='2', help="model id")
     parser.add_argument('--local_rank', default=0, type=int, help='shard_id: node rank for distributed training')
     parser.add_argument("--datatype", default="msrvtt", type=str, help="msvd | msrvtt | vatexEnglish | msrvttfull")
